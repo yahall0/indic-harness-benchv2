@@ -1,0 +1,3 @@
+# Frozen prompts, fixtures, source and provenance use byte-level hashes.
+# Preserve recorded bytes on every platform instead of converting newlines.
+* -text

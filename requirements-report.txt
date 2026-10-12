@@ -1,0 +1,8 @@
+# Optional trusted report dependencies observed in the completed study.
+# Python >=3.12; agent/grader dependencies stay in pinned Docker builds.
+matplotlib==3.11.2
+numpy==2.5.3
+reportlab==4.4.9
+pypdf==6.10.0
+pdfplumber==0.11.9
+Pillow==12.3.0

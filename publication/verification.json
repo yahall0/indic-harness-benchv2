@@ -1,0 +1,32 @@
+{
+  "verified_local_date": "2026-10-12",
+  "verified_platform": "Windows",
+  "python_version": "3.12.14",
+  "original_files_preserved_unchanged": 4623,
+  "original_runtime_or_fixture_logic_changes": false,
+  "frozen_input_hashes_verified": true,
+  "new_model_calls": 0,
+  "original_unit_tests_passed": {
+    "core": 50,
+    "nemotron": 25,
+    "repair": 13
+  },
+  "portable_tests_passed": 5,
+  "clean_checkout": {
+    "private_journals_present": false,
+    "credentials_present": false,
+    "dependency_cache_present": false,
+    "portable_integrity_and_summary_passed": true,
+    "portable_tests_passed": 5,
+    "core_tests_passed": 50
+  },
+  "published_manifest_files": 1619,
+  "matched_tasks": 50,
+  "scored_conditions": 300,
+  "macos_execution_verified_locally": false,
+  "linux_execution_verified_locally": false,
+  "manual_os_matrix_workflow": ".github/workflows/portable-check.yml",
+  "git_history_rewritten": false,
+  "pushed_to_remote": false,
+  "publication_scope": "private remote; source redistribution permission unresolved"
+}

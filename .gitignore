@@ -1,14 +1,44 @@
+# Local environments, installed packages and generated build/render files.
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
 .deps/
+tmp/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials and local environment files. Template fixtures remain available.
 .env
+.env.*
+!.env.example
+!.env.sample
 *.secret
-config/credentials.dpapi.json
-config/credentials.dpapi.json.tmp
+*.dpapi.json
+*.dpapi.json.tmp
+config/credentials*
+.secrets/
+id_rsa
+id_ed25519
+*.p12
+*.pfx
+*.kdbx
+
+# Private journals, attempt workspaces and mutable state at any depth.
 *.sqlite3
 *.sqlite3-wal
 *.sqlite3-shm
 results/
 work/
 reports/security_check.json
+
+# Duplicate delivery bundle; canonical reports remain under output/pdf/.
+/output/indic results.rar
+
+# Local editor and OS state.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
