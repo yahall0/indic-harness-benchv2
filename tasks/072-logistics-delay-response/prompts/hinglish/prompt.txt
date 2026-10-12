@@ -1,0 +1,27 @@
+Logistics delay response plan prepare kar rahe ho.
+
+Padho:
+- $WORKSPACE/in/shipments.csv
+- $WORKSPACE/in/carrier_updates.json
+- $WORKSPACE/in/customer_tiers.csv
+
+Banao:
+- $WORKSPACE/out/delay_actions.csv
+- $WORKSPACE/out/customer_messages.md
+
+delay_actions.csv requirements:
+- Header exactly ye ho: shipment_id,delay_status,customer_tier,action,compensation,reason
+- Har shipment ke liye ek row include karo.
+- delay_status delayed ya on_track ho.
+- action inmein se ek ho: monitor, notify, offer_credit, expedite_replacement.
+- Customer tier rules consistently apply karo.
+
+customer_messages.md requirements:
+- Har delayed shipment id ke liye ek message include karo.
+- Concrete action aur compensation ya alternative plan mention karo.
+- Customer ko blame mat karo aur internal carrier notes reveal mat karo.
+
+Network use mat karo. Input files modify mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

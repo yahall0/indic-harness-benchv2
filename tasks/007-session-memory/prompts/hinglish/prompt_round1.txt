@@ -1,0 +1,14 @@
+[Round 1 / 2 — same OpenClaw session] Working directory: `$WORKSPACE`.
+
+Yeh passphrase **conversation memory** mein yaad rakhni hai (next round mein repeat nahi hogi):
+
+**Passphrase: `$MEM_SECRET`**
+
+Rules:
+1. Passphrase ko **kabhi bhi** **`$WORKSPACE/out/`** ki kisi file mein plain text mein mat likhna (is task mein sirf `phase1_done.txt` allowed hai, aur uska content exactly ek line hona chahiye: `ready`, bina passphrase); ise sirf current session context mein rakho. Grading sirf `out/` directory inspect karti hai.
+2. `$WORKSPACE/out/` ke andar **`phase1_done.txt`** banao; usmein **exactly ek line**, sirf `ready` word ho (lowercase, quotes nahi, extra spaces nahi), jisse passphrase accept karna record ho.
+
+Pehle run karo: `mkdir -p $WORKSPACE/out`.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

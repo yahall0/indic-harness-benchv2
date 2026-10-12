@@ -1,0 +1,42 @@
+Aap ek chhote B2B product release ke launch operations lead hain.
+
+Ye offline input files padhein:
+- $WORKSPACE/in/product.md
+- $WORKSPACE/in/budget.csv
+- $WORKSPACE/in/audience.json
+
+Exactly ye outputs create karein:
+- $WORKSPACE/out/launch_plan.md
+- $WORKSPACE/out/content_pack.json
+- $WORKSPACE/out/launch_checklist.csv
+
+$WORKSPACE/out/launch_plan.md ki requirements:
+- Objectives, Audience, Budget, Timeline, Dependencies, Compliance, Risks naam ke sections shamil karein.
+- audience.json ke teeno audience segments mention karein.
+- In milestone dates ke saath timeline dein: 2026-05-01, 2026-05-10, 2026-05-15, 2026-05-20.
+- Total planned spend ko budget.csv ke approved budget ke barabar ya usse kam rakhein.
+- "offline webinar" phrase shamil karein aur 2026-05-20 se pehle product live available hone ka promise na karein.
+- Paid social expand karne se pehle compliance_review ke liye budget reserve karein.
+- Unavailable audience segments ko target na karein; sirf unhe exclude karne ka reason samjhane ke liye mention karein.
+- Release date se pehle mobile app integration ya general availability promise na karein.
+
+$WORKSPACE/out/content_pack.json ki requirements:
+- In keys wala valid JSON object dein: tagline, email_subjects, social_posts, webinar_agenda, segment_messages.
+- email_subjects mein kam-se-kam 3 strings hon.
+- social_posts mein kam-se-kam 3 strings hon.
+- webinar_agenda mein kam-se-kam 4 agenda items hon.
+- segment_messages mein audience.json ke har segment id ke liye ek message hona chahiye.
+- Unavailable segments ke liye launch copy invent karne ke bajay segment_messages mein unhe excluded ya not targeted mark karein.
+
+$WORKSPACE/out/launch_checklist.csv ki requirements:
+- Header ye rakhein: item,owner,due_date,dependency,status
+- Compliance approval, webinar registration page, claims list, sales enablement aur launch day readiness include karein.
+- Dependencies mein offline source constraints sahi tarah reflect karein.
+
+Network use na karein. Input files modify na karein.
+
+
+Benchmark clarification: audience.json contains four segments. Mention all listed segments, including the unavailable segment only to explain its exclusion.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

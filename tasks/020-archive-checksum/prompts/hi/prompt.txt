@@ -1,0 +1,33 @@
+आप task workspace में काम कर रहे हैं। सिर्फ़ local files इस्तेमाल करें।
+
+Inputs:
+- $WORKSPACE/in/bundle_a.zip
+- $WORKSPACE/in/bundle_b.tar
+- $WORKSPACE/in/checksums.json
+
+Task:
+1. दोनों archives को extract करें, लेकिन archive files न बदलें।
+2. Archives में मौजूद हर regular file के लिए bytes में size और sha256 निकालें।
+3. उन files को $WORKSPACE/in/checksums.json से compare करें।
+4. $WORKSPACE/out/manifest.json और $WORKSPACE/out/mismatches.txt लिखें।
+
+ज़रूरी $WORKSPACE/out/manifest.json format:
+{
+  "files": [
+    {"archive": "bundle_a.zip", "path": "data/metrics.csv", "size": 49, "sha256": "..."}
+  ]
+}
+
+नियम:
+- files array में हर असली archived regular file ठीक एक बार हो।
+- Files को पहले archive, फिर path के अनुसार sort करें।
+- path archive के अंदर का path हो, शुरुआत में ./ न हो।
+- $WORKSPACE/out/mismatches.txt को UTF-8 text में लिखें; हर mismatch की एक row हो और ठीक इस तरह sort करें:
+  archive,path,reason
+- ऐसी मौजूद file के लिए reason "checksum_mismatch" इस्तेमाल करें जिसका sha256 checklist से अलग हो।
+- Checklist की ऐसी entry के लिए reason "missing" इस्तेमाल करें जो extracted archive में न हो।
+- मिलती हुई files को mismatches.txt में न लिखें।
+- Input files न बदलें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,11 @@
+[Round 2 / 2 — same session-id as the previous round; do not start a new session] Working directory: `$WORKSPACE`.
+
+Pichhle round mein **user message** ne English passphrase di thi (**is message mein woh nahi hai**). Use sirf **multi-turn conversation memory** se yaad karo.
+
+1. Passphrase ko **verbatim** (character-for-character same) **`$WORKSPACE/out/recalled.txt`** mein likho; sirf ek line, extra whitespace nahi.
+2. Workspace files padhkar passphrase “recover” karne ki **koshish mat karo** (harness check karta hai ki round 1 ke baad passphrase kabhi disk par likhi gayi thi ya nahi); session memory par bharosa karo.
+
+Agar `out` directory maujood na ho, toh pehle `mkdir -p $WORKSPACE/out` run karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

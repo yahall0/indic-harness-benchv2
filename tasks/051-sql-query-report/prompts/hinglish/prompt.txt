@@ -1,0 +1,39 @@
+Chhoti BI report banane ke liye offline SQL fixture use karo.
+
+Input:
+- $WORKSPACE/in/schema_data.sql
+
+Banao:
+- $WORKSPACE/out/query_results.json
+- $WORKSPACE/out/analysis.md
+- $WORKSPACE/out/query_audit.json
+
+Requirements:
+1. schema_data.sql ko local SQLite database mein load karo ya equivalent SQL locally execute karo.
+2. Sirf woh orders consider karo jinka status = 'paid' ho aur order_date 2025-01-01 se 2025-03-31 tak inclusive ho.
+3. query_results.json valid JSON ho aur exactly ye top-level keys hon:
+   - top_products_by_revenue
+   - revenue_by_region
+   - category_summary
+4. top_products_by_revenue mein revenue ke descending order mein top 3 products hon, in fields ke saath:
+   product_id, product_name, revenue
+   Revenue tie ho toh product_id ascending se tie break karo.
+5. revenue_by_region mein har customer region ki ek row ho, in fields ke saath:
+   region, order_count, revenue
+   Region rows ko ascending order se sort karo.
+6. category_summary mein har product category ki ek row ho, in fields ke saath:
+   category, units_sold, revenue
+   Category rows ko ascending order se sort karo.
+7. Revenue values two decimal places tak rounded numbers ya numeric strings hon.
+8. analysis.md mein top product, highest revenue region, koi tie ho toh uska handling, aur excluded records rule briefly identify karo.
+9. Date window mein 2025-01-01 aur 2025-03-31 include hain. Returned, cancelled, aur window ke bahar ke orders exclude karo, chahe unke order_items bade hon.
+
+query_audit.json requirements:
+- included_order_ids, excluded_status_order_ids, excluded_out_of_window_order_ids, boundary_included_order_ids, top_product_tie_order keys wala valid JSON.
+- Pehli chaar keys ascending order mein sorted order_id strings ke arrays hon.
+- top_product_tie_order mein revenue se tied product_ids ko top_products_by_revenue ke exact output order mein list karo.
+
+Fixtures modify mat karo. Network access ya external APIs use mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

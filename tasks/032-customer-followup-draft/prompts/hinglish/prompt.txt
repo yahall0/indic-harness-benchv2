@@ -1,0 +1,23 @@
+Customer follow-up email aur internal account risk note draft karein.
+
+Ye inputs use karein:
+- $WORKSPACE/in/crm_notes.json
+- $WORKSPACE/in/email_history.md
+- $WORKSPACE/in/pricing_rules.md
+
+Ye outputs create karein:
+- $WORKSPACE/out/followup_email.txt
+- $WORKSPACE/out/account_risk_notes.md
+
+followup_email.txt ki requirements:
+- Customer contact ko naam se address karein.
+- Requested Professional plan aur valid discount limit batayein.
+- Sirf approved next step offer karein.
+- custom SSO, legal terms ya policy se zyada discount promise na karein.
+
+account_risk_notes.md ki requirements:
+- Buying stage, blockers, competitor risk, pricing boundary aur owner ka next action summarize karein.
+- Input files ko modify na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

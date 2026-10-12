@@ -1,0 +1,56 @@
+आप finance reconciliation review के लिए messy sales export clean कर रहे हैं. सिर्फ़ local फ़ाइलें use करें.
+
+Workspace root में copy किए गए inputs:
+- $WORKSPACE/in/messy_sales.csv
+- $WORKSPACE/in/customer_dictionary.csv
+- $WORKSPACE/in/fx_rates.csv
+
+बिल्कुल ये outputs बनाएँ:
+- $WORKSPACE/out/cleaned_sales.csv
+- $WORKSPACE/out/reject_ledger.csv
+- $WORKSPACE/out/reject_summary.json
+- $WORKSPACE/out/cleaning_report.md
+
+Cleaning rules:
+1. Input फ़ाइलें modify न करें.
+2. customer_id को customer_dictionary.csv के against validate करें. Unknown या inactive customer_id वाली rows reject करें.
+3. order_date को row के locale के मुताबिक parse करें:
+   - en_US dates month/day/year होती हैं.
+   - en_GB और de_DE में तारीख़ों का क्रम day/month/year होता है।
+   - ISO dates पहले से year-month-day format में हैं.
+   - Month names वाली dates, जैसे "10-Jan-2025", valid हैं.
+4. status को lowercase में normalize करें. Refund/returned rows का amount_usd ऋणात्मक ही रहना चाहिए.
+5. fx_rates.csv की दरों से amount को USD में बदलें। amount फ़ील्ड हर row का कुल है, unit price नहीं। Currency symbols और accounting parentheses हटाएँ। en_US/en_GB में comma हजारों को और dot दशमलव को अलग करता है; de_DE में dot हजारों को और comma दशमलव को। amount_usd को ठीक दो दशमलव स्थानों तक round करें।
+6. quantity positive integer होना चाहिए.
+7. Validation के बाद order_id के basis पर deduplicate करें. Input order में पहली valid occurrence रखें और बाद की valid duplicates को reason duplicate_order_id से reject करें. Invalid rows को duplicate_order_id के bajay उनके validation reason से reject करें.
+8. Invalid dates, unsupported currency, missing/non-numeric amounts, invalid quantities, unknown/inactive customers, या duplicates वाली rows reject करें.
+9. एक row में multiple reject reasons हों, तो इस priority order में पहला applicable reason record करें:
+   missing_amount, unsupported_currency, invalid_quantity, inactive_customer, unknown_customer, invalid_date, duplicate_order_id.
+10. Refund/returned rows का amount_usd बिल्कुल एक बार negative होना चाहिए: positive returned amount को negative करें, और पहले से negative returned amount को negative ही रखें.
+
+cleaned_sales.csv requirements:
+- Exact header:
+  order_id,order_date,customer_id,customer_name,sku,quantity,amount_usd,status
+- Rows को order_date फिर order_id के हिसाब से sort करें.
+- Extra columns include न करें.
+
+reject_ledger.csv requirements:
+- Exact header:
+  order_id,reason,source_row,notes
+- हर rejected input row के लिए एक row include करें. source_row, messy_sales.csv में header को chhodkar 1-based data-row number है.
+- Rule 9 में दिए गए reason codes में से एक use करें.
+
+reject_summary.json requirements:
+- Valid JSON object हो जो rule 9 के हर reason code के लिए keyed हो, शून्य गिनती वाले reasons समेत.
+- हर reason entry में count, source_rows, और order_ids हों।
+- source_rows, ascending input order में numeric arrays हों.
+
+cleaning_report.md requirements:
+- Valid row गिनती, rejected row गिनती, duplicate गिनती, और total amount_usd summarize करें.
+- हर reject reason category समझाएँ.
+- Use की गई locale या FX assumptions का ज़िक्र करें.
+
+Network access या external APIs use न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

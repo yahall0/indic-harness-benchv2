@@ -1,0 +1,29 @@
+Offline evidence se production checkout incident triage karo.
+
+Inputs:
+- $WORKSPACE/in/topology.json
+- $WORKSPACE/in/metrics/service_metrics.csv
+- $WORKSPACE/in/logs/checkout-web.log
+- $WORKSPACE/in/logs/payment-api.log
+- $WORKSPACE/in/logs/auth-gateway.log
+- $WORKSPACE/in/logs/orders-db.log
+
+Exactly ye output files banao:
+- $WORKSPACE/out/root_cause.json
+- $WORKSPACE/out/triage_notes.md
+
+root_cause.json requirements:
+- Top-level object mein ye fields hon: incident_id, root_cause_service, root_cause_change_id, confidence, affected_services, evidence, excluded_red_herrings, recommended_next_steps.
+- evidence, objects ki list ho jisme source_file aur observation hon.
+- excluded_red_herrings mein misleading signals ke naam aur woh primary cause kyun nahi hain, ye batao.
+
+triage_notes.md requirements:
+- User impact se root cause tak ka dependency path summarize karo.
+- Kam-se-kam three fixture files ko path se cite karo.
+- Immediate mitigation aur verification steps include karo.
+- Inferences ko directly observed facts se clearly alag mark karo.
+
+Input files modify mat karo. Live services ya external APIs use mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

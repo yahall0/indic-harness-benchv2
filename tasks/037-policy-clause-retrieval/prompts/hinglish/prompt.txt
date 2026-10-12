@@ -1,0 +1,33 @@
+Task: Policy Clause Retrieval aur Case Rulings
+
+Ye inputs use karein:
+- `$WORKSPACE/in/policy_manual.md`
+- `$WORKSPACE/in/cases.json`
+- `$WORKSPACE/in/policy_amendment.md`
+- `$WORKSPACE/in/reason_codes.json`
+
+Har case par ruling dene ke liye policy manual, amendment aur canonical reason-code registry use karke `$WORKSPACE/out/case_rulings.json` likhein.
+Jahan amendment zyada specific ho, wahan woh base manual ko supersede karega. Mixed packets par line-item aur case, dono levels par ruling dein.
+
+Output format ki requirements:
+- Top level par JSON array hona chahiye.
+- Har element mein ye fields hone chahiye: `case_id`, `applicable_clause`, `decision`, `reason_code`, `quote_or_signal`, `secondary_clauses`, `blocking_condition`, aur `missing_information`.
+- `applicable_clause` mein manual ka clause number use karein, jaise `TR-2`.
+- `secondary_clauses` array hona chahiye. Agar exception clause bhi ruling ko affect karta hai, uska clause number shamil karein; warna empty array dein.
+- `decision` ki value `approve`, `deny`, ya `needs_review` mein se ek honi chahiye.
+- `reason_code` short machine-readable code ho, jaise `domestic_with_receipt`.
+- Canonical reason codes hi use karein; unke synonyms wale naye codes invent na karein.
+- `blocking_condition` mein `deny` ya `needs_review` ka main reason samjhayen; `approve` ke liye empty string ho sakta hai.
+- `missing_information` array hona chahiye. Agar ruling missing ya conflicting approval, receipt, attendee-list, ya business-purpose info par depend karti hai, missing items list karein; warna empty array dein.
+- Jin cases mein `line_items` hon, unmein `line_item_rulings` array dein. Har item mein `line_id`, `applicable_clause`, `decision`, `reason_code`, `quote_or_signal`, `secondary_clauses`, `blocking_condition`, aur `missing_information` hone chahiye.
+- Mixed packets mein case-level decision AM-2 aggregation ke mutabik dein; har line item ka apna applicable clause aur reason code preserve karein.
+
+Saath hi `$WORKSPACE/out/ruling_summary.csv` likhein aur ye header rakhein:
+`case_id,case_decision,denied_lines,review_lines,approved_lines,controlling_clause,summary_reason`
+
+Summary mein single-line cases samet har case shamil karein. Jis case mein explicit `line_items` na hon, uske counts zero rakhein.
+
+Mana hai: internet use na karein; fixtures modify na karein; exception clauses ignore na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,49 @@
+Budget-vs-actuals variance report taiyar karein.
+
+Ye inputs use karein:
+- $WORKSPACE/in/budget.csv
+- $WORKSPACE/in/actuals.csv
+
+Ye outputs create karein:
+- $WORKSPACE/out/variance_report.csv
+- $WORKSPACE/out/department_rollup.csv
+- $WORKSPACE/out/review_reasons.json
+- $WORKSPACE/out/summary.md
+
+variance_report.csv mein columns isi exact order mein rakhein:
+department,category,budget_amount,actual_amount,variance_amount,variance_pct,flag
+
+Rules:
+1. Fixtures modify na karein.
+2. budget.csv aur actuals.csv ko department aur category ke basis par full outer join karein.
+   - Agar budget row ka matching actual row na ho, to actual_amount 0.00 set karein.
+   - Agar actual row ka matching budget row na ho, to budget_amount 0.00 ke saath unplanned item shamil karein.
+3. variance_amount = actual_amount - budget_amount rakhein.
+4. variance_pct = variance_amount / budget_amount * 100 rakhein.
+   - Agar budget_amount 0.00 ho aur actual_amount nonzero ho, variance_pct N/A aur flag review set karein.
+   - Agar budget_amount aur actual_amount dono 0.00 hon, variance_pct 0.00 aur flag ok set karein.
+5. Amount fields aur variance_pct ko exactly two decimals mein format karein.
+6. Absolute variance_pct strictly 10.00 se zyada ho tabhi flag review rakhein, warna ok. Exactly 10.00 par ok rakhein.
+7. summary.md mein har review item aur variance_amount ke hisab se largest overrun batayein.
+8. summary.md mein unplanned actuals, zero-budget rows aur missing actuals mention karein.
+
+department_rollup.csv ki requirements:
+- Ye exact header rakhein:
+  department,budget_amount,actual_amount,variance_amount,variance_pct,review_item_count,rollup_flag
+- Full outer join ke baad variance_report.csv ki sari rows ko department ke hisab se sum karein.
+- variance_pct = department variance_amount / department budget_amount * 100 rakhein.
+- Agar department budget_amount 0.00 ho aur actual_amount nonzero ho, variance_pct N/A rakhein.
+- review_item_count us department ki flag=review wali category rows ki ginti ho.
+- Agar review_item_count > 0 ho to rollup_flag review rakhein; warna ok.
+- Rows ko department ke ascending order mein sort karein.
+
+review_reasons.json ki requirements:
+- Har review item ko key banakar valid JSON object dein, jiska format `"Department Category"` ho.
+- Har value mein reason_type aur primary_driver hona chahiye.
+- reason_type ki value inmein se ek ho: overrun_pct, underrun_pct, unplanned_actual, missing_actual, zero_budget_actual.
+- primary_driver mein review flag trigger karne wala rule short mein batayein, jaise `variance_pct > 10`, `variance_pct < -10`, `budget missing`, `actual missing`, ya `budget is zero with actual spend`.
+
+Network access ya external APIs use na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

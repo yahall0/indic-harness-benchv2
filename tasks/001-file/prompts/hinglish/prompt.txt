@@ -1,0 +1,10 @@
+Working directory `$WORKSPACE` hai.
+
+`in/input.txt` padho, file mein lines count karo aur result `out/linecount.txt` mein likho.
+
+Requirements:
+- Sirf ek integer (line count) likhna.
+- `in/input.txt` ko modify mat karna.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

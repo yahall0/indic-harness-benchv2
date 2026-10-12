@@ -1,0 +1,27 @@
+2 कुल rounds में से Round 2: देर से आए policy update के बाद rollout plan संशोधित करें।
+
+पढ़ें:
+- $WORKSPACE/out/original_plan.json
+- $WORKSPACE/out/state.json
+- $WORKSPACE/in/round2_update_notice.json
+- $WORKSPACE/in के नीचे मौजूद original input files
+
+बनाएँ:
+- $WORKSPACE/out/revised_plan.json
+- $WORKSPACE/out/diff.md
+- $WORKSPACE/out/state.json को update करें
+
+आवश्यकताएँ:
+- देर से आए update को लागू करें:
+  - EU launch_gate को original EU launch_gate से कम-से-कम 48 hours आगे करें।
+  - EU customer communications को EU launch_gate के साथ आगे करें और launch gate से पहले रखें।
+  - APAC owner Priya उपलब्ध नहीं हैं; APAC decisions में Priya की जगह दूसरा owner रखें।
+  - हर region के support training में "refund exception drill" artifact जोड़ें।
+- original plan के उपयोगी और अप्रभावित AMER decisions बनाए रखें।
+- $WORKSPACE/out/diff.md में Added, Removed, Changed और Unchanged नाम के sections हों।
+- $WORKSPACE/out/state.json में round, plan_version, decisions, source_files_read, changed_decision_ids और unchanged_decision_ids दर्ज करें।
+- input files में बदलाव न करें।
+- यह केवल planning task है। notices, approvals, training या production changes पहले ही execute हो चुके हैं, ऐसा दावा न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

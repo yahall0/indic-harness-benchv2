@@ -1,0 +1,26 @@
+Offline alert storm ko actionable incidents mein reduce karo.
+
+Inputs:
+- $WORKSPACE/in/alerts.jsonl
+- $WORKSPACE/in/topology.json
+
+Exactly ye output files banao:
+- $WORKSPACE/out/deduped_incidents.json
+- $WORKSPACE/out/noise_report.md
+
+deduped_incidents.json requirements:
+- Top-level object mein incidents key ho.
+- incidents, objects ki list ho.
+- Har incident mein ye fields include hon: incident_id, root_alert_id, root_service, cluster_alert_ids, impact_services, summary, evidence.
+- cluster_alert_ids mein root alert aur downstream symptom alerts include hon.
+- impact_services mein customer-facing ya dependent services ke naam hon jo same root problem se affected hain.
+
+noise_report.md requirements:
+- Noise ke taur par filter kiye alerts list karo aur reason samjhao.
+- Duplicates/downstream symptoms ko real noise se distinguish karo.
+- Applicable hone par maintenance windows, synthetic heartbeat flaps aur staging-only alerts mention karo.
+
+Input files modify mat karo. External services use mat karo. Result ko sirf supplied alerts aur topology par base karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

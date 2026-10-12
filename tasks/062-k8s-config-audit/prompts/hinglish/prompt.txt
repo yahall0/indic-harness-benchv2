@@ -1,0 +1,28 @@
+Tum offline Kubernetes service configuration audit kar rahe ho.
+
+Inputs:
+- $WORKSPACE/in/deployment.yaml
+- $WORKSPACE/in/service.yaml
+- $WORKSPACE/in/policy.md
+
+Exactly ye output file banao:
+- $WORKSPACE/out/k8s_audit.csv
+
+CSV requirements:
+- Header mein ye fields hon: check_id,resource,status,severity,evidence,recommendation
+- Har relevant finding ke liye ek row ho.
+- status inmein se ek ho: pass, fail, warn.
+- Jab koi finding lagu ho, tab neeche diye exact check_id values use karo:
+  cpu_memory_limits, readiness_probe, liveness_probe, service_selector, service_target_port, image_tag_policy, privileged_container, service_type_policy
+
+Audit expectations:
+- Container CPU aur memory requests/limits check karo.
+- Readiness aur liveness probes check karo.
+- Deployment labels aur Service selector check karo.
+- Service port/targetPort ko declared container ports se check karo.
+- policy.md ke har forbidden ya required item ko apply karo.
+
+Input files modify mat karo. Network call ya live cluster tools use mat karo. Apna jawab sirf supplied files par base karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

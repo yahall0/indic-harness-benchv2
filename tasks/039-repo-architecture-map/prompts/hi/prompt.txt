@@ -1,0 +1,33 @@
+आपको `$WORKSPACE/in/repo` पर एक छोटा Python service repository दिया गया है.
+
+बिल्कुल ये deliverables बनाएँ:
+
+1. `$WORKSPACE/out/module_map.json`
+   - `modules`, `entry_points`, `dependency_edges`, `key_functions` keys वाला JSON object.
+   - `modules`, module objects का array हो जिसमें कम-से-कम `name`, `path`, और `purpose` हों.
+   - `entry_points` में executable/API entry points canonical `module:function` identifiers से list हों, जहाँ लागू हो; इनमें `minisvc.cli:main` और `minisvc.api.routes:register_routes` शामिल हों.
+   - `dependency_edges` में directed edges objects हों जिनके fields `from`, `to`, और `type` हों; `type` इनमें से एक हो: `imports`, `calls`, `instantiates`, `reads_config`, या `persists_to`.
+   - `key_functions` में important functions और methods का varnan हो.
+   - `runtime_flows` array शामिल करें जो कम-से-कम CLI startup flow और HTTP create-order flow को ordered steps में बताएँ.
+2. `$WORKSPACE/out/architecture.md`
+   - नए engineer के लिए Markdown architecture summary.
+   - Modules, entry points, data flow, storage, और risks/extension points शामिल करें.
+   - महत्वपूर्ण runtime flow बताएं करें और package marker फ़ाइलों को business logic modules न समझें.
+3. `$WORKSPACE/out/doc_code_discrepancies.csv`
+   - Header `claim,doc_source,code_evidence,assessment,risk` वाला CSV.
+   - README/design notes को actual implementation से compare करें.
+   - कम-से-कम readonly enforcement, retry behavior, और audit persistence cover करें, अगर ये code से अलग हों.
+   - `assessment` इनमें से एक हो: `confirmed`, `contradicted`, या `unsupported`.
+4. `$WORKSPACE/out/risk_register.csv`
+   - Header `risk_id,area,evidence,impact,mitigation,owner_hint` वाला CSV.
+   - कम-से-कम storage/data durability, audit behavior, configuration/runtime environment, और API input validation cover करें.
+   - हर row में module, function, या filename जैसे ठोस code evidence का उदाहरण दें.
+5. `$WORKSPACE/out/onboarding_plan.md`
+   - नए engineer के लिए concise onboarding plan.
+   - Recommended reading order, local run/test commands, पहला debugging breakpoint या trace point, और दो सुरक्षित शुरुआती बदलाव शामिल करें.
+   - Active runtime code और package marker या बहुत सरल फ़ाइलें में farq स्पष्ट करें.
+
+`$WORKSPACE/in/repo` के अंदर कुछ modify न करें. Internet access use न करें. सिर्फ़ fixture repository की फ़ाइलें use करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

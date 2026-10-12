@@ -1,0 +1,18 @@
+`$WORKSPACE/in/ordercalc` ke Python package mein tests incomplete hain.
+
+Tumhara kaam:
+- `$WORKSPACE/in/ordercalc/tests/` ke andar tests add ya edit karo.
+- `$WORKSPACE/in/ordercalc/ordercalc/` ke andar files edit mat karo.
+- `$WORKSPACE/in/ordercalc/pricing_rules.md` padhkar usmein bataye behavior ko check karne wale tests likho.
+- Boundary cases bhi test karo: discount ka order, free-shipping threshold, bulk aggregation aur rounding. Inmein se kisi ka implementation galat ho to sambandhit test fail hona chahiye.
+- Evaluator jaan-boojhkar broken pricing implementations ke against mutation checks run karega; achhe tests ko un mutants par fail hona chahiye.
+- Final command `python -m pytest $WORKSPACE/in/ordercalc/tests` pass honi chahiye.
+- `$WORKSPACE/in/ordercalc/tests/TEST_INTENT.md` add karo jo bataye ki tumhare tests kaun se pricing-rule risks cover karte hain. Ismein discount order, free-shipping threshold, bulk aggregation, rounding, coupons, expedited shipping, aur validation errors ka mention hona zaroori hai.
+
+Forbidden:
+- Exact source line snippets jaise private implementation text hard-code mat karo.
+- Success force karne ke liye jin functions ka test ho raha hai ko monkeypatch mat karo.
+- Required behavior tests ko skip ya xfail mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

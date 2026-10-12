@@ -1,0 +1,57 @@
+{
+  "timestamp_utc": "2026-09-30T14:00:14.719981+00:00",
+  "runtime_revision": 2,
+  "original_failure_cause": "Unproven: v1 stored only relay_accounting_gate, not the specific exception or failed upstream response.",
+  "reproduced_defect": "len(None) on optional null tool_calls in a completion message caused a generic relay gate error.",
+  "fixes": [
+    "Normalize optional null tool_calls; preserve generated text and function arguments.",
+    "Save raw parsed upstream trace before response normalization.",
+    "Record failing stage, exception type, HTTP status and settlement state without exception messages/URLs or credentials.",
+    "Version repaired runtime while preserving the original study ID and all run identities.",
+    "Export runtime hash and operator-stop annotation in metrics."
+  ],
+  "validation": {
+    "unit_tests_passed": 24,
+    "docker_runtime_check": true,
+    "devanagari_request_and_response_preserved": true,
+    "nullable_tool_calls_handled": true,
+    "relay_rotation_check": true,
+    "helper_check": true,
+    "controller_durable_recovery_check": true,
+    "all_readiness_gates": true,
+    "resume_identity_check": true,
+    "run_records_preserved": 120
+  },
+  "diagnostic_cloud_probes": {
+    "requests": 3,
+    "maximum_output_tokens_per_request": 64,
+    "input_tokens": 217,
+    "output_tokens": 103,
+    "languages": [
+      "en",
+      "hi",
+      "hinglish"
+    ],
+    "all_successful": true,
+    "benchmark_results": false
+  },
+  "original_hindi_run": {
+    "task": "001-file",
+    "status": "infrastructure_failed",
+    "used_in_language_comparison": false,
+    "rerun": false
+  },
+  "operator_interruption": {
+    "task": "002-exec",
+    "language": "en",
+    "raw_status": "infrastructure_failed",
+    "annotation": "operator_stop_annotation",
+    "used_in_language_comparison": false,
+    "rerun": false
+  },
+  "remaining_unstarted_at_resume": 114,
+  "study_id": "6498cce290def2038c1da1fe958cae8babdb0ef24e7784bd2f66512d4c641c22",
+  "new_runtime_freeze_hash": "690703f6b567068009ff301a0276b633bdfddd8d91c3b7642fad3798e1afdfd5",
+  "old_runtime_freeze_hash": "6498cce290def2038c1da1fe958cae8babdb0ef24e7784bd2f66512d4c641c22",
+  "resumed": "Only unstarted conditions; original failed/interrupted records retained. Existing pass/fail scores were not changed."
+}

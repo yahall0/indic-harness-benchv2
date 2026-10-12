@@ -1,0 +1,11 @@
+**`$WORKSPACE/in/meeting_transcript.txt`** (product meeting का पूरा transcript) पढ़ें और **English meeting summary** को **`$WORKSPACE/out/meeting_summary.txt`** में लिखें (UTF-8 text; ज़रूरत हो तो पहले `mkdir -p out` से directory बनाएँ)।
+
+**Content and format:**
+1. English में **one to three paragraphs** लिखें, जिनमें **main topics**, **जिन conclusions या decisions पर सहमति बनी**, **बड़े risks या खुले मुद्दे**, और **साफ़ follow-ups** शामिल हों (हर sentence का recap ज़रूरी नहीं, लेकिन reader पूरी transcript पढ़े बिना चर्चा समझ सके)। **सिर्फ वही शामिल करें जिसका आधार transcript में हो**—अनुमान न लगाएँ और कुछ गढ़ें नहीं।
+2. **Length**: सामान्य **short workplace summary** रखें—सिर्फ़ कुछ नारे जैसे bullets से साफ़ तौर पर अधिक, और transcript की copy से साफ़ तौर पर छोटा; ज़्यादातर readers इसे **about one to two minutes** में पढ़ लें। बहुत छोटे bullet dumps या बहुत लंबे essays से बचें।
+3. **Information density**: summary को coherent रखते हुए transcript के कई **बार-बार आने वाले या प्रमुख शब्द** स्वाभाविक रूप से शामिल करें (org/product-line names, phase या release wording, resource या constraint language, named technical या process objects, आदि); सिर्फ़ “complete” दिखने के लिए असंबंधित terms न भरें।
+
+**Output path:** सिर्फ़ `out/meeting_summary.txt`।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

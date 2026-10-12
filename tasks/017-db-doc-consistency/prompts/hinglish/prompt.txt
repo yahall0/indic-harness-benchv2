@@ -1,0 +1,36 @@
+# Database and System Deployment Documentation Consistency Audit
+
+## 1. Task Background
+Technical team ka kehna hai ki existing online deployment document `$WORKSPACE/in/db/deployment_guide.md` outdated ho sakta hai, jisse naye staff ko deployment ke waqt baar-baar errors hote hain. System ki pichhli raat ki actual running state database backup file `$WORKSPACE/in/db/backup.sql` mein recorded hai. Saath hi, production environment configuration overrides ke liye K8s ConfigMap (`$WORKSPACE/in/db/environment.yml`) use karta hai, aur node inventory (`$WORKSPACE/in/db/node_inventory.json`) actual hardware record karti hai.
+
+DevOps Agent ki tarah documentation aur real state ke beech contradictions audit karo.
+
+## 2. Core Subtasks
+- **Parse ground truth**: `$WORKSPACE/in/db/backup.sql` read aur parse karke `system_config` table ke saare key‑value pairs extract karo (`environment='global'` aur doosre environments ko alag pehchano). `cluster_nodes` table se node hardware info bhi parse karo.
+- **Document comparison**: `$WORKSPACE/in/db/deployment_guide.md` padho; saare system parameter descriptions aur node planning table extract karo.
+- **Environment override comparison**: `$WORKSPACE/in/db/environment.yml` parse karke har namespace ki configuration override values extract karo.
+- **Hardware inventory comparison**: `$WORKSPACE/in/db/node_inventory.json` parse karke actual hardware configurations extract karo.
+- **Contradiction detection**: Sabhi sources cross-reference karke neeche diye types ki inconsistencies dhoondo:
+  1. **Configuration value conflict**: Documentation aur database global configuration values ke beech differences.
+  2. **Environment override conflict**: ConfigMap override values aur corresponding database environment values ke beech differences.
+  3. **Node hardware conflict**: Documentation node table aur database `cluster_nodes` ya `node_inventory.json` ki hardware info ke beech differences.
+  4. **Region deployment conflict**: Documentation kehti hai saare nodes `us-east-1` mein hain, lekin actual data isse contradict karta hai.
+
+## 3. Required Artifacts
+Task complete karne ke baad ye produce karo:
+- `$WORKSPACE/out/audit_report.csv`: Audit report. Ismein chhe column headers hon: `Source_A`, `Source_B`, `Config_Key`, `Value_A`, `Value_B`, `Issue_Type`. Har row ek inconsistency record kare. `Issue_Type` inmein se ek ho sakta hai: `config_mismatch`, `env_override_mismatch`, `hardware_mismatch`, `region_mismatch`.
+  - Configuration conflicts ke liye: `Source_A="db_global"`, `Source_B="deployment_guide"`
+  - Environment override conflicts ke liye: Production environment: `Source_A="db_global"`, `Source_B="configmap_production"`; Staging environment: `Source_A="db_staging"`, `Source_B="configmap_staging"`. Dhyan rahe: is task mein production ka `session_timeout_min` mismatch hai (db_global=15, configmap_production=30); staging environment ki saari configurations consistent hain, isliye staging ke liye koi `env_override_mismatch` **mat banao**.
+  - Hardware conflicts ke liye: `Source_A="db_cluster_nodes"` ya `"node_inventory"`, `Source_B="deployment_guide"`; `Config_Key` ka format `node_id.hardware_field` ho (jaise `web-01.cpu_cores`).
+  - Region conflicts ke liye: wahi, `Config_Key` ka format `node_id.region` ho.
+- `$WORKSPACE/out/progress.md`: Data kaise extract aur compare kiya, iska short record.
+
+## 4. Constraints
+- **No hallucination**: Report content invent mat karo; saara data di hui files se aana chahiye.
+- **Precise extraction**: Original documentation ya SQL files ko modify mat karo; tumhara kaam sirf comparison report banana hai.
+- **Multi-source cross-reference**: Jab multiple sources (DB aur JSON) same node describe karte hain, unhe consistent ground-truth sources maana jayega; unhe sirf documentation ke against compare karo.
+- **Multi-source consistency**: Agar `backup.sql` ki `cluster_nodes` table aur `node_inventory.json` same node describe karte hain, toh dono consistent maane jayenge; agar difference ho, toh `backup.sql` ko precedence do—aisi internal inconsistencies ko contradictions ke roop mein **report mat karo**.
+- **Zero false positives**: Sirf real inconsistencies report karo. Agar koi configuration item sabhi sources mein consistent hai (jaise staging ki kuch configurations), toh use contradiction ke roop mein **report mat karo**.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

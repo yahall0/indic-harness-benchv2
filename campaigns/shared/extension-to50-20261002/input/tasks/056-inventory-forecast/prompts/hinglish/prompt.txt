@@ -1,0 +1,36 @@
+Local sales aur stock files se two-week inventory reorder plan banao.
+
+Inputs:
+- $WORKSPACE/in/sales_history.csv
+- $WORKSPACE/in/stock.json
+
+Banao:
+- $WORKSPACE/out/reorder_plan.csv
+- $WORKSPACE/out/inventory_exceptions.json
+- $WORKSPACE/out/forecast_notes.md
+
+reorder_plan.csv ke columns isi exact order mein hon:
+sku,avg_weekly_sales,forecast_14d,current_stock,safety_stock,reorder_qty,risk_level
+
+Rules:
+1. Fixtures ko modify mat karo.
+2. stock.json ka har SKU include karo, bhale uski sales_history rows na hon.
+3. Har sku ka avg_weekly_sales uski saari history rows ke units_sold ka average hai. History na ho to avg_weekly_sales aur forecast_14d dono 0.00 hon; forecast_notes.md mein mention karo.
+4. Jo SKU stock.json mein nahi hain unki sales_history rows ignore karo aur unhe skipped mention karo, agar aise SKU hon.
+5. forecast_14d = avg_weekly_sales * 2.
+6. target_stock = forecast_14d + safety_stock.
+7. reorder_qty = max(0, target_stock - current_stock), stock.json mein us sku ke pack_size ke next multiple tak round up karo. Kabhi round down ya nearest par round mat karo.
+8. current_stock < target_stock par risk_level high hai; target_stock ke equal ya usse exactly ek pack_size tak above par medium hai; warna low hai.
+9. avg_weekly_sales aur forecast_14d exactly two decimals mein hon. current_stock, safety_stock aur reorder_qty integer strings hon.
+10. forecast_notes.md mein forecast window, high-risk SKUs, missing-history SKU aur pack-size rounding rule mention karo.
+
+inventory_exceptions.json requirements:
+- Valid JSON keys: high_risk_skus, missing_history_skus, skipped_history_skus, medium_boundary_skus, more_than_one_pack_low_skus, pack_rounding_cases.
+- Pehli paanch keys ke arrays ascending sorted hon.
+- more_than_one_pack_low_skus mein sirf woh SKU hon jinka current stock target_stock se exactly ek pack_size se bhi zyada above hai. Har low-risk SKU include mat karo jab tak woh yeh boundary case satisfy na kare.
+- pack_rounding_cases object har nonzero reorder_qty wale SKU ko uski reorder_qty string se map kare.
+- Yeh audit artifact reorder_plan.csv aur forecast_notes.md se consistent ho.
+
+Network access ya external APIs use mat karo.
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

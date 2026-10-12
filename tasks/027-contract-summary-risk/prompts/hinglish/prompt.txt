@@ -1,0 +1,24 @@
+Draft contract ko company policy ke against review karo.
+
+Inputs:
+- $WORKSPACE/in/contract.md
+- $WORKSPACE/in/company_policy.md
+
+Outputs:
+- $WORKSPACE/out/contract_summary.md
+- $WORKSPACE/out/risk_clauses.csv
+
+risk_clauses.csv requirements:
+- CSV header: clause_id,risk_type,quote,recommended_action,severity
+- company_policy.md se conflict karne wali har clause include karo.
+- quote mein contract.md ka exact text hona chahiye.
+- severity ki value High, Medium ya Low honi chahiye.
+
+contract_summary.md requirements:
+- Dono parties, contract term, renewal, payment, data/security, liability aur termination summarize karo.
+- "Policy risks" naam ka chhota section include karo.
+- Recommended business review actions se aage legal advice mat do.
+- Input files modify mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

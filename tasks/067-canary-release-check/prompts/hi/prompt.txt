@@ -1,0 +1,36 @@
+Offline metric snapshots के आधार पर आकलन करें कि canary release continue, pause, या rollback होनी चाहिए.
+
+Inputs:
+- $WORKSPACE/in/baseline_metrics.csv
+- $WORKSPACE/in/canary_metrics.csv
+- $WORKSPACE/in/thresholds.json
+
+बिल्कुल ये output फ़ाइल बनाएँ:
+- $WORKSPACE/out/canary_decision.json
+- $WORKSPACE/out/metric_evidence.csv
+
+canary_decision.json requirements:
+- Top-level object में ये हों: release_id, decision, breached_metrics, calculations, rationale, next_actions.
+- decision इनमें से एक हो: continue, pause, rollback.
+- breached_metrics में threshold exceed करने वाले metric names list हों.
+- calculations में हर evaluated metric के लिए baseline_value, canary_value, delta, threshold, direction, sample_count, और evidence_status हों.
+- Delta calculate करने से पहले एक metric की सब available rows का average lein.
+- Direction सही apply करें:
+  - increase_bad का matlab है canary - baseline threshold से ऊपर हो तो bura है.
+  - decrease_bad का matlab है baseline - canary threshold से ऊपर हो तो bura है.
+- thresholds.json का कोई metric baseline या canary में missing हो, तो evidence_status को missing_data mark करें, use breached न गिनें, और caveat include करें.
+- thresholds.json के min_sample_count से sample_count कम हो, तो evidence_status को low_sample mark करें और caveat include करें.
+- next_actions safe operational recommendations हों; rollback execute करने का daava न करें.
+
+metric_evidence.csv requirements:
+- Exact header:
+  metric,baseline_value,canary_value,delta,threshold,direction,severity,evidence_status,breached
+- thresholds.json के हर metric के लिए एक row include करें.
+
+thresholds.json के हर metric का evaluation करें. Input फ़ाइलें modify न करें. Monitoring APIs call न करें और live data use न करें.
+
+
+Benchmark clarification: Produce both listed output files: out/canary_decision.json and out/metric_evidence.csv.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

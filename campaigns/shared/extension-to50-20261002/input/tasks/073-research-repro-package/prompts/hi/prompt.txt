@@ -1,0 +1,34 @@
+आप एक शोध पुनरुत्पादनीयता पैकेज का ऑडिट कर रहे हैं।
+
+पढ़ें:
+- $WORKSPACE/in/README.md
+- $WORKSPACE/in/scripts/*
+- $WORKSPACE/in/results.csv
+- $WORKSPACE/in/paper_claims.md
+
+पैकेज में जानबूझकर खराब ऑटोमेशन, गायब मूल इनपुट, प्रकाशित मेट्रिक में असंगतियां और जमा पैकेज से गायब Appendix आर्टिफ़ैक्ट मिले हुए हैं।
+
+बनाएं:
+- $WORKSPACE/out/reproducibility_report.md
+- $WORKSPACE/out/missing_steps.csv
+
+reproducibility_report.md की आवश्यकताएं:
+- हर पेपर दावे के लिए एक Markdown अनुभाग रखें, शीर्षक ठीक `### Claim CLAIM-X` हो (उदाहरण: `### Claim CLAIM-1`, …, `### Claim CLAIM-4`)।
+- हर अनुभाग में दावे को अपेक्षित आर्टिफ़ैक्ट (`results.csv`, स्क्रिप्ट, subgroup CSV पथ) से जोड़ें और ईमानदारी से बताएं कि क्या साक्ष्य पुनरुत्पादनीयता का समर्थन करते हैं।
+- समझाएं कि आज दिए पैकेज से मुख्य निष्कर्ष शुरू से अंत तक पुनरुत्पादित क्यों नहीं हो सकते (गायब raw bundle, खराब driver script, CSV/पेपर अंतर, गायब subgroup tables)।
+- retention lift के संख्यात्मक अंतर (पेपर बनाम `results.csv`) को स्पष्ट रूप से CLAIM-2 से जोड़ें; दोबारा रन के लॉग न गढ़ें।
+
+missing_steps.csv की आवश्यकताएं:
+- पहली पंक्ति ठीक यह हो: item,type,impact,recommended_fix
+- कम से कम 4 पंक्तियां दें; हर पंक्ति में impact और recommended_fix गैर-रिक्त हों।
+- पंक्तियां मिलकर ये सभी अंतराल कवर करें:
+  1. README में बताए trial-level raw inputs गायब हैं।
+  2. analysis driver (`analyze_main.py`) काम नहीं करता / उसका syntax खराब है।
+  3. पेपर CLAIM-2 और दिए `results.csv` में मेट्रिक/टेबल असंगति है (`retention_lift`)।
+  4. Appendix D subgroup आर्टिफ़ैक्ट (`results/subgroup_ablation.csv`) गायब है।
+  इन अंतरालों को संक्षिप्त item/type शब्दों में लिखें—ओरेकल सामान्यीकृत keywords जांचता है।
+
+निष्पादन परिणाम न गढ़ें और दोबारा रन सफल होने का दावा न करें।
+नेटवर्क का उपयोग न करें। इनपुट फ़ाइलें न बदलें।
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

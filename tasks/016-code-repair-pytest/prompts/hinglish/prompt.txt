@@ -1,0 +1,23 @@
+# Core Component Bug Fix Task
+
+## 1. Task Background
+Guang Xiang ne haal hi mein environment configuration files merge karne ke liye Python utility script submit ki thi (file `$WORKSPACE/in/app/config_manager.py` mein hai). Lekin CI pipeline fail hui, yani related unit tests poore pass nahi hue.
+Development agent ki tarah kaam karo: bug dhoondhne aur source code fix karne ke liye test cases run karo.
+
+## 2. Core Subtasks
+- **Run tests**: system terminal se `pytest $WORKSPACE/in/app/test_config.py` chalao; error stack trace output ko padho aur samjho.
+- **Locate and fix the bug**: `config_manager.py` ki logic flaw analyze karo aur nested dictionaries ka **deep update** sahi tarah handle karne ke liye file modify karo.
+- **Verify the fix**: dobara `pytest` run karke ensure karo ki saare test cases 100% pass hue.
+
+## 3. Required Artifacts
+Task complete karne ke baad ye produce karo:
+- Successfully fixed `$WORKSPACE/in/app/config_manager.py` file (original file ko directly modify karke save karo).
+- `$WORKSPACE/out/progress.md` generate karo: troubleshooting, root cause analysis, aur final fix logic ka short record.
+
+## 4. Constraints
+- **No cheating**: test file `test_config.py` mein koi code ya assertions bilkul modify mat karo.
+- **Minimal changes**: sirf bug-causing logic fix karo; poori file rewrite mat karo ya third-party libraries introduce mat karo (`copy.deepcopy` prohibited hai; manually implement karo).
+- **Additional constraint**: value dictionary hai ya nahi check karte waqt `isinstance(value, dict)` **use mat karo**. `type(value) is dict` ya `hasattr(value, 'items')` jaise alternatives use kar sakte ho.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,19 @@
+`$WORKSPACE/in/cart-ui/src/cartState.js` ke small JavaScript cart state module mein state bugs hain: quantity updates shared state mutate karte hain, invalid quantities leak hote hain, memoized selectors stale ho sakte hain, aur persisted carts arrays share kar sakte hain.
+
+Tumhara kaam:
+- `$WORKSPACE/in/cart-ui/src/cartState.js` ki implementation fix karo.
+- `$WORKSPACE/in/cart-ui/src/cartState.test.js` edit mat karo.
+- `node $WORKSPACE/in/cart-ui/src/cartState.test.js` pass karao.
+- Public function names aur CommonJS exports preserve karo.
+- Test file change kiye bina expected undo/redo, persistence, selector aur coupon helpers add karo.
+- Updates immutable rakho; old cart snapshots usable rehne chahiye.
+- `applyCoupon(cart, code, discountCentsByCode)` ko CommonJS export ke taur par add karo. Known code apply karne par subtotal utne fixed cent amount se reduce ho, lekin zero se neeche na jaaye; unknown codes par `ValueError`/`Error` throw ho aur message mein coupon/code ka mention ho.
+- Carts ko schema version ke saath persist karo. `restoreCart` ko current serialized carts aur legacy v1 payloads, jinka shape `{"items":[...],"coupon":...}` hai, support karna hai. Inhe current cart shape mein migrate karo, arrays ya item objects share kiye bina.
+- Hidden checks repeated operation sequences, deep item copying, restore ke baad selector freshness aur undo/redo future clearing bhi test karenge.
+- Hidden checks `addItem` ke baad original input item mutate kar sakte hain; carts ko us external object ka reference retain nahi karna chahiye.
+- Hidden checks undo/redo ke beech coupon application aur serialization round trips bhi test karenge.
+
+External dependencies ya network calls add mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

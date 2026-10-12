@@ -1,0 +1,24 @@
+ईमेल संदेशों को सुसंगत threads में जोड़ें और अगला reply तैयार करें।
+
+इन inputs का उपयोग करें:
+- $WORKSPACE/in/emails/*.json
+
+ये outputs बनाएँ:
+- $WORKSPACE/out/thread_summary.json
+- $WORKSPACE/out/reply_draft.txt
+
+thread_summary.json के लिए आवश्यकताएँ:
+- "threads" array वाला JSON object बनाएँ।
+- जिन forwarded या दोहराए गए messages का message_id या मुख्य body समान हो, उन्हें deduplicate करें।
+- असंबंधित subjects को अलग threads में रखें।
+- Northwind onboarding thread के लिए chronological timeline और final_todos शामिल करें।
+- ISO timestamps को दिए गए रूप में बिल्कुल वैसा ही रखें।
+
+reply_draft.txt के लिए आवश्यकताएँ:
+- केवल Northwind onboarding thread का reply लिखें।
+- Morgan Lee को संबोधित करें।
+- सहमत pilot kickoff date की पुष्टि करें, लंबित security questionnaire का नाम लें, और procurement approval पूरा होने का दावा न करें।
+- input files में बदलाव न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

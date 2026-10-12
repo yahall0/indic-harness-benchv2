@@ -1,0 +1,30 @@
+केवल स्थानीय फ़ाइलों से A/B परीक्षण का विश्लेषण करें।
+
+इनपुट:
+- $WORKSPACE/in/experiment_cells.csv
+- $WORKSPACE/in/exclusions.csv
+- $WORKSPACE/in/analysis_plan.md
+
+ठीक ये बनाएं:
+- $WORKSPACE/out/variant_metrics.csv
+- $WORKSPACE/out/ab_summary.json
+- $WORKSPACE/out/exclusion_ledger.csv
+- $WORKSPACE/out/recommendation.md
+
+नियम:
+1. इनपुट फ़ाइलें न बदलें।
+2. बताए exclusions लागू करने के बाद experiment_cells.csv के eligible_users और conversions का उपयोग करें।
+3. conversion_rate = conversions / eligible_users, refund_rate = refunds / conversions और revenue_per_eligible_user = revenue_usd / eligible_users निकालें।
+4. B बनाम A के लिए two-proportion z-test उपयोग करें; two-sided, alpha = 0.05.
+5. दरों और lift मानों को चार दशमलव स्थान तक पूर्णांकित करें। revenue_per_eligible_user, z_stat और p_value भी चार दशमलव स्थान तक हों।
+6. variant_metrics.csv का हेडर ठीक यह हो:
+   variant,eligible_users,conversions,conversion_rate,refund_rate,revenue_per_eligible_user
+7. ab_summary.json में हों: control_variant, treatment_variant, alpha, lift_absolute, lift_relative, z_stat, p_value, significant, recommendation.
+8. exclusion_ledger.csv का हेडर ठीक यह हो:
+   user_id,reason,variant,notes
+   exclusions.csv की हर पंक्ति शामिल करें और इनपुट क्रम बनाए रखें।
+9. recommendation.md में बताएं कि launch करना चाहिए या नहीं, statistical significance का उल्लेख करें, और underpowered mobile cohort तथा duplicate assignment cleanup की सावधानियां शामिल करें।
+
+नेटवर्क या बाहरी API का उपयोग न करें।
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

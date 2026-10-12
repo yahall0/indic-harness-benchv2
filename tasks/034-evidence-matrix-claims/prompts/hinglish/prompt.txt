@@ -1,0 +1,20 @@
+Task: Claims ke liye Evidence Matrix banao
+
+Inputs:
+- `$WORKSPACE/in/claims.csv`
+- `$WORKSPACE/in/sources/*.txt`
+
+claims.csv ke har claim ko one by one check karo aur `$WORKSPACE/out/evidence_matrix.csv` output karo.
+
+CSV mein ye header hona chahiye:
+`claim_id,claim,classification,source_file,evidence_phrase`
+
+Constraints:
+- `classification` exactly inmein se ek ho: `support`, `contradict`, ya `unclear`.
+- `source_file` mein relative path `sources/filename.txt` use karo. `unclear` classification ho toh conclusion ke liye insufficient sabse relevant source de sakte ho.
+- `evidence_phrase` ek short evidence signal ho jo samjhaye ki claim supported hai, contradicted hai, ya determine nahi kiya ja sakta.
+- claims.csv ke har claim_id ko cover karo; extra claim_ids mat jodo.
+- Fixtures modify mat karo; online mat jao.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

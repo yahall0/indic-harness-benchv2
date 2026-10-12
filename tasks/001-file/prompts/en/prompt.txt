@@ -1,0 +1,10 @@
+The working directory is `$WORKSPACE`.
+
+Read `in/input.txt`, count the number of lines in the file, and write the result to `out/linecount.txt`.
+
+Requirements:
+- Write only a single integer (the line count).
+- Do not modify `in/input.txt`.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

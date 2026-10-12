@@ -1,0 +1,27 @@
+Round 2 of 2: saved state se resume karo.
+
+Round 1 ka existing $WORKSPACE/out/state.json, $WORKSPACE/in/case_queue.json aur $WORKSPACE/in/operator_patch.json padho. Saved pending_ids se continue karo; pehle complete hue C-101 se C-103 ke kaam ko carry forward karne ke alawa dobara compute ya rewrite mat karo.
+
+Banao ya update karo:
+- $WORKSPACE/out/state.json
+- $WORKSPACE/out/final_result.json
+
+$WORKSPACE/out/state.json mein ab saare five completed ids aur empty pending_ids list honi chahiye. Scoring se pehle pending items par valid operator patches apply karo. Duplicate patch_id values ko first application ke baad ignore karo aur unknown ids ke patches ignore karo. Iske processing_log mein reused/skipped preexisting work, applied patches, ignored patches aur newly processed round2 work ko alag-alag identify karo.
+
+$WORKSPACE/out/final_result.json valid JSON ho aur ismein ye hon:
+- run_id: "resume-drill-74"
+- resumed_from_state: true
+- total_items: 5
+- Queue order mein completed_ids
+- risk_score >= 12 wale ids ke escalations
+- risk_score < 12 wale ids ke monitor_ids
+- aggregate_risk_score: sab item risk scores ka sum
+- skipped_preexisting_ids aur newly_processed_ids wala resume_audit
+- applied_patch_ids, ignored_patch_ids aur ignored_reasons wala patch_audit
+
+Saath mein $WORKSPACE/out/resume_audit.md banao, jisme preserved history, patch handling aur idempotent resume behavior summarize ho.
+
+Input files modify mat karo. Network-dependent output mat banao.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

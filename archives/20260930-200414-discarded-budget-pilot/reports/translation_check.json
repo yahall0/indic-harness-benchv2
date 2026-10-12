@@ -1,0 +1,886 @@
+{
+  "scope": "Static prompt literal/provenance checks; semantic correctness is self-reviewed, not independently verified.",
+  "task_count": 40,
+  "unique_prompt_count": 46,
+  "expected_prompt_files": 138,
+  "passed": true,
+  "errors": [],
+  "prompts": [
+    {
+      "task_id": "001-file",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "9efcdc8b4c11b2fd59e54c9303f44525b6b96724505b38150d07ed26520e5a83",
+      "languages": {
+        "en": {
+          "sha256": "d855e5735fff033dfacd610c1772e1c01e581924cc0d19beee1caefe780e4e5d",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "9d5ea766d9ce787e989fc4ad5570f243b16839c517bfeab5443a19011fa17259",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "760590058b6ce61fd824402aa4eafd339fd6d2bb4704fc658680ecf1a30cfad8",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "002-exec",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "7a7402e5f712e06b40d6a67423cfdbf0f2c3695f563c8c2fe17e1a956c909523",
+      "languages": {
+        "en": {
+          "sha256": "202f476b185aae417d79bb29737a01ff51b27ae2d13dba381f3751e075f07456",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "4e255c34ae78ac2768ef97cfec76fd5bce77a6a738aab1c297f07b2de19d4f25",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "01b30ebe2de9b6e53a155345416f641991aa180bf0b00dbe816edb073e674162",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "004-meeting-summary",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "fe493afe746f5c35350a5f94828fda972143c8b471d36ba38339a7f9a40770cb",
+      "languages": {
+        "en": {
+          "sha256": "6982628893f3a45d1c19a22ec3b91333c65315ecfcf02fbcb41d191210a85cb0",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "bfc793cc12232fe1995539c87efe615878f4b17b1f1b648c636c8c39eb227d01",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "58fcfb75ccc3b5d4cf7dc1297da4203ddc75baa7eaf1c57bf0e0b610c0362b57",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "005-email-triage",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "c4c5b62dfa680d3c3a39993af377fbd259b038db08c78ada6a28be6f374422a1",
+      "languages": {
+        "en": {
+          "sha256": "d89de0ab0a886ec41a2dcea2fe3f62dd8b335a89d2235a8bd65330da2f887c4d",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "b159012a4ddc5a89c18e543bfedfad7226b7b77341f232dbd76c5adcbbc2954a",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "9540ebcead7a20d2080baabb213bdcca078bcc4c17ceccf91efdce493c391a1b",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "007-session-memory",
+      "prompt_file": "prompt_round1.txt",
+      "source_sha256": "f25b1b0c7346bc8a1b15bc08705ade0bef6204bdf5e550d96f2a9ebdda321e76",
+      "languages": {
+        "en": {
+          "sha256": "3bb5db4b083d1f50eb57f35c65096e99b821948b2d6c39c2118224cf2b2cf989",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "4cf875aef536762a279f59630789e608c73f752a45973a6362ab98db814a2301",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "8fcb460f7ce4243c3eb98609aac248b5c1015b78c8a108fcf81bbf03f8b2979c",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "007-session-memory",
+      "prompt_file": "prompt_round2.txt",
+      "source_sha256": "3742b20eb8441b3b7db642972c8da88628632cc5b9bdf77a14d83dc6e1b5929a",
+      "languages": {
+        "en": {
+          "sha256": "820f489e2512ade5a36fd6a596f8daf6c4fd51a8292e7a99d99a6f39798a8496",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "c6879456b2864b1e52bcd5b0bf61068255f65be4e311fb6abb61733f2e2b04a4",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "2c58581d293f092800e3b6109c433ffb78a768939ad71071c9f7214372d671bb",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "012-doc-synthesis",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "d155cae1924f52c4bf2ed0b9a2dce647985550421a9b0e0440db4885fda7e9bc",
+      "languages": {
+        "en": {
+          "sha256": "dd081e8ff872d41540dd90529378673956a4d307d179353d44bc970c4849663d",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "4dd0729859756bd5238094fad657e2d4f47526b584a32cb864fba099488a2328",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "0db06b665bb8582a46481407287bad64391196be4da707ba5cd9539e3173eff6",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "016-code-repair-pytest",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "68d9b0714f74a100f758d12588294dceab65e63bcd2c4764147226a8126e7395",
+      "languages": {
+        "en": {
+          "sha256": "49c3010accc75adb5b4b76fe21894ca7623656d5b0ceb1405a271fa18c30968f",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "66a8d1c95397106d21a4048800995fbeeabae6d8b52ab188efc064bc485eb158",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "107e5337403c438f185a4f9588cbd8902c0447cc3193a0928e6734caaf0bdc00",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "017-db-doc-consistency",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "e765f065ce0aff8b764fb332aedf9e383c5b3587eaa7c8b7d599b18be8a4c454",
+      "languages": {
+        "en": {
+          "sha256": "8beae63f31d79f460e5b7cb2cc7323a1de7d3eacba23f0f90987abed1c39b24d",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "5a4babcab0f007644a0d88196779af4ded1f4fb659be5674021553d480214e8e",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "6e9ef4d814d604e0cd990afc6b5e9e17494ee93ca086c3c8c45db4a915c62287",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "019-incident-runbook-synthesis",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "bc75ac0a88f0d103eda22e94c756662460ae081f39fb929cad41753d8d4a1dbb",
+      "languages": {
+        "en": {
+          "sha256": "446b9d5142d3fcc9bec5ec7c7f61c20a70fa1bded9d66883c467d3a6901bd738",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "2cadc84cf213cb24c192bd203d279e5b81b5979f6bf260480914809384a18515",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "6f1a637275445d99e65f4348e0b6ec76e0ce57d4633100ff2743c10baad3272d",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "020-archive-checksum",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "53d14e3550e713c972655f87057f2c7a6e0d2c55763d12166dfee5c436b025d0",
+      "languages": {
+        "en": {
+          "sha256": "b76669bc0ce9a98e389e52693c9d70f537c14bf63d018b16829671e63664772a",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "b530ec65b6acad0bd2c628ce61e77c81900e4de346caac08399a2982cae5de71",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "4aeda2041358688d86907bddd89f24a2abdfa9ddbd0a98efedd90bd25fdc2a74",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "021-batch-rename-transform",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "8e11dc3fb6d8fc29bcded7a3c65d0dc8e43000106c4138453a8096a11312f361",
+      "languages": {
+        "en": {
+          "sha256": "2960c7ea1c4fb8bd8b3d6b85634e927ad1ac2bad91d71011ed3af63f1f775be6",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "848331722deaba51db3dba6a28cbf19e94a74c9ed3623fd95da334694b69eae7",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "cb73ef9ae63dab39958da9a240c2f09c739001f47055a82999be78ac71d89842",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "022-local-rest-api-summary",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "861d69493a314968f9ac5890bbe94fcad51a18be87ec89d5e339b0b5e262008c",
+      "languages": {
+        "en": {
+          "sha256": "ee3bdc8a579a2b8d6e1ff83c87ca07a417dc19569e9ad65b83fd504f36a3dfda",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "af8cfc2acdfc534b8c5fc3aba288bd00e2eb62026e583ba3d6f5e80a678c17cd",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "99cb52738b3f5d28632d26ab66c696b4d63a2fc9fa8c38579181d0ddfc404749",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "024-calendar-scheduling-conflict",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "a9503cb0ea7f5ff4bc83bf61e0925202d15b9277b37f4cacf3c20104224c2654",
+      "languages": {
+        "en": {
+          "sha256": "f1631e07b6a23a3f8e89b46a44dffda55ba525c7872fc75cb7d40cc5edb5ad94",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "754ba994d66829ccfbd601d6a4178380babe1704976cee61fefdd241c77848a9",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "a5a98b45e84ab2466b58d1e0c6a14d78c13148d6477089be3775deb229b5eb7b",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "026-ppt-brief-generation",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "d87d8763b66ae5a178e1b9cbacb2f2836e90326897e95da71487e55bb6162c44",
+      "languages": {
+        "en": {
+          "sha256": "7b75397cf1709739954b9b067c57a0d9ff7244729cada3a5a29b7b520b92e66e",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "e714c32b324a172d2e29092fc41ec4b69a67bb21f3be2c3215ba98e1ea25eea5",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "5f0042ce8a5c6c5d6602ccdddf10798f80b682ca328f530dcb89408b45898dcd",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "027-contract-summary-risk",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "dcfe481dc252595f5611f7a127f1c3ac38fb796c3256f9d355f48afb2cdb466b",
+      "languages": {
+        "en": {
+          "sha256": "ae9a4aa74cc1b346847f5b6ac21c9b79404997ada7c890bd904a4e7831edb261",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "951243ab3870f7f6183f740ebc78d23a499f90e070dbace00a18752d390eb760",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "be9e29ca3694f001b5394cd06898505fd361c875ec8b7741e39aa596f75317fe",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "033-offline-knowledge-qa",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "be8da496585184a1c9fa11eeae1f22b32c0a94dc7d1bf249373c4ab4773b42e6",
+      "languages": {
+        "en": {
+          "sha256": "5c5241728e025346093088e3b05387326108bf9096bc7ac06544ef9fe897325e",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "133e1a32bc5410b75c95db6d06c4919570a626e4de9e5d8b3e80ab1f8ce26b0a",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "fa3b70ffaa0ff7e971e7f7e068018895058983bca9ee9d67eda659c9892dbf19",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "034-evidence-matrix-claims",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "40931d0c770a47727afe747d1106b1e6ada764bcbcd209dd886537fd235ee6ee",
+      "languages": {
+        "en": {
+          "sha256": "cc81ac768951081774d3ba7b4d8d75fe4a61a2a9ef021cc72277f39167f6f496",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "893d8dd1cfd986c70b22717e0543d5a916b48809827f3025846f3860023322b7",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "ff8d9e6405b16aacea7e15da49881b43057536bb4c642955b70b7d8b3d4c4418",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "035-conflicting-source-resolution",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "caedc968a77f8891e48ac6145767d82af6738f83fbfce370ac33019eef268722",
+      "languages": {
+        "en": {
+          "sha256": "abdecec22a918f6b6ac2ca9abedf0f6554188c2e764692b8d083f359de8a8c83",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "e5edd247d239f76dd367cf35baf49bd623bc74d0843f2464d9671b009df66150",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "2128c4819cd18abf0298de9fe1e1306e18cccc506cadc13534991558860f72b3",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "036-citation-consistency-audit",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "8ae22473d77ae0a8405e715a15254356589717c7c7ed7ab9f4df47410357a0ca",
+      "languages": {
+        "en": {
+          "sha256": "8f18e5e05cbfb79c4136db4b68aaec5ebe928b113242e543232d405d2eb51799",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "8933a936094b8ec74480f521a89930188dd92c40c6fe23694df6177615bfb1b8",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "3c8d6a554e990761ccf5a0ef7fae6247f74ba7f8aaa64dead6c408ed09d36879",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "039-repo-architecture-map",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "c48df44e1df184cebc093064ebb85ccd25b94ac25c3e8f3aae4ab3baa05aa7d9",
+      "languages": {
+        "en": {
+          "sha256": "50871e1c47fcb7ffceb31977c2a50af2188f380d942779b9dde6bb5c45e09173",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "3b24d3f8f8300629cd605887a278a1513180de3971b3c6fd656bfa367a959e3c",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "322a60cb4c25656074915b2a8d2bbfb49b83182ca4346c29c16e446819d42311",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "040-test-coverage-fill",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "e8c6bca2f0c495bdd4da82d91e017a145f97150c44e43adc62fb77b2ac7800b5",
+      "languages": {
+        "en": {
+          "sha256": "491ac6f5f43b40e91c8fa9cf3e65070a4e67d66e79843bb7de556a375a49ad21",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "31811b2ad1f8a04f748344583f1e8d7a39723a4e915914b9dcb1cccb69cc70e6",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "3978842d19028779f3a941ef8dd19312c2f19616292e3935485d19f2f2bbf974",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "041-frontend-state-bug",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "dbde5803a207612001387a3223870f71eb1caec0285f1156ee16e5532f698486",
+      "languages": {
+        "en": {
+          "sha256": "d05955dc01adedd040d86044c703de1d54ae4499411c299f0770d9bcc8561c04",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "41bd77a6f0e59f8fdf64e8bfb0e590f255200f17a323dab607f17509b2803bf0",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "136d0f7a92acc53d37882c4dc24e63dfeab3e9f0aec1a6dfc5c2dab04dfaf81c",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "049-excel-like-cleaning",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "6f2bc0c5acacf228d931d1db13c8645ba3636acf3b21be87d82c5ff22ca7f67e",
+      "languages": {
+        "en": {
+          "sha256": "8730b23ad206f2122ee889b0f164742c82d15a0a91b5d21e581a9a2e983d7154",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "132d962d40121668afdeeedf783e30e308b275c93a9cca170e4fe3740bbd79f7",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "0678080eceb698fc40b630fc7ffc63df1ea8ab6541b54a33f1927c1fa2df0372",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "050-multitable-join-analysis",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "3f6dbc0c64035047390b70b46c852e4a877ee68c9d3ade4419355f50321b6c0e",
+      "languages": {
+        "en": {
+          "sha256": "ff1033d606924b1cbbc04d30937be6430c5c957f63f69862bd34f9a0486269f7",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "f6fe102df4623094f38e85b62029fefcf010d6276e05e0d66d3a1a047a369c61",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "911d74347e8994fba49e3fbca1cb0040f813baafa8f39208975ca8aa92d268d5",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "051-sql-query-report",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "9a6edaea28c047faabe8a6ee23a6341435c658604ed466192d09d7e83453554f",
+      "languages": {
+        "en": {
+          "sha256": "cfaaf5cb217bb4b53f10a040749c63002b27f0df540ff5c447553247d367d74d",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "b5345025bb29825b5949fe853b18cf975e26d49b8669dfc4197ff9cebcc1f465",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "6a03bef6dc1c3786f82df4cfeb0ebd8a0c8ac4dfc3a211124dcc416fb9a065d8",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "052-metric-definition-audit",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "6b1312a5cac2270f74aa045968deba56386bc3a1da37cbc68aba083d02846e73",
+      "languages": {
+        "en": {
+          "sha256": "9d0f8492138738f7d5135ffb86a6117c86c6d45304f13555a16563c0c4dc5276",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "09b98f9f694da4b40112b9c70b1050ef2bef20e38f7972c68bc71a1c50071209",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "f358b255e81c62445e5c177404250a7abcf2e5213633e2ed02ce685e43130ba3",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "053-anomalous-transaction-detect",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "304b37741d50266207b509ee382214f63d6720e2a1c1ca04ff71bb03cdebbf94",
+      "languages": {
+        "en": {
+          "sha256": "2fc713714b650ee7b1b752a7829d3a1e6779505337260279ed24ccef827db56d",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "ece1c605cb8ff1ef73885bbf761356b3384e2705f377652d693eff15fd3994b0",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "331f8d216534bf06874f538f2258a296e886f516ce17ba5ecb810bed5b67cad1",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "057-interruption-resume",
+      "prompt_file": "prompt_round1.txt",
+      "source_sha256": "4ff07f5bdd443bd48ad673fc9a5b3a120331f808ee81ac43246bb22b3f2e0b69",
+      "languages": {
+        "en": {
+          "sha256": "cfcbaa3d7361387761d8c47aa0490aeaab76670233d0b98d458f24e95357520c",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "3751fdc084743c0952ffdf4af08a7c392b4f98c9c89b5f8b6dc09fc8514a5171",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "796a5aeee8b06f74bace7805d0306fcacf95a9a11b030e59e0366ad0bcd49aef",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "057-interruption-resume",
+      "prompt_file": "prompt_round2.txt",
+      "source_sha256": "284f2baa8ec5083948521d1f014af3255e1e5f37d2deb4725ccf18a4b6f524a6",
+      "languages": {
+        "en": {
+          "sha256": "b528e31d5dbdb803c7908075d47df2e8ef0949e04ace7e5f7bf596258b8435a4",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "0fda85920336d3c3913af8cc646419fe27429654fe0abaa611bf4daa0c2a25c6",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "0c460a210b720a0567acca6185456c6f074412ee72c8b677e722dbd2762e99a1",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "058-multiday-project-state",
+      "prompt_file": "prompt_day1.txt",
+      "source_sha256": "805720a31b72cf92f2d6d55dcff7c72a564ba126ee6127d058e3e81d30754d71",
+      "languages": {
+        "en": {
+          "sha256": "2b056dee319ba9a1bbf37518d72c7ee9e2c02f1fbbca6651042f33e9db995a51",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "6d00cc88458b6b644877cd8275bcfd2fa5dc8831061e15905bc22afc3c6f57ed",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "17a12bfa770731f7ad22b468c2dc56794214cbe542e68a7f03e8d4459d579fc1",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "058-multiday-project-state",
+      "prompt_file": "prompt_day2.txt",
+      "source_sha256": "a3fd754d217368f634a8179b5548d00fa3f44540ff7d20bee19c6db28aa03b44",
+      "languages": {
+        "en": {
+          "sha256": "75839ea910183988ff76449101745ad3674c9f1d79afddc9edb13418a4ff8e38",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "39353dde4902a1f10807478705b8126a18b5faa1261a78baba811f7c63a2d9d0",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "6360bc020c022ecffca46cb93e856d73ce79c37950b8279ace24c0cd6350c0cf",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "058-multiday-project-state",
+      "prompt_file": "prompt_day3.txt",
+      "source_sha256": "9de0777c103501722a032a3c966ede7a0c37cadf10803a4a61df7428f73068d0",
+      "languages": {
+        "en": {
+          "sha256": "eff6a0078f7228521c66cacb96815542b93760d39441d1450e16b2cb817401c6",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "7e8b7dd0e4d73cd1209e72ef61b9d0d2f03c67a4cb6be6fffd0cc048687ed65d",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "16696c7978982a6d2ada2c2584c3a9c9bcadb527847010c15d7b85bcb31a04ee",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "059-event-update-replan",
+      "prompt_file": "prompt_round1.txt",
+      "source_sha256": "c149ddb3a5ad289b6fe5ce0b994f0707edc5b69a79273e1e37d17be422a71ae0",
+      "languages": {
+        "en": {
+          "sha256": "fa11dde09d89b63fc353fa137714e7e2ad943ba449112e072c4b6720957a5e67",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "bd619e1cb47ac668b0bc965a1a67c92d04f0683e55576839abc5bf4307892d4a",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "04d2ba59038924d2ae754545f3e2817488c35740fa87c43d2285aab1de0bd89c",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "059-event-update-replan",
+      "prompt_file": "prompt_round2.txt",
+      "source_sha256": "4d52c65b344e4ad55212973a27fa19ba119c4053b96498c5bbbfa5ee1da737b4",
+      "languages": {
+        "en": {
+          "sha256": "ac0d2b0fc13b7ad37b6370ef4b9f5ea2873302b492e249ced947aa99b821a40b",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "fa8b2270d9bf0a7f3962488bef341afd00d176221c7e9ad3fd94b8a5037126e6",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "f27867ba7ac10f88b797f812d10ccd8f72db7be10ef8b38402ef6038affb6e9c",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "060-task-cancellation-cleanup",
+      "prompt_file": "prompt_round1.txt",
+      "source_sha256": "1bb23da6fb4a38f5fe9e8dbcd67ad63579dfb5f1cd593fa4350ccc9b793db484",
+      "languages": {
+        "en": {
+          "sha256": "336efa0af520e670744232e26d8e8e9474c51ebcf08b9e6c8459ac94dd0410c1",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "ce02a9cb985a06534c012ae743cedfd747060b3682a852572037c5b8387a2fa2",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "ce7eae96b1984aaafe72e0c4932419d4419034effd317494271806eb0ce7f25b",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "060-task-cancellation-cleanup",
+      "prompt_file": "prompt_round2.txt",
+      "source_sha256": "88bb6495baa0f06cbc8b2b4f165dbe0f061d76e24a89f8a9a667b4d08b54b918",
+      "languages": {
+        "en": {
+          "sha256": "45bff6ee13f973202cec813d38b097af2c04237454e22c0ae1b1dfae11cee24b",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "08deab14788823dce4bfb20fb79f9b85e67e5933049efa70be52339c83ac16c5",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "1fb61821dba4d5f5bc4e98214e264ab77a84f6175cd405ca4ea4386361b42694",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "062-k8s-config-audit",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "8c627939ed3c37441b0df531b182d1090c92ada88b17d3d83183c81baf635c43",
+      "languages": {
+        "en": {
+          "sha256": "0d23f915da495ba140c578f57a84585f04b68e5692db83e2d165185d82b5b47d",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "e671b35f6b02ff294c16d5bb78b2276c7a80348ef41d857087d2a3870d981b55",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "e815743e90b7aca1ee6c9a01aff9febebaeb95e20a6aabe9ddf8a8398d8c5210",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "063-alert-dedup-noise",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "85128273e003eb300985b98bf09118996d28601a4e67e73c541a3c18274d014b",
+      "languages": {
+        "en": {
+          "sha256": "2d67b1c4df3c34310a15c4ad4fbc09a7a390e33ad3ff00ec7b18b968d3c3346b",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "d84b7abdf6cafcf43e4816dae515ea7d5e4727a552f6724afcf285269e8cb48a",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "97a97af9a20ffcdedeb593f63528e0278d5ea542ce052356e80911287ab31b33",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "064-service-dependency-triage",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "31add747e92711a275dedffb2c21efdd2418c23c981a65d9464c920cf6d74877",
+      "languages": {
+        "en": {
+          "sha256": "6a553e5c3603c2f883ab11d5c089f759e63b318718f0e9818365fbf780625fa9",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "8a9ad1aa8b27e68ec44f125842939f8dfff837212ef852bb4a39add24d38c685",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "988bad88e8efa1bbcad7ee6e453c34d2313369c0a1ac556c9d11c206281e2a92",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "067-canary-release-check",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "7052855a58f3cbe58a84ad182798139ca8119615b4eec4fdb8be258b7fd2178a",
+      "languages": {
+        "en": {
+          "sha256": "99ce7f493f40ccbbb27bae4fbb604d44ad7e2295058eef1e3e7cf8af94bc0832",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "a65148996d25a4d1eeaec68fefed9a3c841150689acd3cc5e71a4af0fabc6cea",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "ac9bbb51d70b2c273517c925e4eb3ff0889c1d9c6c26ec96ebbb308f96c584d0",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "070-hr-resume-screening",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "4d3681b1097e0aec4def6e371360a39c8a81557fadb073df12a23a1f25aeccde",
+      "languages": {
+        "en": {
+          "sha256": "725c4c7887c9daae330870ba95e30fcac6b3466c3f51267aa28a7892d70d5475",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "f892cc8e30e5683e85917ad9c40593fa53c543ea7014e4059ef24bb22253d631",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "7fa0d0ff911bce32a03cf2c3ec5a707c3f1f61e78baf0d2781742be602259cfc",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "071-ecommerce-support-routing",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "29416bef0b7edcbb5639ef11c38c476ed141e85411bc027cf8bd0d583d107b36",
+      "languages": {
+        "en": {
+          "sha256": "1798687d5dc6f7df661ab8aaf0fab5583272831b16de99b9635ab79da20505f8",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "7d87da2edd2c45ffd7999bb5b77bbe6681dc21acc624d973bedd147d13991410",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "f08c0daf4143125880057da3d820e3744ab14ac1ed9826a899875c7dd3e7bc90",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "072-logistics-delay-response",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "5ae29f15f0190e0529c83b1cf79f5c3f0ada5b16f6127ded15b2664f64916dbc",
+      "languages": {
+        "en": {
+          "sha256": "9913aa1b1b1f228956a18a3cf2d1d68a52ca4589194168e4dd9711c604fdbf35",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "9e6f21ca96f017bd3ce7d2291ba1bb104bea7fd76c1e96918e3a3ecafdcb655a",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "f4e6486711bdc4617c5c52b30433a2afacc1ac555dce0c22fb086bb35652c58e",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "074-education-grading-feedback",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "40653b41b6dde7469b32b62f30857e74c35eccd6419ac938ce3e7188cbf82dd3",
+      "languages": {
+        "en": {
+          "sha256": "147aa4a5770c8f5171a1360d719401fc93e0e9acf578be3a67ee4a6f96035ff3",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "14b45ae02a01f94ed678863252ce49dda8ced4b02cfc30be9f12ebc6af6c5484",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "c0c4a74d611e2afa8557ece346db4b9131ce5f420f2a00c0a81595c50a79751d",
+          "errors": []
+        }
+      }
+    },
+    {
+      "task_id": "075-platform-appeal-review",
+      "prompt_file": "prompt.txt",
+      "source_sha256": "cfa29c080a1ac35c4852cbd1b2a560ace4bea814db3dfc788836827e17da2a9d",
+      "languages": {
+        "en": {
+          "sha256": "6012f0441d66fd111a25539cb3dfe54ae7cfc03c34bea3a335d0b89fa9dade57",
+          "errors": []
+        },
+        "hi": {
+          "sha256": "391b9ec44a86d3a038fa2183bb84e546e8d8964a4791405a4aeaad663515e537",
+          "errors": []
+        },
+        "hinglish": {
+          "sha256": "d144ebba3549c9841c416f62e525fc393e677605b7adb6255aad9d00fea4ebde",
+          "errors": []
+        }
+      }
+    }
+  ],
+  "oracle_validation_completed": false,
+  "pilot_authorized_by_this_check": false
+}

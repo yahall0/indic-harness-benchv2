@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-09-30T13:24:18.201482+00:00",
+  "ready": true,
+  "remaining_preparation_gates": [],
+  "reference_files_unchanged": 1116,
+  "original_tasks_audited": 106,
+  "status_counts": {
+    "validated": 40,
+    "deferred": 64,
+    "excluded": 2
+  },
+  "released_validated_triplets": 40,
+  "instruction_rounds": 46,
+  "prompt_files": 138,
+  "planned_runs": 120,
+  "benchmark_runs": 0,
+  "completed_triplets": 0,
+  "credential_slots_checked": 4,
+  "actual_cloud_probe_requests": 4,
+  "cloud_requests_this_final_stage": 0,
+  "dataset_hash": "6498cce290def2038c1da1fe958cae8babdb0ef24e7784bd2f66512d4c641c22",
+  "next_action": "Stop before benchmarks; launch instructions are in READY_TO_START.md."
+}

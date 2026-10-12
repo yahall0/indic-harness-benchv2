@@ -1,0 +1,36 @@
+Offline metric snapshots ke basis par decide karo ki canary release continue, pause, ya rollback karni chahiye.
+
+Inputs:
+- $WORKSPACE/in/baseline_metrics.csv
+- $WORKSPACE/in/canary_metrics.csv
+- $WORKSPACE/in/thresholds.json
+
+Exactly ye output file banao:
+- $WORKSPACE/out/canary_decision.json
+- $WORKSPACE/out/metric_evidence.csv
+
+canary_decision.json requirements:
+- Top-level object mein ye hon: release_id, decision, breached_metrics, calculations, rationale, next_actions.
+- decision inmein se ek ho: continue, pause, rollback.
+- breached_metrics mein woh metric names list hon jinhone thresholds exceed kiye.
+- calculations mein har evaluated metric ke liye baseline_value, canary_value, delta, threshold, direction, sample_count aur evidence_status hon.
+- Delta calculate karne se pehle same metric ki saari available rows ka average lo.
+- Direction correctly apply karo:
+  - increase_bad ka matlab canary - baseline threshold se upar ho toh bad hai.
+  - decrease_bad ka matlab baseline - canary threshold se upar ho toh bad hai.
+- thresholds.json ka koi metric baseline ya canary mein missing ho toh evidence_status ko missing_data mark karo, use breached mat count karo, aur caveat include karo.
+- thresholds.json ke min_sample_count se sample_count kam ho toh evidence_status ko low_sample mark karo aur caveat include karo.
+- next_actions safe operational recommendations hon; rollback execute karne ka claim mat karo.
+
+metric_evidence.csv requirements:
+- Exact header:
+  metric,baseline_value,canary_value,delta,threshold,direction,severity,evidence_status,breached
+- thresholds.json ke har metric ke liye ek row include karo.
+
+thresholds.json ke har metric ko evaluate karo. Input files modify mat karo. Monitoring APIs call mat karo aur live data use mat karo.
+
+
+Benchmark clarification: Produce both listed output files: out/canary_decision.json and out/metric_evidence.csv.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

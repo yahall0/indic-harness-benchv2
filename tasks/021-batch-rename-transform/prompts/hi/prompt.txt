@@ -1,0 +1,48 @@
+आप एक छोटा offline file-standardization pipeline बना रहे हैं। सिर्फ़ local files इस्तेमाल करें।
+
+Input directory:
+- $WORKSPACE/in/raw/
+
+बनाएँ:
+- $WORKSPACE/out/normalized/
+- $WORKSPACE/out/rename_log.csv
+- $WORKSPACE/out/error_report.csv
+
+Supported transformations:
+1. TXT "Key: Value" revenue files
+   - Valid region/amount/currency records को JSON में बदलें।
+   - Output filename format: revenue_<yyyy>_<mm>.json.
+2. Customer CSV exports
+   - Valid rows को JSON array में बदलें।
+   - Keys को name,email,spend के रूप में normalize करें।
+   - Spend numeric होना चाहिए।
+   - खराब rows छोड़ें और error_report.csv में दर्ज करें।
+3. Inventory JSON files
+   - items array को sku,qty columns वाले CSV में बदलें और sku के अनुसार sort करें।
+   - Output filename format: inventory_<warehouse>.csv.
+
+Filename rules:
+- $WORKSPACE/in/raw/ को recursively scan करें।
+- Supported extensions .txt, .csv, और .json हैं; uppercase/lowercase दोनों मान्य हैं।
+- Unsupported files process न करें।
+- Output filenames को lowercase snake_case में normalize करें।
+- अगर दो supported inputs से एक ही output name बने, तो sorted source path में पहली file का base name रखें और बाद की conflicting outputs के नाम में __2, __3 आदि जोड़ें।
+
+CSV log requirements:
+- rename_log.csv का exact header: source,target,action
+- हर successfully transformed supported input के लिए एक row शामिल करें।
+- Rows को source path के अनुसार sort करें।
+- Workspace-relative paths इस्तेमाल करें, जैसे in/raw/...
+
+error_report.csv requirements:
+- Exact header: source,row_or_record,error_type,details
+- Malformed supported records और unsupported files शामिल करें।
+- Unsupported files report हों, लेकिन out/normalized में copy न हों।
+
+Rules:
+- Input files न बदलें और न delete करें।
+- $WORKSPACE/out/normalized/ में अतिरिक्त files न बनाएँ।
+- JSON outputs valid UTF-8 JSON होने चाहिए।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

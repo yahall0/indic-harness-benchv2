@@ -1,0 +1,16 @@
+Round 2 of 2: नई constraint के बाद plan revise करें.
+
+Existing $WORKSPACE/out/original_plan.json और $WORKSPACE/in/update_notice.json पढ़ें. ये बनाएँ:
+- $WORKSPACE/out/revised_plan.json
+- $WORKSPACE/out/diff.md
+
+Update notice में ये constraints jodi गई हैं:
+- live_support को Room B में shift करना होगा
+- Chen 13:00 के बाद unavailable हैं
+- rehearsal 11:00 से पहले ख़त्म होनी चाहिए
+- live_support से पहले 15-minute accessibility check add करें
+
+Original plan के उन उपयोगी setup/teardown निर्णयों को बनाए रखें जिन पर नई शर्त का असर नहीं पड़ा है। $WORKSPACE/out/diff.md में जोड़ी गई, हटाई गई और बदली गई चीज़ें सूचीबद्ध करें। इनपुट फ़ाइलों में बदलाव न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

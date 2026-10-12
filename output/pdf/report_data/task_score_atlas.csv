@@ -1,0 +1,51 @@
+task_id,category,added,oss_en,oss_hi,oss_hinglish,nemotron_en,nemotron_hi,nemotron_hinglish,mean_model_gain
+001-file,"Workspace, Tool Use & Multimodal Operations",False,100.0,100.0,100.0,100.0,0.0,100.0,-33.333333333333336
+004-meeting-summary,Office & Business Communication,False,100.0,77.78,100.0,100.0,100.0,88.89,3.703333333333333
+005-email-triage,Office & Business Communication,False,0.0,87.5,0.0,100.0,100.0,100.0,70.83333333333333
+007-session-memory,Long-running Autonomy & State Adaptation,False,100.0,100.0,100.0,100.0,100.0,100.0,0.0
+012-doc-synthesis,"Knowledge, Evidence & Retrieval",False,0.0,0.0,0.0,48.67,65.67,65.67,60.00333333333333
+016-code-repair-pytest,Software Engineering & Codebase Maintenance,False,100.0,100.0,90.0,90.0,100.0,90.0,-3.3333333333333335
+017-db-doc-consistency,Software Engineering & Codebase Maintenance,False,100.0,96.06,10.0,10.0,10.0,10.0,-58.68666666666667
+019-incident-runbook-synthesis,"SRE, DevOps & Release Ops",False,0.0,71.5,0.0,75.0,75.75,0.0,26.416666666666668
+020-archive-checksum,"Workspace, Tool Use & Multimodal Operations",False,100.0,35.714285714285715,14.285714285714285,100.0,100.0,100.0,50.0
+021-batch-rename-transform,"Workspace, Tool Use & Multimodal Operations",False,35.294117647058826,23.52941176470588,35.294117647058826,23.52941176470588,23.52941176470588,23.52941176470588,-7.843137254901964
+022-local-rest-api-summary,"Workspace, Tool Use & Multimodal Operations",False,0.0,78.26086956521739,4.3478260869565215,86.95652173913044,78.26086956521739,86.95652173913044,56.52173913043479
+024-calendar-scheduling-conflict,Office & Business Communication,False,44.440000000000005,44.440000000000005,55.559999999999995,44.440000000000005,44.440000000000005,44.440000000000005,-3.7066666666666634
+026-ppt-brief-generation,Office & Business Communication,False,20.0,80.0,20.0,90.0,90.0,100.0,53.333333333333336
+027-contract-summary-risk,Office & Business Communication,False,14.29,7.140000000000001,7.140000000000001,71.43,85.71,71.43,66.66666666666667
+033-offline-knowledge-qa,"Knowledge, Evidence & Retrieval",False,0.0,0.0,0.0,96.67,96.67,96.67,96.67
+034-evidence-matrix-claims,"Knowledge, Evidence & Retrieval",False,0.0,0.0,84.0,92.0,92.0,92.0,64.0
+035-conflicting-source-resolution,"Knowledge, Evidence & Retrieval",False,68.99,0.0,65.85,0.0,0.0,0.0,-44.94666666666666
+036-citation-consistency-audit,"Knowledge, Evidence & Retrieval",False,0.0,0.0,76.28,0.0,0.0,0.0,-25.426666666666666
+039-repo-architecture-map,Software Engineering & Codebase Maintenance,False,12.0,45.95,12.0,12.0,12.0,40.35,-1.8666666666666671
+040-test-coverage-fill,Software Engineering & Codebase Maintenance,False,47.38,47.38,41.86,47.38,35.0,43.0,-3.7466666666666675
+041-frontend-state-bug,Software Engineering & Codebase Maintenance,False,20.39,20.39,20.39,20.39,20.39,20.39,0.0
+049-excel-like-cleaning,"Data, BI & Finance Analytics",False,59.88,12.61,56.98,69.0,53.49,61.050000000000004,18.023333333333337
+050-multitable-join-analysis,"Data, BI & Finance Analytics",False,12.83,12.83,12.83,88.24,12.83,12.83,25.136666666666667
+051-sql-query-report,"Data, BI & Finance Analytics",False,8.64,8.64,8.64,8.64,100.0,8.64,30.453333333333333
+053-anomalous-transaction-detect,"Data, BI & Finance Analytics",False,93.58,83.96000000000001,9.04,97.86,97.86,100.0,36.38
+057-interruption-resume,Long-running Autonomy & State Adaptation,False,73.08,80.77,14.29,69.23,53.849999999999994,80.77,11.90333333333333
+058-multiday-project-state,Long-running Autonomy & State Adaptation,False,29.69,23.44,0.0,15.620000000000001,29.69,23.44,5.206666666666667
+059-event-update-replan,Long-running Autonomy & State Adaptation,False,14.29,36.36,14.29,50.0,23.810000000000002,23.810000000000002,10.893333333333336
+060-task-cancellation-cleanup,Long-running Autonomy & State Adaptation,False,49.0,49.0,49.0,100.0,100.0,49.0,34.0
+062-k8s-config-audit,"SRE, DevOps & Release Ops",False,86.99,14.000000000000002,14.000000000000002,14.000000000000002,88.18,78.71000000000001,21.966666666666672
+063-alert-dedup-noise,"SRE, DevOps & Release Ops",False,6.0,100.0,100.0,6.0,6.0,6.0,-62.666666666666664
+064-service-dependency-triage,"SRE, DevOps & Release Ops",False,6.0,6.0,6.0,80.0,78.5,83.72,74.74
+067-canary-release-check,"SRE, DevOps & Release Ops",False,6.0,6.0,6.0,6.0,99.11,90.41,59.173333333333325
+071-ecommerce-support-routing,Vertical Professional Workflows,False,0.0,45.0,0.0,0.0,0.0,0.0,-15.0
+074-education-grading-feedback,Vertical Professional Workflows,False,10.0,74.0,40.0,66.0,66.0,66.0,24.666666666666668
+075-platform-appeal-review,Vertical Professional Workflows,False,28.000000000000004,28.000000000000004,28.000000000000004,5.0,5.0,5.0,-23.000000000000004
+028-email-thread-merge,Office & Business Communication,False,9.09,72.72999999999999,9.09,36.36,36.36,9.09,-3.03333333333333
+032-customer-followup-draft,Office & Business Communication,False,85.71,57.14,71.43,71.43,100.0,71.43,9.52666666666667
+044-ci-config-repair,Software Engineering & Codebase Maintenance,False,72.0,72.0,67.7,72.0,72.0,97.66,9.986666666666665
+048-release-note-changelog,Software Engineering & Codebase Maintenance,False,10.0,38.769999999999996,10.0,10.0,10.0,10.0,-9.589999999999998
+054-budget-variance-analysis,"Data, BI & Finance Analytics",False,61.160000000000004,40.47,69.0,7.4399999999999995,69.0,7.4399999999999995,-28.916666666666668
+065-capacity-planning,"SRE, DevOps & Release Ops",False,79.27,80.54,28.18,6.0,6.0,58.36,-39.21
+068-product-launch-ops,Vertical Professional Workflows,False,64.41,72.88,81.36,91.53,91.53,91.53,18.646666666666672
+079-smallfile-batch-reject-ledger,"Workspace, Tool Use & Multimodal Operations",False,21.027817067421026,2.0,21.027817067421026,44.6016030174446,2.0,2.0,1.5153229608675172
+080-schema-roundtrip-conversion,"Workspace, Tool Use & Multimodal Operations",False,73.91304347826086,91.30434782608695,73.91304347826086,17.391304347826086,0.0,0.0,-73.91304347826086
+096-offline-knowledge-qa-insufficient-evidence,"Knowledge, Evidence & Retrieval",False,0.0,57.07,0.0,0.0,65.0,0.0,2.643333333333333
+056-inventory-forecast,"Data, BI & Finance Analytics",True,69.0,9.47,63.31,69.0,9.47,9.47,-17.94666666666667
+073-research-repro-package,Vertical Professional Workflows,True,42.0,0.0,0.0,60.0,40.0,42.0,33.333333333333336
+089-ab-test-caveat-analysis,"Data, BI & Finance Analytics",True,52.38,69.0,4.760000000000001,4.760000000000001,95.24000000000001,4.760000000000001,-7.126666666666665
+106-release-approval-gate-plan,Long-running Autonomy & State Adaptation,True,11.0,33.5,11.0,74.83,38.61,86.81,48.25

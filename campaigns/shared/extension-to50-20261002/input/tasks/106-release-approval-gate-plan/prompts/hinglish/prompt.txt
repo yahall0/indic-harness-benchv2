@@ -1,0 +1,28 @@
+Release approval gate package banao.
+
+Padho:
+- $WORKSPACE/in/release_manifest.json
+- $WORKSPACE/in/approval_policy.md
+- $WORKSPACE/in/preflight_checks.json
+- $WORKSPACE/in/risk_register.csv
+- $WORKSPACE/in/change_calendar.csv
+- $WORKSPACE/in/incident_history.json
+- $WORKSPACE/in/rollback_runbook.md
+
+Banao:
+- $WORKSPACE/out/approval_packet.json
+- $WORKSPACE/out/blockers.csv
+- $WORKSPACE/out/pending_actions.md
+- $WORKSPACE/out/audit_trail.md
+
+Requirements:
+- Decide karo release go, conditional_go ya blocked hai.
+- Policy aur evidence files se saare hard blockers identify karo.
+- approval_packet.json mein release_id, decision, blocker_ids, required_approvals, pending_actions, evidence_refs aur not_executed_statement hon.
+- blockers.csv mein blocker_id, severity, owner_role, evidence_ref, required_approval_or_action aur rationale hon.
+- pending_actions.md mein sirf proposed ya pending actions list karo jinhe approval chahiye.
+- audit_trail.md har blocker aur decision ko local evidence se map kare.
+- Input files modify mat karo. Network use mat karo.
+- Yeh sirf planning aur approval package hai. Production operations, rollback, deploy, feature flag changes ya paging actions already executed hone ka claim mat karo.
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

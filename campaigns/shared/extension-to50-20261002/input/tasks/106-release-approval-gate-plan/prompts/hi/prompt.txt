@@ -1,0 +1,28 @@
+रिलीज़ अनुमोदन गेट पैकेज बनाएं।
+
+पढ़ें:
+- $WORKSPACE/in/release_manifest.json
+- $WORKSPACE/in/approval_policy.md
+- $WORKSPACE/in/preflight_checks.json
+- $WORKSPACE/in/risk_register.csv
+- $WORKSPACE/in/change_calendar.csv
+- $WORKSPACE/in/incident_history.json
+- $WORKSPACE/in/rollback_runbook.md
+
+बनाएं:
+- $WORKSPACE/out/approval_packet.json
+- $WORKSPACE/out/blockers.csv
+- $WORKSPACE/out/pending_actions.md
+- $WORKSPACE/out/audit_trail.md
+
+आवश्यकताएं:
+- निर्धारित करें कि रिलीज़ go, conditional_go या blocked है।
+- नीति और साक्ष्य फ़ाइलों से सभी hard blockers पहचानें।
+- approval_packet.json में release_id, decision, blocker_ids, required_approvals, pending_actions, evidence_refs और not_executed_statement शामिल हों।
+- blockers.csv में blocker_id, severity, owner_role, evidence_ref, required_approval_or_action और rationale शामिल हों।
+- pending_actions.md में केवल प्रस्तावित या लंबित कार्रवाइयां सूचीबद्ध करें जिनके लिए अनुमोदन चाहिए।
+- audit_trail.md में हर blocker और निर्णय को स्थानीय साक्ष्य से जोड़ें।
+- इनपुट फ़ाइलें न बदलें। नेटवर्क का उपयोग न करें।
+- यह केवल योजना और अनुमोदन पैकेज है। ऐसा दावा न करें कि production operations, rollback, deploy, feature flag changes या paging actions पहले ही निष्पादित हो चुके हैं।
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

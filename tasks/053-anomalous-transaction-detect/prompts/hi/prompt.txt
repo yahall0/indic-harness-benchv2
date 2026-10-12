@@ -1,0 +1,33 @@
+Local rulebook से suspicious transactions detect करें.
+
+Inputs:
+- $WORKSPACE/in/transactions.csv
+- $WORKSPACE/in/rules.md
+
+बनाएँ:
+- $WORKSPACE/out/suspicious_transactions.csv
+- $WORKSPACE/out/rule_audit.json
+- $WORKSPACE/out/case_notes.md
+
+suspicious_transactions.csv के columns, इसी exact order में:
+transaction_id,customer_id,rule_id,risk_level,reason
+
+Rules:
+1. Fixtures modify न करें.
+2. सिर्फ़ rules.md में दिए rules apply करें.
+3. हर उस transaction को include करें जो कम-से-कम एक rule trigger करता हो.
+4. Transaction multiple rules trigger करें, तो highest-risk rule इस्तेमाल करें और reason में अन्य triggered rule IDs का ज़िक्र करें.
+5. कोई rule trigger न करने वाले transactions include न करें.
+6. Card velocity के लिए transactions को CSV row order के bajay timestamp से evaluate करें.
+7. case_notes.md में suspicious transactions की संख्या summarize करें और हर triggered rule_id का ज़िक्र करें.
+
+rule_audit.json requirements:
+- suspicious_transaction_ids, non_suspicious_transaction_ids, rule_counts, secondary_rule_ids keys वाला valid JSON.
+- suspicious_transaction_ids और non_suspicious_transaction_ids sorted arrays हों.
+- rule_counts, हर rule_id को उन suspicious transactions की संख्या से map करें जहाँ वह primary rule_id है.
+- secondary_rule_ids सिर्फ़ उन multi-rule transaction_ids को map करें जो CSV reason में mention किए गए anya triggered rule ids के sorted arrays से हों.
+
+Network access या external APIs use न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

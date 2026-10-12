@@ -1,0 +1,44 @@
+Task: कई दस्तावेज़ों का synthesis और विरोधाभासों का पता लगाना
+
+एक ही incident के बारे में पाँच दस्तावेज़ `$WORKSPACE/in/` के अंदर हैं:
+- doc1_news_site_a.md (NewsSite A का article)
+- doc2_news_site_b.md (NewsSite B का article)
+- doc3_social_media.md (social posts / अफ़वाहें)
+- doc4_official_statement.md (official statement)
+- doc5_expert_analysis.md (expert analysis)
+
+इनमें मतभेद हैं और इनमें गलतियाँ या bias हो सकता है।
+
+नीचे के सभी काम पूरे करें; सब कुछ `$WORKSPACE/out/` के अंदर लिखें:
+
+1. हर दस्तावेज़ का भरोसे का score (**trustworthiness.json**)
+   हर document को 0–10 का score और एक छोटा कारण दें (जैसे source authority, आपसी consistency, evidence chain)।
+   Format:
+   {
+     "doc1_news_site_a.md": {"score": 6, "reason": "specific numbers but sensational tone"},
+     ...
+   }
+
+2. विरोधाभास (**contradictions.json**)
+   मुख्य विरोधाभासों की सूची दें (कम-से-कम 3); संबंधित documents और उदाहरण वाली representative quotes/snippets बताएँ।
+   Format:
+   {
+     "contradictions": [
+       {
+         "claim": "example axis of disagreement",
+         "documents": ["doc1", "doc2", "doc4"],
+         "quotes": ["...", "...", "..."],
+         "resolution": "your best-supported resolution"
+       }
+     ]
+   }
+
+3. अंतिम विवरण (**final_report.md**)
+   - आपस में जाँच के आधार पर सबसे विश्वसनीय विवरण (English prose के लगभग 1200–3500 characters)।
+   - **Uncertainty / disputes** section।
+   - `[filename]` tags से evidence pointers।
+
+Scoring में उचित trust scores, विरोधाभासों की पूरी जाँच, और तार्किक, evidence-backed final report को महत्व दिया जाएगा।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

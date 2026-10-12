@@ -1,0 +1,46 @@
+MOCK_API_BASE environment variable mein jo local REST API diya hai, sirf wahi use karo. Public internet use mat karo.
+
+Available endpoints:
+- GET $MOCK_API_BASE/projects?page=N
+- GET $MOCK_API_BASE/users?page=N
+- GET $MOCK_API_BASE/incidents?page=N
+
+Har endpoint paginated hai aur `items` aur `next_page` ke saath JSON return karta hai. Kuch initial requests par HTTP 429 ya 503 mil sakta hai; short backoff ke saath locally retry karo.
+
+Task:
+Teeno endpoints ke saare pages fetch karo, data join karo, aur ye files likho:
+- $WORKSPACE/out/api_summary.json
+- $WORKSPACE/out/data_quality_report.md
+
+Required JSON format:
+{
+  "source_base_url": "the exact base URL you used",
+  "project_count": 4,
+  "active_budget_usd": 26800,
+  "open_incidents": 5,
+  "projects": [
+    {
+      "id": "p-100",
+      "name": "Atlas Migration",
+      "owner_name": "Mira Chen",
+      "team": "Platform",
+      "status": "active",
+      "budget_usd": 12500,
+      "open_incident_count": 1,
+      "highest_open_severity": "high"
+    }
+  ]
+}
+
+Rules:
+- Projects ko id ke ascending order mein sort karo.
+- active_budget_usd, un projects ke budget_usd ka sum hai jinka status "active" hai.
+- open_incidents mein sirf wahi incidents count karo jahan open true ho.
+- highest_open_severity ka order high > medium > low hai; jis project mein koi open incident na ho, uske liye null likho.
+- Sirf summary JSON save karo. Raw endpoint payloads ya unrelated text include mat karo.
+- Duplicate project ids ko do baar count mat karo.
+- Missing owners ke liye owner_name null aur team null rakho, aur unka mention data_quality_report.md mein karo.
+- Orphan incidents ko project counts se exclude karo, lekin data_quality_report.md mein unka mention karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

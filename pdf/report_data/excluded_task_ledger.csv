@@ -1,0 +1,9 @@
+﻿task_id,category,failed_languages,cause
+002-exec,"Workspace, Tool Use & Multimodal Operations",en,Local accounting acknowledgment
+052-metric-definition-audit,"Data, BI & Finance Analytics",en,Provider HTTP 500 after retries
+070-hr-resume-screening,Vertical Professional Workflows,hi,Ambiguous transport / timeout
+072-logistics-delay-response,Vertical Professional Workflows,en,Ambiguous transport / timeout
+037-policy-clause-retrieval,"Knowledge, Evidence & Retrieval",hi,Response delivery / broken pipe
+055-funnel-dropoff-analysis,"Data, BI & Finance Analytics","hi, hinglish",Provider HTTP 500 after retries
+066-rollback-readiness,"SRE, DevOps & Release Ops",hinglish,Ambiguous transport / timeout
+103-policy-update-replan-diff,Long-running Autonomy & State Adaptation,"en, hi",Provider HTTP 500 after retries / Ambiguous transport / timeout

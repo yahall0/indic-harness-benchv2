@@ -1,0 +1,57 @@
+Local tables se customer-level revenue metrics aur reconciliation note banao.
+
+Workspace root mein copied inputs:
+- $WORKSPACE/in/customers.csv
+- $WORKSPACE/in/orders.csv
+- $WORKSPACE/in/payments.csv
+- $WORKSPACE/in/refunds.csv
+- $WORKSPACE/in/fx_rates.csv
+- $WORKSPACE/in/chargebacks.csv
+
+Ye files banao:
+- $WORKSPACE/out/customer_metrics.csv
+- $WORKSPACE/out/region_summary.json
+- $WORKSPACE/out/reconciliation_audit.json
+- $WORKSPACE/out/reconciliation_notes.md
+
+customer_metrics.csv columns, isi exact order mein:
+canonical_customer_id,name,region,order_count,gross_revenue_usd,refund_amount_usd,chargeback_amount_usd,net_revenue_usd,segment
+Rows ko canonical_customer_id ascending order mein sort karo.
+
+Business rules:
+1. Input files modify mat karo.
+2. customers.csv ke canonical_customer_id se aliases roll up karo. Har canonical customer ke liye ek row output karo, un canonical customers samet jinke paas valid revenue nahi hai.
+3. `order_count`, un distinct `order_id` values ko count karta hai jinka `order_status` paid hai aur jinke liye at least ek captured payment hai. Same order ki multiple captured payment rows phir bhi ek hi order count hongi.
+4. Gross revenue captured payments se aata hai, order_amount se nahi. Duplicate payment rows sirf tab ignore karo jab `(order_id, amount, currency, status)` ki saari values match hon; same order ke different amounts wale captured payments add honge.
+5. Payments, refunds aur chargebacks ko fx_rates.csv se USD mein convert karo.
+6. Missing order_id ko refer karne wale captured payments orphan payments hain. Unhe revenue mein count mat karo, lekin reconciliation_notes.md mein list karo.
+7. Refunds sirf tab count karo jab woh us order ko refer karte hon jo paid hai aur captured payment revenue ke zariye included hai. Orphan refunds, cancelled orders ke refunds aur captured revenue ke bina orders ke refunds anomalies hain, revenue deductions nahi.
+8. Chargebacks sirf tab count karo jab woh included paid/captured order ko refer karte hon aur status won_by_customer ho. won_by_merchant chargebacks reconciliation notes mein likho, lekin revenue se deduct mat karo.
+9. Net revenue = gross revenue - refunds - chargebacks.
+10. Money fields ko exactly two decimals mein format karo.
+11. Canonical customers ko is tarah segment karo:
+   - net_revenue_usd >= 500 ho toh platinum
+   - net_revenue_usd >= 250 aur < 500 ho toh gold
+   - net_revenue_usd > 0 aur < 250 ho toh silver
+   - net_revenue_usd == 0 ho toh dormant
+
+region_summary.json requirements:
+- Region-keyed valid JSON object.
+- Har region entry mein canonical_customer_count, gross_revenue_usd, net_revenue_usd hon.
+
+reconciliation_notes.md requirements:
+- Revenue ka basis explain karo.
+- Duplicate payments, orphan payments, orphan refunds, cancelled/no-captured orders ke against refunds aur chargebacks list karo.
+- Canonical customer merge mention karo.
+
+reconciliation_audit.json requirements:
+- duplicate_payment_ids, orphan_payment_ids, refund_anomaly_ids, included_chargeback_ids, excluded_chargeback_ids, alias_customer_ids keys wala valid JSON.
+- Har value ascending order mein sorted IDs ka array ho.
+- duplicate_payment_ids woh duplicate captured payment rows hain jinhe tuple rule ki wajah se ignore kiya gaya.
+- refund_anomaly_ids mein orphan refunds, cancelled orders ke refunds, aur captured revenue ke bina orders ke refunds include hon.
+- excluded_chargeback_ids mein woh chargebacks include hon jo deduct nahi kiye gaye kyunki order included nahi hai ya chargeback status won_by_customer nahi hai.
+
+Network access mat use karo. customer_metrics.csv mein extra columns mat jodo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

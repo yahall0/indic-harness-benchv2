@@ -1,0 +1,24 @@
+कंपनी की नीति के साथ मसौदा अनुबंध की समीक्षा करें।
+
+इनपुट:
+- $WORKSPACE/in/contract.md
+- $WORKSPACE/in/company_policy.md
+
+आउटपुट:
+- $WORKSPACE/out/contract_summary.md
+- $WORKSPACE/out/risk_clauses.csv
+
+risk_clauses.csv की शर्तें:
+- CSV header: clause_id,risk_type,quote,recommended_action,severity
+- company_policy.md से टकराने वाली हर clause शामिल करें।
+- quote में contract.md का हूबहू पाठ होना चाहिए।
+- severity का मान High, Medium या Low होना चाहिए।
+
+contract_summary.md की शर्तें:
+- दोनों पक्षों, अनुबंध की अवधि, renewal, भुगतान, data/security, liability और termination का सार दें।
+- "Policy risks" नाम का छोटा section शामिल करें।
+- सुझाए गए व्यावसायिक review steps से आगे बढ़कर कानूनी सलाह न दें।
+- इनपुट फ़ाइलों में बदलाव न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

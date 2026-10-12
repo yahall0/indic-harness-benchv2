@@ -1,0 +1,43 @@
+तीन artifacts बनाने के लिए `$WORKSPACE/in/release` के release inputs का उपयोग करें:
+
+1. `$WORKSPACE/out/CHANGELOG.md`
+   - लागू होने पर Markdown release notes को Added, Changed, Fixed, Security और Breaking Changes में बाँटें।
+   - issue IDs और आसानी से समझ आने वाले विवरण शामिल करें।
+   - वापस लिए गए fixes को shipped changes के रूप में न लिखें।
+   - टाले गए features को shipped changes के रूप में न लिखें।
+   - केवल documentation वाले काम का उल्लेख supporting documentation के रूप में कर सकते हैं, लेकिन उसे shipped product issue न गिनें।
+   - किसी issue के कई commits हों, तो उसका सार केवल एक बार दें।
+   - embargoed security work के लिए exploit या implementation details के बिना सुरक्षित, सामान्य स्तर का note दें।
+2. `$WORKSPACE/out/release_summary.json`
+   - इन keys वाला JSON दें: `version`, `date`, `highlights`, `breaking_changes`, `issue_count`, `risk_notes`।
+   - `issue_count` में केवल shipped और non-reverted `ISSUE-*` product issue IDs गिनें; `SEC-*` advisory IDs नहीं।
+   - `issue_count` में deferred `ISSUE-*` IDs और केवल documentation वाले `ISSUE-*` IDs न गिनें।
+3. `$WORKSPACE/out/upgrade_notes.md`
+   - हर breaking change के लिए migration guidance दें।
+   - reverted काम का उल्लेख shipped changes से अलग करें।
+   - embargoed security details उजागर न करें।
+4. `$WORKSPACE/out/release_decisions.json`
+   - इन keys वाला JSON दें: shipped_issue_ids, reverted_issue_ids, deferred_issue_ids, docs_only_issue_ids, security_advisory_ids, embargoed_security_advisory_ids, public_security_advisory_ids, breaking_change_ids, duplicate_commit_issue_ids।
+   - हर value ascending क्रम में sorted array हो।
+   - shipped_issue_ids में केवल shipped, non-reverted `ISSUE-*` product issue IDs गिनें।
+   - reverted_issue_ids में वे reverted `ISSUE-*` product issue IDs दें जिन्हें shipped changes न दिखाएँ।
+   - deferred_issue_ids में release से पहले टाले गए और ship न हुए `ISSUE-*` feature IDs दें।
+   - docs_only_issue_ids में उन `ISSUE-*` IDs को दें जिनका shipped काम केवल documentation है और जो issue_count को प्रभावित न करें।
+   - security_advisory_ids में `SEC-*` advisory IDs को product issues से अलग दें।
+   - embargoed_security_advisory_ids और public_security_advisory_ids में security_advisory_ids को embargo की स्थिति के अनुसार बाँटें।
+   - breaking_change_ids में हर उस shipped issue ID को दें जिसके लिए migration guidance चाहिए।
+   - duplicate_commit_issue_ids में वे shipped issue IDs दें जो एक से अधिक non-revert, non-defer commit में हैं; फिर भी उनका सार एक बार ही दें।
+5. `$WORKSPACE/out/release_audit.json`
+   - इन keys वाला JSON दें: issue_status_by_id, shipped_issue_commit_counts, non_counted_issue_ids, migration_required_issue_ids।
+   - issue_status_by_id में issues.csv के हर ID को ठीक एक status दें: shipped, reverted, deferred, docs_only, embargoed_security, public_security।
+   - shipped_issue_commit_counts में हर shipped `ISSUE-*` product issue ID के लिए उस issue के non-revert, non-defer, non-docs commits की संख्या दें।
+   - non_counted_issue_ids में वे सभी IDs दें जो release_summary.issue_count में न जुड़ें: reverted issues, deferred issues, docs-only issues और SEC-* advisory IDs।
+   - migration_required_issue_ids, breaking_change_ids से मेल खाएँ और ascending क्रम में sorted हों।
+
+कोई commit या issue न गढ़ें। आज की तारीख का उपयोग न करें; `commits.json` की तारीख लें। fixture files में बदलाव न करें।
+
+
+Benchmark clarification: Produce all five listed output files: out/CHANGELOG.md, out/release_summary.json, out/upgrade_notes.md, out/release_decisions.json, and out/release_audit.json.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

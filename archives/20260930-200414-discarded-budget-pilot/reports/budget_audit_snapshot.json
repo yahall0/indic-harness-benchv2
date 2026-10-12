@@ -1,0 +1,621 @@
+{
+  "statuses": {
+    "completed": 16,
+    "infrastructure_failed": 2,
+    "budget_exhausted": 9,
+    "running": 1,
+    "planned": 92
+  },
+  "attempts": [
+    {
+      "id": "a9f8e78453db27b14b358c08",
+      "task": "001-file",
+      "language": "en",
+      "status": "completed",
+      "requests": 4,
+      "input_bound": 18826,
+      "output_reserved": 411,
+      "input_actual": 18826,
+      "output_actual": 411,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 44.969
+    },
+    {
+      "id": "99356869d570af5936250ff3",
+      "task": "001-file",
+      "language": "hi",
+      "status": "infrastructure_failed",
+      "requests": 3,
+      "input_bound": 37350,
+      "output_reserved": 4329,
+      "input_actual": 9312,
+      "output_actual": 233,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": "relay_accounting_gate",
+      "elapsed_sec": 38.985
+    },
+    {
+      "id": "db715ecefcc4392637f6b7ba",
+      "task": "001-file",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 4,
+      "input_bound": 18818,
+      "output_reserved": 387,
+      "input_actual": 18818,
+      "output_actual": 387,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 33.047
+    },
+    {
+      "id": "b384533e822cb12c5f210975",
+      "task": "002-exec",
+      "language": "hi",
+      "status": "completed",
+      "requests": 7,
+      "input_bound": 37052,
+      "output_reserved": 1679,
+      "input_actual": 37052,
+      "output_actual": 1679,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 49.188
+    },
+    {
+      "id": "514ef529ca3e02f877ea894f",
+      "task": "002-exec",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 9,
+      "input_bound": 50323,
+      "output_reserved": 1905,
+      "input_actual": 50323,
+      "output_actual": 1905,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 57.938
+    },
+    {
+      "id": "d646ee7711da31af0fd41615",
+      "task": "002-exec",
+      "language": "en",
+      "status": "infrastructure_failed",
+      "requests": 10,
+      "input_bound": 81374,
+      "output_reserved": 5567,
+      "input_actual": 47954,
+      "output_actual": 1471,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": null,
+      "elapsed_sec": 51.812
+    },
+    {
+      "id": "199a358d5ada49a8b3abc357",
+      "task": "004-meeting-summary",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 4,
+      "input_bound": 20895,
+      "output_reserved": 1125,
+      "input_actual": 20895,
+      "output_actual": 1125,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 41.969
+    },
+    {
+      "id": "f9b364d263c0d7e613ebef4b",
+      "task": "004-meeting-summary",
+      "language": "en",
+      "status": "completed",
+      "requests": 5,
+      "input_bound": 25944,
+      "output_reserved": 1349,
+      "input_actual": 25944,
+      "output_actual": 1349,
+      "usage_missing": 0,
+      "score": 0.8889,
+      "pause_reason": null,
+      "elapsed_sec": 54.813
+    },
+    {
+      "id": "156824ea0f868ff23dab4bc1",
+      "task": "004-meeting-summary",
+      "language": "hi",
+      "status": "completed",
+      "requests": 6,
+      "input_bound": 27672,
+      "output_reserved": 1579,
+      "input_actual": 27672,
+      "output_actual": 1579,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 59.109
+    },
+    {
+      "id": "ac1c6dc37d42d5e14dc41ac2",
+      "task": "005-email-triage",
+      "language": "en",
+      "status": "completed",
+      "requests": 9,
+      "input_bound": 49498,
+      "output_reserved": 2733,
+      "input_actual": 49498,
+      "output_actual": 2733,
+      "usage_missing": 0,
+      "score": 0,
+      "pause_reason": null,
+      "elapsed_sec": 78.484
+    },
+    {
+      "id": "be57d4536bc459dd4ab02169",
+      "task": "005-email-triage",
+      "language": "hi",
+      "status": "completed",
+      "requests": 10,
+      "input_bound": 56310,
+      "output_reserved": 3063,
+      "input_actual": 56310,
+      "output_actual": 3063,
+      "usage_missing": 0,
+      "score": 0,
+      "pause_reason": null,
+      "elapsed_sec": 75.906
+    },
+    {
+      "id": "89c486ad502723930a23b6a0",
+      "task": "005-email-triage",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 7,
+      "input_bound": 37708,
+      "output_reserved": 1465,
+      "input_actual": 37708,
+      "output_actual": 1465,
+      "usage_missing": 0,
+      "score": 0,
+      "pause_reason": null,
+      "elapsed_sec": 49.469
+    },
+    {
+      "id": "65db066df1f5cf4cac268186",
+      "task": "007-session-memory",
+      "language": "hi",
+      "status": "completed",
+      "requests": 7,
+      "input_bound": 35679,
+      "output_reserved": 1069,
+      "input_actual": 35679,
+      "output_actual": 1069,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 55.531
+    },
+    {
+      "id": "b1db8d02144d17b2e696aeff",
+      "task": "007-session-memory",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 7,
+      "input_bound": 35431,
+      "output_reserved": 1088,
+      "input_actual": 35431,
+      "output_actual": 1088,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 54.109
+    },
+    {
+      "id": "e48d87f537ef6e8108f99bb2",
+      "task": "007-session-memory",
+      "language": "en",
+      "status": "completed",
+      "requests": 5,
+      "input_bound": 24831,
+      "output_reserved": 741,
+      "input_actual": 24831,
+      "output_actual": 741,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 45.047
+    },
+    {
+      "id": "505535d2219f6f4f830cec5d",
+      "task": "012-doc-synthesis",
+      "language": "hinglish",
+      "status": "budget_exhausted",
+      "requests": 11,
+      "input_bound": 62538,
+      "output_reserved": 1147,
+      "input_actual": 62538,
+      "output_actual": 1147,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 49.735
+    },
+    {
+      "id": "9f385019fd932d3bbde27a1f",
+      "task": "012-doc-synthesis",
+      "language": "en",
+      "status": "budget_exhausted",
+      "requests": 11,
+      "input_bound": 63183,
+      "output_reserved": 2308,
+      "input_actual": 63183,
+      "output_actual": 2308,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 62.484
+    },
+    {
+      "id": "5fd11cac96d4b7d1ecea0fe1",
+      "task": "012-doc-synthesis",
+      "language": "hi",
+      "status": "budget_exhausted",
+      "requests": 11,
+      "input_bound": 61830,
+      "output_reserved": 1146,
+      "input_actual": 61830,
+      "output_actual": 1146,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 68.047
+    },
+    {
+      "id": "f0d758e20c7c45b1f4b60a8e",
+      "task": "016-code-repair-pytest",
+      "language": "en",
+      "status": "completed",
+      "requests": 8,
+      "input_bound": 48072,
+      "output_reserved": 1408,
+      "input_actual": 48072,
+      "output_actual": 1408,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 55.359
+    },
+    {
+      "id": "799ec53cf0dae5b03ce017bc",
+      "task": "016-code-repair-pytest",
+      "language": "hi",
+      "status": "completed",
+      "requests": 7,
+      "input_bound": 42250,
+      "output_reserved": 1301,
+      "input_actual": 42250,
+      "output_actual": 1301,
+      "usage_missing": 0,
+      "score": 0.9,
+      "pause_reason": null,
+      "elapsed_sec": 48.875
+    },
+    {
+      "id": "6c9d14b654fea596705b559f",
+      "task": "016-code-repair-pytest",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 8,
+      "input_bound": 47913,
+      "output_reserved": 1542,
+      "input_actual": 47913,
+      "output_actual": 1542,
+      "usage_missing": 0,
+      "score": 1.0,
+      "pause_reason": null,
+      "elapsed_sec": 52.219
+    },
+    {
+      "id": "8fdc405154b920c2d37130b9",
+      "task": "017-db-doc-consistency",
+      "language": "hi",
+      "status": "budget_exhausted",
+      "requests": 9,
+      "input_bound": 59821,
+      "output_reserved": 5001,
+      "input_actual": 59821,
+      "output_actual": 5001,
+      "usage_missing": 0,
+      "score": 0.1,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 94.844
+    },
+    {
+      "id": "f8c494bb90f6e9934002616d",
+      "task": "017-db-doc-consistency",
+      "language": "hinglish",
+      "status": "budget_exhausted",
+      "requests": 9,
+      "input_bound": 58951,
+      "output_reserved": 3680,
+      "input_actual": 58951,
+      "output_actual": 3680,
+      "usage_missing": 0,
+      "score": 0.1,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 72.75
+    },
+    {
+      "id": "721492e74e5b019c8203820b",
+      "task": "017-db-doc-consistency",
+      "language": "en",
+      "status": "budget_exhausted",
+      "requests": 8,
+      "input_bound": 58147,
+      "output_reserved": 6301,
+      "input_actual": 58147,
+      "output_actual": 6301,
+      "usage_missing": 0,
+      "score": 0.85,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 88.797
+    },
+    {
+      "id": "2b6e3953388409f6b654edf4",
+      "task": "019-incident-runbook-synthesis",
+      "language": "hinglish",
+      "status": "budget_exhausted",
+      "requests": 10,
+      "input_bound": 59477,
+      "output_reserved": 883,
+      "input_actual": 59477,
+      "output_actual": 883,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 39.547
+    },
+    {
+      "id": "8e8506276ea6003e8b1e5035",
+      "task": "019-incident-runbook-synthesis",
+      "language": "en",
+      "status": "budget_exhausted",
+      "requests": 9,
+      "input_bound": 56075,
+      "output_reserved": 3692,
+      "input_actual": 56075,
+      "output_actual": 3692,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 68.109
+    },
+    {
+      "id": "5f3d24036ab56df58a4d9c31",
+      "task": "019-incident-runbook-synthesis",
+      "language": "hi",
+      "status": "budget_exhausted",
+      "requests": 9,
+      "input_bound": 56036,
+      "output_reserved": 3434,
+      "input_actual": 56036,
+      "output_actual": 3434,
+      "usage_missing": 0,
+      "score": 0.0,
+      "pause_reason": "Attempt inference budget exhausted",
+      "elapsed_sec": 68.547
+    },
+    {
+      "id": "1b09b3ab126993380e933689",
+      "task": "020-archive-checksum",
+      "language": "en",
+      "status": "running",
+      "requests": 7,
+      "input_bound": 64395,
+      "output_reserved": 5046,
+      "input_actual": 31581,
+      "output_actual": 950,
+      "usage_missing": 0,
+      "score": null,
+      "pause_reason": null,
+      "elapsed_sec": null
+    }
+  ],
+  "budget_events": [
+    {
+      "run_id": "5f3d24036ab56df58a4d9c31",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "5f3d24036ab56df58a4d9c31",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "89ee4de6c08a56f942e40cf89ab63b22",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "8e8506276ea6003e8b1e5035",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "8e8506276ea6003e8b1e5035",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "41e5233f31736803b0e36582166bfe95",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "2b6e3953388409f6b654edf4",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "2b6e3953388409f6b654edf4",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "8572b19d8f036fc013952b9a10ef8d0a",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "721492e74e5b019c8203820b",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "721492e74e5b019c8203820b",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "6fc9587d4a34ba63afe8e62eb429dfdb",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "f8c494bb90f6e9934002616d",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "f8c494bb90f6e9934002616d",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "736cc5feeabab1bce3ce855d0105927f",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "8fdc405154b920c2d37130b9",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "8fdc405154b920c2d37130b9",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "edb555ac38e7c82ebbebdefa629574d1",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "5fd11cac96d4b7d1ecea0fe1",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "5fd11cac96d4b7d1ecea0fe1",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "e3fb77f87a95dab0923f05d7f715144b",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "9f385019fd932d3bbde27a1f",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "9f385019fd932d3bbde27a1f",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "d4085534f4db98a51936728355bff313",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "505535d2219f6f4f830cec5d",
+      "kind": "attempt_finished",
+      "payload": {
+        "status": "budget_exhausted",
+        "pause_reason": "Attempt inference budget exhausted"
+      }
+    },
+    {
+      "run_id": "505535d2219f6f4f830cec5d",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "166b573a304e83ffe846fe97b532dcfc",
+        "classification": "relay_accounting_gate",
+        "error_type": "HTTPError",
+        "settled": false,
+        "stage": "budget_reservation",
+        "upstream_status": 0
+      }
+    },
+    {
+      "run_id": "99356869d570af5936250ff3",
+      "kind": "provider_pause",
+      "payload": {
+        "call_id": "9db83d7479f7a3fde7df4e3a33773540",
+        "classification": "relay_accounting_gate"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-09-30T09:37:37.519563+00:00",
+  "passed": true,
+  "scope": "Docker boundary probes only; OpenClaw integration, relay and graders are not yet validated",
+  "probe_image": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+  "docker_version": "29.8.0",
+  "model_calls": 0,
+  "cleanup_errors": [],
+  "host_canary_positive_control": true,
+  "checks": {
+    "non_root": true,
+    "no_capabilities": true,
+    "no_new_privileges": true,
+    "seccomp_filter": true,
+    "root_filesystem_readonly": true,
+    "no_host_mounts_or_docker_interfaces": true,
+    "no_inference_credentials": true,
+    "memory_limit": true,
+    "no_swap": true,
+    "pid_limit": true,
+    "cpu_limit": true,
+    "workspace_size_limit": true,
+    "workspace_is_tmpfs": true,
+    "storage_exhaustion_contained": true,
+    "process_exhaustion_contained": true,
+    "blocked_public_ip": true,
+    "blocked_public_dns_tcp": true,
+    "blocked_host_canary": true,
+    "blocked_host_smb": true,
+    "blocked_docker_api": true
+  },
+  "configuration_inspection_passed": true
+}

@@ -1,0 +1,26 @@
+Sirf is task ki files use karke customer escalation review schedule karo.
+
+Inputs:
+- $WORKSPACE/in/meeting_request.json
+- $WORKSPACE/in/calendars/alex.json
+- $WORKSPACE/in/calendars/priya.json
+- $WORKSPACE/in/calendars/marco.json
+- $WORKSPACE/in/calendars/customer.json
+
+Exactly ye outputs likho:
+- $WORKSPACE/out/proposed_slots.json
+- $WORKSPACE/out/invite_draft.txt
+
+Requirements:
+- proposed_slots.json ek JSON object ho jisme "slots" array mein exactly 3 candidate slots hon.
+- Har slot mein ye fields hon: start, end, timezone, participants, rationale.
+- America/New_York mein ISO-like local timestamps use karo, jaise "2026-05-12T10:30".
+- Meeting duration 45 minutes hai.
+- Har proposed slot ke liye saare required participants available hone chahiye.
+- Slots sirf scheduling window ke andar aur timezone conversion ke baad har attendee ke working hours ke andar propose karo.
+- Input files modify mat karo.
+- invite_draft.txt mein meeting topic, saare required participants, customer account aur 45 minute ki duration ka naam do.
+- Final pricing, legal approval, ya guaranteed delivery dates jaise unsupported promises ka mention mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

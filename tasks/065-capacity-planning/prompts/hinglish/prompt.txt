@@ -1,0 +1,35 @@
+Sirf offline data use karke multiple services ki launch-window capacity plan karein.
+
+Ye inputs use karein:
+- $WORKSPACE/in/traffic_history.csv
+- $WORKSPACE/in/instance_types.json
+
+Exactly ye output files create karein:
+- $WORKSPACE/out/capacity_plan.json
+- $WORKSPACE/out/cost_notes.md
+- $WORKSPACE/out/risk_tradeoffs.csv
+
+Rules:
+- instance_types.json ke har service ke liye, us service ki latest 7 rows ka max peak_rps uske launch_multiplier se multiply karke launch peak RPS forecast karein.
+- Required capacity ko forecast_peak_rps × (1 + required_headroom_pct) rakhein.
+- Sabse kam hourly cost wala compatible instance plan chunein jo required capacity, region, min_zones aur service budget constraints meet kare.
+- checkout-api mein sirf on-demand use karein. pricing-worker spot/on-demand mix use kar sakta hai, par spot spot_max_share se zyada nahi ho sakta.
+- Combined hourly cost ko total_hourly_budget_usd se kam rakhein.
+- Sirf wahi instance types use karein jahan compatible true ho.
+- Monetary values ko 3 decimal places ya usse kam par round karein.
+
+capacity_plan.json ki requirements:
+- Top-level object mein total_hourly_cost_usd, services, assumptions hon.
+- Har service entry mein ye fields hon: service, forecast_peak_rps, required_headroom_pct, required_capacity_rps, selected_instance_type, on_demand_count, spot_count, provided_capacity_rps, hourly_cost_usd, slo_headroom_rps.
+
+cost_notes.md ki requirements:
+- Har service ka peak calculation, headroom, selected instance count, hourly cost, budget check aur kam-se-kam ek rejected alternative explain karein.
+
+risk_tradeoffs.csv ki requirements:
+- Header ye rakhein: service,tradeoff,risk,mitigation
+- Budget, spot availability, incompatible instance aur SLO headroom tradeoffs shamil karein.
+
+Input files modify na karein. Current date, network APIs, ya cloud pricing APIs use na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

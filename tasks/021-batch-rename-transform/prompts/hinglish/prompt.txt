@@ -1,0 +1,48 @@
+Ek chhota offline file-standardization pipeline bana rahe ho. Sirf local files use karo.
+
+Input directory:
+- $WORKSPACE/in/raw/
+
+Create karo:
+- $WORKSPACE/out/normalized/
+- $WORKSPACE/out/rename_log.csv
+- $WORKSPACE/out/error_report.csv
+
+Supported transformations:
+1. TXT "Key: Value" revenue files
+   - Valid region/amount/currency records ko JSON mein convert karo.
+   - Output filename format: revenue_<yyyy>_<mm>.json.
+2. Customer CSV exports
+   - Valid rows ko JSON array mein convert karo.
+   - Keys ko name,email,spend mein normalize karo.
+   - Spend numeric hona chahiye.
+   - Bad rows skip karke error_report.csv mein report karo.
+3. Inventory JSON files
+   - items array ko sku,qty columns wale CSV mein convert karo aur sku ke hisaab se sort karo.
+   - Output filename format: inventory_<warehouse>.csv.
+
+Filename rules:
+- $WORKSPACE/in/raw/ ko recursively scan karo.
+- Supported extensions .txt, .csv, aur .json hain; case-insensitive.
+- Unsupported files process mat karo.
+- Output filenames ko lowercase snake_case mein normalize karo.
+- Agar do supported inputs ka output name same banega, toh sorted source path mein pehle waali file ka base name rakho aur baad ke conflicting output names mein __2, __3, etc. append karo.
+
+CSV log requirements:
+- rename_log.csv ka exact header: source,target,action
+- Har successfully transformed supported input ke liye ek row include karo.
+- Rows ko source path ke hisaab se sort karo.
+- Workspace-relative paths use karo, jaise in/raw/...
+
+error_report.csv requirements:
+- Exact header: source,row_or_record,error_type,details
+- Malformed supported records aur unsupported files include karo.
+- Unsupported files report hon, lekin out/normalized mein copy mat hon.
+
+Rules:
+- Input files modify ya delete mat karo.
+- $WORKSPACE/out/normalized/ mein extra files create mat karo.
+- JSON outputs valid UTF-8 JSON hone chahiye.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

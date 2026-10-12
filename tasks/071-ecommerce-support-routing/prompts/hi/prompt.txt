@@ -1,0 +1,42 @@
+आप ecommerce support tickets route कर रहे हैं.
+
+पढ़ें:
+- $WORKSPACE/in/tickets.json
+- $WORKSPACE/in/order_history.csv
+- $WORKSPACE/in/policy.md
+
+हर ticket में `vip_flag`, `prior_ticket_refs` जैसे optional fields हैं. VIP-1 का paalan करें: VIP से **information_request** को तेज़ी मिलती है (`priority=high`), लेकिन INFO-1 evidence rules या fraud holds कभी skip नहीं होते.
+
+बनाएँ:
+- $WORKSPACE/out/routing_decisions.json
+- $WORKSPACE/out/reply_templates.md
+
+routing_decisions.json requirements:
+- Valid JSON array हो जिसमें tickets.json के हर ticket id के लिए **exactly one object** हो (IDs same हों; same ordering ज़रूरी नहीं).
+- हर object में ये keys **zaroor** हों (order id न दिया हो तो empty string `""` use करें): ticket_id, action, policy_basis, order_id, priority, customer_reply_key.
+- action ∈ { refund, reship, escalate_human, information_request }.
+- policy_basis में governing clause token हो (REFUND-1, SHIP-1, ESC-1, INFO-1, FRAUD-1, CONFLICT-1, DISPUTE-1). Semicolon text से multiple citations दे सकते हैं, पर tooling checks के लिए सूची में दिया primary clause ID string ज़रूर होना चाहिए.
+- Conflicts को सावधानी से सुलझाएँ: fraud holds, carrier/system contradictions के muqable warehouse facts, और DISPUTE-1 window के अंदर delivered-status POD disputes — VIP कुछ और kahe तब भी escalate_human.
+- Verification missing हो → information_request + INFO-1.
+- priority ∈ { high, normal }. हर escalate_human ticket के लिए और verification के बिना VIP-backed INFO-1 threads के लिए (policy VIP-1) **high** use करें.
+- हर ticket के लिए customer_reply_key exactly एक stable snake_case identifier हो (templates में वही key use हो).
+
+reply_templates.md requirements:
+- हर ticket के लिए एक section दें, जिसका exact heading हो: `### Template <ticket_id>` (example: `### Template T-1001`).
+- Body empathetic हो और automation से अलग route किए गए outcomes का binding promise न करें.
+- जब तक action यह सुनिश्चित न करे कि automation ने refund, reship या hold removal पहले ही कर दिया है, उनका promise कभी न करें — escalation पर language conditional रखें.
+
+साथ ही बनाएँ:
+- $WORKSPACE/out/escalation_notes.csv
+  पहली row बिल्कुल ये हो: ticket_id,reason,policy_basis,human_team
+  सिर्फ़ हर escalate_human ticket के लिए एक row; reason concise हो (≥8 chars); policy_basis routing_decisions.json से consistent हो; human_team बिल्कुल इनमें से एक हो:
+  - T-1003 → Logistics Escalations
+  - T-1005 → Fraud Review
+  - T-1006 → Trust and Safety
+  - T-1008 → Carrier Claims
+  - T-1009 → Logistics Integrity
+
+Network use न करें. Input फ़ाइलें modify न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

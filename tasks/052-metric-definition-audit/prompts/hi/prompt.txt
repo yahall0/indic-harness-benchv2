@@ -1,0 +1,34 @@
+Approved metric definitions के against dashboard export audit करें.
+
+Inputs:
+- $WORKSPACE/in/metric_definitions.md
+- $WORKSPACE/in/dashboard_export.csv
+
+बनाएँ:
+- $WORKSPACE/out/metric_audit.csv
+- $WORKSPACE/out/equivalence_audit.json
+
+Output columns, इसी exact order में:
+metric_name,dashboard_formula,approved_formula,affected_field,severity
+
+Rules:
+1. Fixtures modify न करें.
+2. सिर्फ़ उन metrics को include करें जिनका dashboard formula approved definition से conflict करता है.
+3. जो metrics approved definition से semantically match करते हैं उन्हें flag न करें. Metric conflict करता है या नहीं, decide करने से पहले metric_definitions.md में दिए equivalent formula notes apply करें.
+4. Revenue, conversion, या cohort-retention denominator errors के लिए severity high होनी चाहिए; average/latency/window या operational SLA denominator errors के लिए medium; बाकी के लिए low.
+5. Conflicting metrics के `dashboard_formula`, `approved_formula`, और `affected_field` text source फ़ाइलें से सीधा copy करें.
+6. metric_audit.csv valid CSV होना चाहिए. Comma वाले fields को quote करें.
+
+equivalence_audit.json requirements:
+- mismatched_metrics, semantically_matching_metrics, severity_by_metric, reason_class_by_metric keys वाला valid JSON.
+- mismatched_metrics, metric_audit.csv में शामिल sorted metric names हों.
+- semantically_matching_metrics, dashboard export के वे sorted metric names हों जिन्हें flag नहीं करना चाहिए, क्योंकि equivalence notes लागू करने के बाद वे semantically match करते हैं.
+- severity_by_metric हर mismatched metric name को उसकी severity से map करें.
+- reason_class_by_metric dashboard export के हर metric को, semantically matching metrics समेत, in labels में से exactly एक से map करें:
+  semantically_equivalent, revenue_formula_mismatch, denominator_mismatch, time_basis_mismatch, window_mismatch, field_mismatch, distinctness_mismatch, missing_filter.
+- जब average, latency, या duration metric timestamp fields substitute करके ग़लत lifecycle interval measure करें, तब `time_basis_mismatch` use करें, भले इससे field names भी बदलें. `field_mismatch` को non-time fields, जैसे opted_in_users versus email_opted_in_users, के लिए रखें.
+
+Network access या external APIs use न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

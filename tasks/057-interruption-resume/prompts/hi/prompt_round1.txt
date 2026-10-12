@@ -1,0 +1,25 @@
+Round 1 of 2: interrupted case review शुरू करें.
+
+Input फ़ाइलें $WORKSPACE/in के अंदर हैं:
+- case_queue.json में सारे review items उनके required order में हैं.
+- interruption_notice.json बताता है कि simulated interruption कहाँ होता है.
+
+सिर्फ़ $WORKSPACE/out/state.json बनाएँ. इस round में $WORKSPACE/out/final_result.json न बनाएँ.
+
+Queue के बिल्कुल पहले तीन items, C-101 से C-103 तक, process करें. हर processed item के लिए calculate करें:
+- risk_score = impact * likelihood
+- जब risk_score >= 12 हो तो action = "escalate", वरना "monitor"
+
+$WORKSPACE/out/state.json valid JSON हो और इसमें ये हों:
+- schema_version: 1
+- run_id: "resume-drill-74"
+- completed_ids: ["C-101", "C-102", "C-103"]
+- queue के बाकी items को order में रखने वाला pending_ids
+- तीन completed items के per_item_results
+- हर completed item के लिए एक entry वाला processing_log; हर entry में id, step: "round1", और source_file: "case_queue.json" हों
+- interrupted_after_id: "C-103"
+
+Input फ़ाइलें modify न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

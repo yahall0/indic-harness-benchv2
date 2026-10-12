@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-09-30T09:26:27.009223+00:00",
+  "reference_files_hashed": 1116,
+  "reference_unchanged": true,
+  "tasks_audited": 106,
+  "candidates": 40,
+  "excluded": 2,
+  "released_triplets": 0,
+  "translated_prompts": 0,
+  "model_calls": 0,
+  "categories": {
+    "Workspace, Tool Use & Multimodal Operations": 15,
+    "Office & Business Communication": 12,
+    "Long-running Autonomy & State Adaptation": 11,
+    "Software Engineering & Codebase Maintenance": 22,
+    "Knowledge, Evidence & Retrieval": 13,
+    "SRE, DevOps & Release Ops": 7,
+    "Data, BI & Finance Analytics": 14,
+    "Vertical Professional Workflows": 12
+  },
+  "public_tunnel_tasks": [
+    "003-browser",
+    "006-access-bilibili",
+    "078-local-api-cursor-retry-ledger",
+    "081-local-html-dom-form-extract",
+    "088-api-contract-mock-client-compat"
+  ],
+  "pause": "Stop before translations. User will switch to GPT-6 Luna and confirm.",
+  "deferred": 64,
+  "planned_runs": 120,
+  "planned_language_versions": 120,
+  "candidate_categories": {
+    "Workspace, Tool Use & Multimodal Operations": 5,
+    "Office & Business Communication": 5,
+    "Long-running Autonomy & State Adaptation": 5,
+    "Knowledge, Evidence & Retrieval": 5,
+    "Software Engineering & Codebase Maintenance": 5,
+    "SRE, DevOps & Release Ops": 5,
+    "Data, BI & Finance Analytics": 5,
+    "Vertical Professional Workflows": 5
+  },
+  "curation_policy": "40 matched tasks; avoid heavy setup/external dependencies; local file tasks, lightweight code repair, and simple mock APIs retained."
+}

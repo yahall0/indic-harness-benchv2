@@ -1,0 +1,18 @@
+test_baseline_shared_file_change_blocks (test_resume.ResumeTests.test_baseline_shared_file_change_blocks) ... ok
+test_capability_digest_thinking_and_context_changes_block (test_resume.ResumeTests.test_capability_digest_thinking_and_context_changes_block) ... ok
+test_failed_request_trace_and_response_are_independently_idempotent (test_resume.ResumeTests.test_failed_request_trace_and_response_are_independently_idempotent) ... ok
+test_final_canary_cannot_replay_existing_journal_or_load_keys (test_resume.ResumeTests.test_final_canary_cannot_replay_existing_journal_or_load_keys) ... ok
+test_only_owned_repair_hold_can_be_cleared (test_resume.ResumeTests.test_only_owned_repair_hold_can_be_cleared) ... ok
+test_provider_timeout_changes_only_transport_and_remains_bounded (test_resume.ResumeTests.test_provider_timeout_changes_only_transport_and_remains_bounded) ... ok
+test_resume_without_authorization_never_loads_keys (test_resume.ResumeTests.test_resume_without_authorization_never_loads_keys) ... ok
+test_unknown_calls_are_settled_once_only_after_resource_retirement (test_resume.ResumeTests.test_unknown_calls_are_settled_once_only_after_resource_retirement) ... ok
+test_empty_final_length_is_preserved_without_fabricated_success (test_streaming.StreamingTests.test_empty_final_length_is_preserved_without_fabricated_success) ... ok
+test_keepalive_comments_do_not_become_model_content (test_streaming.StreamingTests.test_keepalive_comments_do_not_become_model_content) ... ok
+test_model_identity_changes_and_unbounded_tool_indices_fail_closed (test_streaming.StreamingTests.test_model_identity_changes_and_unbounded_tool_indices_fail_closed) ... ok
+test_reasoning_unicode_fragmented_tools_finish_and_authoritative_usage (test_streaming.StreamingTests.test_reasoning_unicode_fragmented_tools_finish_and_authoritative_usage) ... ok
+test_truncated_stream_or_missing_usage_never_releases_reservation (test_streaming.StreamingTests.test_truncated_stream_or_missing_usage_never_releases_reservation) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.820s
+
+OK

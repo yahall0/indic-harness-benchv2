@@ -1,0 +1,15 @@
+**`$WORKSPACE`** के अंदर नीचे दिए गए चरण पूरे करने के लिए **terminal** का इस्तेमाल करें। Harness ने पहले ही खाली **`out/`** directory बना दी है; अगर repo root में `AGENTS.md`, `.git` वगैरह दिखें, तो वे runtime से आए हैं—**उन्हें अनदेखा करें** और outputs सिर्फ **`out/`** के अंदर लिखें।
+
+हर चरण का artifact **single-line text** होना चाहिए (पहली line गिनी जाएगी; आगे या पीछे अतिरिक्त whitespace न हो), जैसा सामान्य CLI इस्तेमाल में बनेगा:
+
+1. **Arithmetic expansion**: **`42`** को **`out/step1.txt`** में लिखें (इसे shell से ही बनाना है, जैसे `echo $((6*7))` या equivalent redirect)।
+
+2. **`basename`**: पहले किसी deep path के अंदर file बनाएँ, जैसे
+   `mkdir -p out/a/b` और `touch out/a/b/c.txt`; फिर उस path का **filename** (directory के बिना) **`out/step2.txt`** में लिखें (जैसे `basename` या equivalent; expected single line **`c.txt`**)।
+
+3. **Pipeline and `tr`**: **`hello`** को **`out/step3.txt`** में लिखें (जैसे `printf 'HELLO\n' | tr '[:upper:]' '[:lower:]'` को redirect करना, या equivalent pipeline)।
+
+दिए गए prompt से आगे किसी external resource या network पर निर्भर न रहें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

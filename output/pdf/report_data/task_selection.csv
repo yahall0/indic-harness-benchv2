@@ -1,0 +1,51 @@
+task_id,category,added_task
+001-file,"Workspace, Tool Use & Multimodal Operations",False
+004-meeting-summary,Office & Business Communication,False
+005-email-triage,Office & Business Communication,False
+007-session-memory,Long-running Autonomy & State Adaptation,False
+012-doc-synthesis,"Knowledge, Evidence & Retrieval",False
+016-code-repair-pytest,Software Engineering & Codebase Maintenance,False
+017-db-doc-consistency,Software Engineering & Codebase Maintenance,False
+019-incident-runbook-synthesis,"SRE, DevOps & Release Ops",False
+020-archive-checksum,"Workspace, Tool Use & Multimodal Operations",False
+021-batch-rename-transform,"Workspace, Tool Use & Multimodal Operations",False
+022-local-rest-api-summary,"Workspace, Tool Use & Multimodal Operations",False
+024-calendar-scheduling-conflict,Office & Business Communication,False
+026-ppt-brief-generation,Office & Business Communication,False
+027-contract-summary-risk,Office & Business Communication,False
+033-offline-knowledge-qa,"Knowledge, Evidence & Retrieval",False
+034-evidence-matrix-claims,"Knowledge, Evidence & Retrieval",False
+035-conflicting-source-resolution,"Knowledge, Evidence & Retrieval",False
+036-citation-consistency-audit,"Knowledge, Evidence & Retrieval",False
+039-repo-architecture-map,Software Engineering & Codebase Maintenance,False
+040-test-coverage-fill,Software Engineering & Codebase Maintenance,False
+041-frontend-state-bug,Software Engineering & Codebase Maintenance,False
+049-excel-like-cleaning,"Data, BI & Finance Analytics",False
+050-multitable-join-analysis,"Data, BI & Finance Analytics",False
+051-sql-query-report,"Data, BI & Finance Analytics",False
+053-anomalous-transaction-detect,"Data, BI & Finance Analytics",False
+057-interruption-resume,Long-running Autonomy & State Adaptation,False
+058-multiday-project-state,Long-running Autonomy & State Adaptation,False
+059-event-update-replan,Long-running Autonomy & State Adaptation,False
+060-task-cancellation-cleanup,Long-running Autonomy & State Adaptation,False
+062-k8s-config-audit,"SRE, DevOps & Release Ops",False
+063-alert-dedup-noise,"SRE, DevOps & Release Ops",False
+064-service-dependency-triage,"SRE, DevOps & Release Ops",False
+067-canary-release-check,"SRE, DevOps & Release Ops",False
+071-ecommerce-support-routing,Vertical Professional Workflows,False
+074-education-grading-feedback,Vertical Professional Workflows,False
+075-platform-appeal-review,Vertical Professional Workflows,False
+028-email-thread-merge,Office & Business Communication,False
+032-customer-followup-draft,Office & Business Communication,False
+044-ci-config-repair,Software Engineering & Codebase Maintenance,False
+048-release-note-changelog,Software Engineering & Codebase Maintenance,False
+054-budget-variance-analysis,"Data, BI & Finance Analytics",False
+065-capacity-planning,"SRE, DevOps & Release Ops",False
+068-product-launch-ops,Vertical Professional Workflows,False
+079-smallfile-batch-reject-ledger,"Workspace, Tool Use & Multimodal Operations",False
+080-schema-roundtrip-conversion,"Workspace, Tool Use & Multimodal Operations",False
+096-offline-knowledge-qa-insufficient-evidence,"Knowledge, Evidence & Retrieval",False
+056-inventory-forecast,"Data, BI & Finance Analytics",True
+073-research-repro-package,Vertical Professional Workflows,True
+089-ab-test-caveat-analysis,"Data, BI & Finance Analytics",True
+106-release-approval-gate-plan,Long-running Autonomy & State Adaptation,True

@@ -1,0 +1,12 @@
+Day 1 of 3: project state initialize karo.
+
+$WORKSPACE/in/day1_brief.json padho. Ye files banao ya update karo:
+- $WORKSPACE/out/project_log.md
+- $WORKSPACE/out/final_plan.json
+
+Day 1 ke liye baseline scope, owners, milestones, risks, tentative decisions aur open questions capture karo. $WORKSPACE/out/final_plan.json mein Day 1 entry wala change_history array aur decisions array hona chahiye. Koi pilot scope tentative ho toh mark karo, taaki later days mein audit history khoye bina use reverse kiya ja sake. Fixture se aage ki dates invent mat karo; fixture ke relative day labels use karo.
+
+Input files modify mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,33 @@
+केवल local files का उपयोग करके offline batch normalization pipeline बनाएँ।
+
+यह input पढ़ें:
+- $WORKSPACE/in/dropbox/
+- $WORKSPACE/in/normalization_rules.yaml
+
+सभी files को recursively scan करें। Supported valid records को दिए गए path में हर input के लिए एक normalized JSON file में बदलें।
+$WORKSPACE/out/normalized/ में रखें। deterministic ledgers लिखें।
+
+समर्थित formats:
+- customer CSV files में ये columns हों: id,name,email,status
+- order JSON files में ये fields हों: order_id, customer_id, amount, currency
+- note TXT files में इस तरह की lines हों: Case: C-100, Owner: ana, Status: open
+
+ये outputs बनाएँ:
+- $WORKSPACE/out/normalized/
+- $WORKSPACE/out/index.csv
+- $WORKSPACE/out/reject_ledger.csv
+- $WORKSPACE/out/batch_summary.json
+
+index.csv header: source_path,target_path,record_type,record_id,status
+reject_ledger.csv header: source_path,error_type,details
+
+नियम:
+- in/dropbox/customers_01.csv जैसे workspace-relative source paths इस्तेमाल करें।
+- index rows और reject rows को source_path से sort करें।
+- एक input file में कई valid records हों, तो हर valid record के लिए अलग normalized JSON file बनाएँ।
+- सभी supported files में record ids को globally unique मानें; बाद में आने वाले duplicate ids reject करें।
+- input files में बदलाव या उन्हें delete न करें।
+- unknown extensions, malformed files, missing required fields, invalid status, invalid amount और duplicate record ids को reject_ledger.csv में दर्ज करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

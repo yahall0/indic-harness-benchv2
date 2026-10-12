@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "harness": "openclaw",
+  "openclaw_version": "2026.9.7",
+  "model": "gpt-oss:20b",
+  "upstream": "https://ollama.com/v1/chat/completions",
+  "temperature": 0,
+  "reasoning_effort": "medium",
+  "attempt_timeout_sec": 600,
+  "max_requests": 30,
+  "max_input_tokens": 200000,
+  "max_output_tokens": 16000,
+  "max_response_tokens": 4096,
+  "max_transport_retries": 2,
+  "credential_environment_variables": [
+    "INDIC_OLLAMA_KEY_1",
+    "INDIC_OLLAMA_KEY_2",
+    "INDIC_OLLAMA_KEY_3",
+    "INDIC_OLLAMA_KEY_4"
+  ],
+  "agent_cpus": 2,
+  "agent_memory_bytes": 3221225472,
+  "agent_pids": 256,
+  "workspace_bytes": 536870912,
+  "concurrent_agent_runs": 1,
+  "target_tasks": 40,
+  "target_task_language_versions": 120,
+  "planned_runs": 120,
+  "paid_credit_purchase": false,
+  "pilot_status": "uniform_200k_input_restart",
+  "protocol_revision": 2,
+  "input_budget_policy": "conservative_utf8_byte_preflight; reconcile actual provider usage after settlement"
+}

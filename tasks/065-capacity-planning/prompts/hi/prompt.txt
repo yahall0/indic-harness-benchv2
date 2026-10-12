@@ -1,0 +1,35 @@
+केवल offline data का उपयोग करके कई services की launch-window capacity plan करें।
+
+इन inputs का उपयोग करें:
+- $WORKSPACE/in/traffic_history.csv
+- $WORKSPACE/in/instance_types.json
+
+ठीक ये output files बनाएँ:
+- $WORKSPACE/out/capacity_plan.json
+- $WORKSPACE/out/cost_notes.md
+- $WORKSPACE/out/risk_tradeoffs.csv
+
+नियम:
+- instance_types.json के हर service के लिए, उस service की हाल की 7 rows में max peak_rps को उसके launch_multiplier से गुणा करके launch peak RPS forecast करें।
+- required capacity = forecast_peak_rps × (1 + required_headroom_pct) रखें।
+- ऐसा सबसे कम hourly cost वाला compatible instance plan चुनें जो required capacity, region, min_zones और service budget की शर्तें पूरी करे।
+- checkout-api में केवल on-demand इस्तेमाल करें। pricing-worker में spot/on-demand mix हो सकता है, लेकिन spot, spot_max_share से अधिक न हो।
+- कुल hourly cost, total_hourly_budget_usd से कम रखें।
+- केवल वही instance types इस्तेमाल करें जिनमें compatible true हो।
+- monetary values को अधिकतम 3 decimal places तक round करें।
+
+capacity_plan.json की आवश्यकताएँ:
+- top-level object में total_hourly_cost_usd, services, assumptions हों।
+- हर service entry में ये शामिल हों: service, forecast_peak_rps, required_headroom_pct, required_capacity_rps, selected_instance_type, on_demand_count, spot_count, provided_capacity_rps, hourly_cost_usd, slo_headroom_rps।
+
+cost_notes.md की आवश्यकताएँ:
+- हर service की peak calculation, headroom, चुने गए instance count, hourly cost, budget check और कम-से-कम एक अस्वीकृत विकल्प समझाएँ।
+
+risk_tradeoffs.csv की आवश्यकताएँ:
+- Header यह हो: service,tradeoff,risk,mitigation
+- budget, spot availability, incompatible instance और SLO headroom के tradeoffs शामिल करें।
+
+input files में बदलाव न करें। current date, network APIs या cloud pricing APIs का उपयोग न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

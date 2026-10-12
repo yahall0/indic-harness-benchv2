@@ -1,0 +1,1 @@
+{"call_id":"51e2cd96ad3dac1571386ea3a5845be5","phase":"request","request":{"max_tokens":8,"messages":[{"content":"Count from one to one hundred; show detailed reasoning.","role":"user"}],"model":"nemotron-3-super","reasoning_effort":"high","stream":true,"stream_options":{"include_usage":true},"temperature":0}}

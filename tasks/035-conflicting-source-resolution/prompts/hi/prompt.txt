@@ -1,0 +1,44 @@
+Task: Conflicting Sources को resolve करें
+
+`$WORKSPACE/in/briefs/` की फ़ाइलों में Project Kestrel के बारे में कई briefs हैं। कुछ तथ्यों में विरोध है। Launch readiness के तथ्यों का निपटारा करने के लिए सिर्फ़ offline materials इस्तेमाल करें।
+
+सामान्य रूप से sources की priority का ये order लागू करें. अगर higher-priority source सिर्फ़ local या scoped fact cover करता है, तो use सिर्फ़ उसी coverage scope में लागू करें:
+
+1. signed_regulator_notice
+2. audited_finance_extract
+3. operations_log
+4. signed vendor/contract addenda
+5. press_release
+6. social_digest
+
+ये outputs बनाएँ:
+
+1. `$WORKSPACE/out/resolved_facts.json`
+   - Required fields: `project_status`, `approved_budget_musd`, `launch_date`, `customer_count`, `primary_vendor`, `service_scope`, `scope_exception`, और `evidence`.
+   - `evidence` एक array हो. हर item में `fact_key`, `source_file`, `quote_or_signal`, और `priority_reason` हों.
+   - `source_file`, `$WORKSPACE/in/` से strict relative path हो, जैसे `briefs/signed_regulator_notice.md`; सिर्फ़ filename न दें.
+   - जब lower-priority source, higher-priority source से conflict करें, तो higher-priority source use करें.
+   - `service_scope` के लिए contract-planned scope और regulator-authorized launch-day scope में farq बताएँ. अगर higher-priority source सिर्फ़ launch-day authorization cover करता हो, तो final fact में उस scoped coverage को reflect करें.
+
+2. `$WORKSPACE/out/uncertainties.md`
+   - ऐसे facts को clearly list करें जिनकी pushti नहीं हो सकती.
+   - कम-से-कम three entries दें और समझाएँ कि available materials kyon insufficient हैं.
+
+3. `$WORKSPACE/out/conflict_matrix.csv`
+   - Header बिल्कुल `fact_key,winning_source,losing_sources,resolution_rationale,coverage_scope` हो.
+   - कम-से-कम five conflict या scoped-coverage areas cover करें: launch date, budget, vendor, customer गिनती, और service scope.
+   - `coverage_scope` समझाएँ की winning source global fact, budget fact, launch-day authorization, contract-planned scope, या किसी और specific scope को cover करता है.
+
+4. `$WORKSPACE/out/source_reliability.json`
+   - JSON array हो, हर used या rejected source के लिए एक item.
+   - हर item में `source_file`, `priority_rank`, `coverage_scope`, `used_for`, `rejected_claims`, और `reliability_note` हों.
+   - Scoped authority को clearly समझाएँ, khaaskar जहाँ regulator authorization और contract-planned service अलग हों.
+
+5. `$WORKSPACE/out/decision_log.md`
+   - Conflicts कैसे resolve हुए, इसका concise chronological explanation.
+   - Launch-day scope और contract-planned scope के अंतर पर कम-से-कम एक paragraph और low-priority rumors reject करने के कारण पर एक paragraph include करें.
+
+Forbidden: internet use न करें; fixtures modify न करें; low-priority rumors को final facts के रूप में न apnayein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

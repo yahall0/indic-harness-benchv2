@@ -1,0 +1,20 @@
+Task: Evidence Attribution के साथ Offline Document QA
+
+सिर्फ़ `$WORKSPACE/in/docs/*.md` और `$WORKSPACE/in/questions.json` के offline materials use कर सकते हैं. Online न जाएँ और materials में न दी गई जानकारी भरने के लिए common knowledge use न करें.
+
+`questions.json` से सारे questions पढ़ें और answers `$WORKSPACE/out/answers.json` में लिखें.
+
+Output format:
+- Top level JSON array होना चाहिए; हर element एक question से correspond करें.
+- हर element में ये fields हों: `question_id`, `answer`, `source_file`, `quote_or_signal`.
+- Materials में जवाब देने के लिए पर्याप्त evidence न हो, तो `answer` बिल्कुल `insufficient_evidence` हो, `source_file` `null` या empty string हो, और `quote_or_signal` में बताएँ कि किस type का evidence missing है.
+- जवाब दिए जा सकने वाले questions के लिए `source_file`, `docs/` के अंदर का relative path हो, जैसे `docs/operations.md`.
+- `quote_or_signal` में छोटा quote या locate करने का signal दें जो जवाब को support करें; सिर्फ़ “see document” न लिखें.
+
+Prohibitions:
+- Fixtures की किसी फ़ाइल को modify न करें.
+- Extra Markdown wrapping output न करें.
+- जिनका जवाब नहीं दिया जा सकता, उनके answers fabricate न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

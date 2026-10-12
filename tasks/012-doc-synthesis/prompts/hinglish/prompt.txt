@@ -1,0 +1,44 @@
+Task: multi-document synthesis aur contradictions detect karna
+
+Ek hi incident ke baare mein paanch documents `$WORKSPACE/in/` ke andar hain:
+- doc1_news_site_a.md (NewsSite A article)
+- doc2_news_site_b.md (NewsSite B article)
+- doc3_social_media.md (social posts / afwaahen)
+- doc4_official_statement.md (official statement)
+- doc5_expert_analysis.md (expert analysis)
+
+In documents mein conflicts hain aur errors ya bias ho sakta hai.
+
+Neeche ke sab tasks complete karo; sab kuch `$WORKSPACE/out/` ke andar likho:
+
+1. Har document ka trust score (**trustworthiness.json**)
+   Har document ko 0–10 score do aur short rationale likho (jaise source authority, internal consistency, evidence chain).
+   Shape:
+   {
+     "doc1_news_site_a.md": {"score": 6, "reason": "specific numbers but sensational tone"},
+     ...
+   }
+
+2. Contradictions (**contradictions.json**)
+   Key contradictions ki list do (kam-se-kam 3), aur batao kaunse documents involve hain; representative quotes/snippets cite karo.
+   Shape:
+   {
+     "contradictions": [
+       {
+         "claim": "example axis of disagreement",
+         "documents": ["doc1", "doc2", "doc4"],
+         "quotes": ["...", "...", "..."],
+         "resolution": "your best-supported resolution"
+       }
+     ]
+   }
+
+3. Final narrative (**final_report.md**)
+   - Cross-checking ke basis par sabse credible account (English prose ke lagbhag 1200–3500 characters).
+   - **Uncertainty / disputes** section.
+   - `[filename]` tags se evidence pointers.
+
+Scoring reasonable trust scores, contradictions ki thorough coverage, aur logical, evidence-backed final report ko importance deta hai.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

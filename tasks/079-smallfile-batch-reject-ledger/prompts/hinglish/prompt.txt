@@ -1,0 +1,33 @@
+Sirf local files use karke offline batch normalization pipeline banayein.
+
+Ye input padhein:
+- $WORKSPACE/in/dropbox/
+- $WORKSPACE/in/normalization_rules.yaml
+
+Saari files recursively scan karein. Supported valid records ko diye gaye path mein har input ke liye ek normalized JSON file mein convert karein.
+$WORKSPACE/out/normalized/ mein rakhein. Deterministic ledgers likhein.
+
+Supported formats:
+- Customer CSV files mein columns hon: id,name,email,status
+- Order JSON files mein fields hon: order_id, customer_id, amount, currency
+- Note TXT files mein is tarah ki lines hon: Case: C-100, Owner: ana, Status: open
+
+Ye outputs create karein:
+- $WORKSPACE/out/normalized/
+- $WORKSPACE/out/index.csv
+- $WORKSPACE/out/reject_ledger.csv
+- $WORKSPACE/out/batch_summary.json
+
+index.csv header: source_path,target_path,record_type,record_id,status
+reject_ledger.csv header: source_path,error_type,details
+
+Rules:
+- in/dropbox/customers_01.csv jaise workspace-relative source paths use karein.
+- Index rows aur reject rows ko source_path ke hisab se sort karein.
+- Ek input file mein multiple valid records hon, to har valid record ke liye alag normalized JSON file banayein.
+- Sabhi supported files mein record ids globally unique hone chahiye; baad mein aaye duplicate ids reject karein.
+- Input files ko modify ya delete na karein.
+- Unknown extensions, malformed files, missing required fields, invalid status, invalid amount aur duplicate record ids ko reject_ledger.csv mein record karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

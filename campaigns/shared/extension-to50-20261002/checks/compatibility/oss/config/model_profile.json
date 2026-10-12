@@ -1,0 +1,1 @@
+{"agent_thinking":"medium","context_window":65536,"model":"gpt-oss:20b","provider_context_window":131072,"provider_reasoning_effort":"medium","response_model_aliases":["gpt-oss:20b"],"thinking":true,"thinking_control_semantics":"Same medium effort as the original GPT-OSS-20B campaign."}

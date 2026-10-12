@@ -1,0 +1,48 @@
+Local event logs se product funnel analyze karein, cohorts compare karein aur data-quality caveats batayein.
+
+Ye input padhein:
+- $WORKSPACE/in/events.jsonl
+
+Ye outputs create karein:
+- $WORKSPACE/out/funnel_metrics.json
+- $WORKSPACE/out/dropoff_insights.md
+- $WORKSPACE/out/cohort_comparison.csv
+- $WORKSPACE/out/stage_user_sets.json
+
+Funnel stages ko isi order mein rakhein:
+visit, signup, verify_email, trial_start, purchase
+
+Rules:
+1. Fixtures modify na karein.
+2. Jahan user_agent mein "bot", "crawler", ya "synthetic" ho, case-insensitive tareeke se bot traffic exclude karein. Kisi user ka koi bhi event bot traffic ho to poore user ko exclude karke uska user_id excluded_bot_users mein list karein.
+3. Funnel evaluate karne se pehle har user ke non-bot events timestamp se sort karein. CSV/JSONL row order guaranteed nahi hai.
+4. Required order mein har stage tak pahunche unique users count karein. Previous stage se pehle aaye stage events ignore karein, par usi stage ka baad mein aaya valid event count karein.
+5. Ek user ke repeated valid stage events deduplicate karein.
+6. funnel_metrics.json mein ye fields hone chahiye:
+   - stages: objects ka array, jinmein stage, users, conversion_from_visit, conversion_from_previous, dropoff_from_previous, dropoff_rate_from_previous hon.
+   - largest_dropoff: from_stage, to_stage, lost_users, dropoff_rate wala object.
+   - excluded_bot_users: exclude kiye bot user ids ka array.
+   - data_quality: ignored_order_events aur deduplicated_stage_events wala object.
+     ignored_order_events un ignored event records ki ginti hai jo required previous stage se pehle aaye.
+     deduplicated_stage_events un repeated valid stage event records ko count karta hai jinhe us user aur stage ke pehle valid event ke baad ignore kiya.
+7. visit ke liye conversion_from_previous 1.0 aur dropoff fields 0 hone chahiye.
+8. Rates ko four decimals tak round karein.
+9. largest_dropoff woh stage transition hai jiska dropoff_rate_from_previous sabse bada ho.
+10. Cohort metrics mein har user ko uski pehli valid non-bot visit ke cohort mein assign karein. Har observed non-bot cohort include karein.
+11. cohort_comparison.csv ka header ye ho:
+   cohort,visit_users,purchase_users,purchase_rate,largest_dropoff_transition
+   Har cohort ke liye ek row include karein.
+   Rows ko cohort name ke ascending order mein sort karein.
+12. dropoff_insights.md mein largest dropoff transition batayein, cohorts compare karein, aur sample size ya ordering noise par kam-se-kam ek caveat dein.
+
+stage_user_sets.json ki requirements:
+- In keys wala valid JSON dein: stage_users, largest_dropoff_lost_user_ids, ignored_order_user_ids, deduplicated_stage_user_ids.
+- stage_users mein har funnel stage ke liye us stage tak sahi order mein pahunche non-bot user_ids ki sorted list dein.
+- largest_dropoff_lost_user_ids mein largest_dropoff transition par chhoote user_ids ki sorted list dein.
+- ignored_order_user_ids mein un users ko list karein jinka kam-se-kam ek event prerequisite stage se pehle aane ke karan ignore hua.
+- deduplicated_stage_user_ids mein un users ko list karein jinka kam-se-kam ek repeated valid stage event us user aur stage ke pehle valid event ke baad ignore hua.
+
+Network access ya external APIs use na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

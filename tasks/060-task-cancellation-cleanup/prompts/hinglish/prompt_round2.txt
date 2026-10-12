@@ -1,0 +1,19 @@
+Round 2 of 2: cancel karke cleanup karo.
+
+$WORKSPACE/out/state.json, $WORKSPACE/out/tmp/export_manifest_draft.json aur $WORKSPACE/in/cancel_notice.json padho. Cancellation authoritative hai.
+
+Update/create karo:
+- $WORKSPACE/out/state.json
+- $WORKSPACE/out/cancellation_report.md
+- $WORKSPACE/out/audit.log
+
+Required behavior:
+- state.status "cancelled" hona chahiye
+- state.cancel_reason notice se match kare
+- $WORKSPACE/out/tmp ke andar temporary files aur directories remove karo
+- $WORKSPACE/out/audit.log aur cancellation_report.md mein audit trail preserve karo
+- Input files delete ya modify mat karo
+- Final export files mat banao
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

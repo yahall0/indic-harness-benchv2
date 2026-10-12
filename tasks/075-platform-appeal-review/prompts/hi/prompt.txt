@@ -1,0 +1,41 @@
+Platform policy bundle के against moderation appeals review कर रहे हैं.
+
+**Mandatory execution constraint:** सभी inputs पढ़ने के बाद, run समाप्त होने से **पहले**, तीनों deliverables को `$WORKSPACE/out/` में disk पर लिखना **अनिवार्य** है:
+1. `appeal_decisions.csv`
+2. `explanations.md`
+3. `redaction_audit.csv`
+
+फ़ाइल-writing tools या shell redirection use करें, ताकि in paths पर real content वाली फ़ाइलें मौजूद हों; सिर्फ़ chat में उनका varnan न करें. अगर `$WORKSPACE/out/` missing हो, तो use बनाएँ, फिर फ़ाइलें लिखें.
+
+फ़ैसला करने से पहले नीचे दिया गया हर input पढ़ें:
+- $WORKSPACE/in/moderation_policy.md
+- $WORKSPACE/in/policy_amendments.md
+- $WORKSPACE/in/case_files/*.json
+
+जहाँ उल्लेख हो, amendments 2026-01-01 को या उसके बाद दर्ज appeals पर लागू होते हैं। यदि case JSON में `appeal_filed` इस तारीख़ से पहले है, तो `prior_harass_strikes` की संख्या अधिक होने पर भी META-2, PRECVIO-1 को रोकता है। harassment tier की शर्त पूरी करने वाली appeals पर EDGE-1 लागू करें।
+
+बनाएँ:
+- $WORKSPACE/out/appeal_decisions.csv
+- $WORKSPACE/out/explanations.md
+
+appeal_decisions.csv requirements:
+- Header row के columns बिल्कुल ये नाम और order हों: case_id,decision,final_action,policy_basis,confidence
+- case_files/ के अंदर मौजूद हर case JSON फ़ाइल के लिए exactly एक row हो.
+- decision इनमें से एक हो: uphold, overturn, downgrade.
+- final_action, decision और policy bundle (amendments समेत) के साथ consistent हो.
+- policy_basis में हर applicable clause ID शामिल हो; multiple IDs को semicolons से अलग करें (जैसे PRECVIO-1;EDGE-1). IDs policy documents से match होनी चाहिए.
+- हर row के लिए confidence calibration से **exactly** match करें; सिर्फ़ **high**, **medium**, या **low** use करें: clear-cut hate/counterspeech → **high**; compromise narratives, EDGE/PRECVIO/MISLABEL interplay, PRECVIO vs EDGE/META-2 date logic, या advisory automation conflicts → आम तौर पर **medium**; वास्तव में ambiguous fact patterns → **low**.
+
+explanations.md requirements:
+- **हर** case id cover करें, हर एक के लिए एक Markdown section हो जिसका exact heading `### Case <case_id>` हो (example: `### Case A-01`).
+- **हर** section के अंदर उस case के `appeal_decisions.csv` में listed **हर** clause ID cite करें, facts summarize करें (जहाँ relevant हो advisory automation समेत), और पूरी फ़ाइल में सिर्फ़ एक बार नहीं, **हर** section में rather than या instead of include करें.
+
+साथ ही बनाएँ:
+- $WORKSPACE/out/redaction_audit.csv
+  Header columns के नाम और order बिल्कुल ये हों: case_id,redacted_field,redaction_reason
+  Sensitive payload paths को explicit करने के लिए पर्याप्त rows दें—जब case JSON में multiple sensitive keys (`reporter`, `reporter_email`, `reporter_alias`, …) हों, तो उन paths के नाम अलग-अलग rows में दें (हर case id के लिए minimum **one row**, और multiple fields लागू हों तो ज़्यादा rows).
+
+Network use न करें. Input फ़ाइलें modify न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,47 @@
+﻿task_id,category,english,hindi,hinglish,english_status,hindi_status,hinglish_status
+001-file,"Workspace, Tool Use & Multimodal Operations",1.0,1.0,1.0,completed,completed,completed
+004-meeting-summary,Office & Business Communication,1.0,0.7778,1.0,completed,completed,completed
+005-email-triage,Office & Business Communication,0,0.875,0,completed,completed,completed
+007-session-memory,Long-running Autonomy & State Adaptation,1.0,1.0,1.0,completed,completed,completed
+012-doc-synthesis,"Knowledge, Evidence & Retrieval",0.0,0.0,0.0,completed,completed,budget_exhausted
+016-code-repair-pytest,Software Engineering & Codebase Maintenance,1.0,1.0,0.9,completed,completed,completed
+017-db-doc-consistency,Software Engineering & Codebase Maintenance,1.0,0.9606,0.1,completed,completed,completed
+019-incident-runbook-synthesis,"SRE, DevOps & Release Ops",0.0,0.715,0.0,budget_exhausted,completed,completed
+020-archive-checksum,"Workspace, Tool Use & Multimodal Operations",1.0,0.35714285714285715,0.14285714285714285,budget_exhausted,budget_exhausted,completed
+021-batch-rename-transform,"Workspace, Tool Use & Multimodal Operations",0.35294117647058826,0.23529411764705882,0.35294117647058826,completed,completed,completed
+022-local-rest-api-summary,"Workspace, Tool Use & Multimodal Operations",0.0,0.782608695652174,0.043478260869565216,completed,completed,budget_exhausted
+024-calendar-scheduling-conflict,Office & Business Communication,0.4444,0.4444,0.5556,completed,completed,completed
+026-ppt-brief-generation,Office & Business Communication,0.2,0.8,0.2,completed,completed,completed
+027-contract-summary-risk,Office & Business Communication,0.1429,0.0714,0.0714,completed,completed,completed
+028-email-thread-merge,Office & Business Communication,0.0909,0.7273,0.0909,budget_exhausted,completed,completed
+032-customer-followup-draft,Office & Business Communication,0.8571,0.5714,0.7143,completed,completed,completed
+033-offline-knowledge-qa,"Knowledge, Evidence & Retrieval",0.0,0.0,0.0,completed,completed,completed
+034-evidence-matrix-claims,"Knowledge, Evidence & Retrieval",0.0,0.0,0.84,completed,completed,completed
+035-conflicting-source-resolution,"Knowledge, Evidence & Retrieval",0.6899,0.0,0.6585,completed,completed,completed
+036-citation-consistency-audit,"Knowledge, Evidence & Retrieval",0.0,0.0,0.7628,completed,completed,budget_exhausted
+039-repo-architecture-map,Software Engineering & Codebase Maintenance,0.12,0.4595,0.12,budget_exhausted,budget_exhausted,completed
+040-test-coverage-fill,Software Engineering & Codebase Maintenance,0.4738,0.4738,0.4186,completed,completed,completed
+041-frontend-state-bug,Software Engineering & Codebase Maintenance,0.2039,0.2039,0.2039,completed,completed,completed
+044-ci-config-repair,Software Engineering & Codebase Maintenance,0.72,0.72,0.677,completed,completed,budget_exhausted
+048-release-note-changelog,Software Engineering & Codebase Maintenance,0.1,0.3877,0.1,completed,completed,completed
+049-excel-like-cleaning,"Data, BI & Finance Analytics",0.5988,0.1261,0.5698,completed,completed,completed
+050-multitable-join-analysis,"Data, BI & Finance Analytics",0.1283,0.1283,0.1283,budget_exhausted,completed,completed
+051-sql-query-report,"Data, BI & Finance Analytics",0.0864,0.0864,0.0864,completed,budget_exhausted,completed
+053-anomalous-transaction-detect,"Data, BI & Finance Analytics",0.9358,0.8396,0.0904,completed,completed,budget_exhausted
+054-budget-variance-analysis,"Data, BI & Finance Analytics",0.6116,0.4047,0.69,completed,completed,completed
+057-interruption-resume,Long-running Autonomy & State Adaptation,0.7308,0.8077,0.1429,completed,completed,completed
+058-multiday-project-state,Long-running Autonomy & State Adaptation,0.2969,0.2344,0.0,budget_exhausted,completed,budget_exhausted
+059-event-update-replan,Long-running Autonomy & State Adaptation,0.1429,0.3636,0.1429,completed,completed,completed
+060-task-cancellation-cleanup,Long-running Autonomy & State Adaptation,0.49,0.49,0.49,completed,completed,completed
+062-k8s-config-audit,"SRE, DevOps & Release Ops",0.8699,0.14,0.14,completed,completed,completed
+063-alert-dedup-noise,"SRE, DevOps & Release Ops",0.06,1.0,1.0,completed,completed,completed
+064-service-dependency-triage,"SRE, DevOps & Release Ops",0.06,0.06,0.06,completed,completed,completed
+065-capacity-planning,"SRE, DevOps & Release Ops",0.7927,0.8054,0.2818,completed,completed,completed
+067-canary-release-check,"SRE, DevOps & Release Ops",0.06,0.06,0.06,completed,completed,completed
+068-product-launch-ops,Vertical Professional Workflows,0.6441,0.7288,0.8136,completed,completed,completed
+071-ecommerce-support-routing,Vertical Professional Workflows,0.0,0.45,0.0,completed,completed,budget_exhausted
+074-education-grading-feedback,Vertical Professional Workflows,0.1,0.74,0.4,completed,completed,completed
+075-platform-appeal-review,Vertical Professional Workflows,0.28,0.28,0.28,completed,completed,completed
+079-smallfile-batch-reject-ledger,"Workspace, Tool Use & Multimodal Operations",0.21027817067421026,0.02,0.21027817067421026,completed,budget_exhausted,completed
+080-schema-roundtrip-conversion,"Workspace, Tool Use & Multimodal Operations",0.7391304347826086,0.9130434782608695,0.7391304347826086,completed,completed,completed
+096-offline-knowledge-qa-insufficient-evidence,"Knowledge, Evidence & Retrieval",0.0,0.5707,0.0,completed,completed,completed

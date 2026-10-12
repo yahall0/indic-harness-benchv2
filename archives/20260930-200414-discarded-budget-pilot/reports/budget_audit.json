@@ -1,0 +1,204 @@
+{
+  "snapshot_utc": "2026-09-30T14:27:32.024942+00:00",
+  "budget_stopped_runs": 13,
+  "tasks": [
+    "012-doc-synthesis",
+    "017-db-doc-consistency",
+    "019-incident-runbook-synthesis",
+    "020-archive-checksum",
+    "021-batch-rename-transform"
+  ],
+  "all_observed_budget_stops_input_preflight": true,
+  "input_actual_range": [
+    26785,
+    63183
+  ],
+  "output_actual_range": [
+    883,
+    6301
+  ],
+  "requests_range": [
+    5,
+    11
+  ],
+  "reservation_to_actual_ratio_median": 5.71,
+  "reservation_to_actual_ratio_range": [
+    5.07,
+    5.92
+  ],
+  "explanation": "Every settled call releases unused reservation correctly. Rejection is caused by actual cumulative usage plus a worst-case byte reservation for the next context exceeding 100000. No request was forwarded after this guard failed.",
+  "uncertainty": "Rejected next requests were never forwarded; their actual token usage and whether extra budget would enable completion are unknown.",
+  "changes_made": "None: protocol and current execution remain unchanged.",
+  "recommendation": "If relaxing the budget, use a uniform 200000-input-token-cap cohort across all 40 task triplets; retain 30 requests, 16000 output tokens and existing timeout. Archive current study as pilot rather than mixing budgets or selectively retrying low scores.",
+  "runs": [
+    {
+      "task_id": "012-doc-synthesis",
+      "language": "hinglish",
+      "requests": 11,
+      "actual_input_tokens": 62538,
+      "unused_input_tokens": 37462,
+      "actual_output_tokens": 1147,
+      "elapsed_sec": 49.735,
+      "last_request_byte_reservation": 38462,
+      "last_request_actual_input": 6703,
+      "last_request_reservation_ratio": 5.74,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "012-doc-synthesis",
+      "language": "en",
+      "requests": 11,
+      "actual_input_tokens": 63183,
+      "unused_input_tokens": 36817,
+      "actual_output_tokens": 2308,
+      "elapsed_sec": 62.484,
+      "last_request_byte_reservation": 39521,
+      "last_request_actual_input": 6909,
+      "last_request_reservation_ratio": 5.72,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "012-doc-synthesis",
+      "language": "hi",
+      "requests": 11,
+      "actual_input_tokens": 61830,
+      "unused_input_tokens": 38170,
+      "actual_output_tokens": 1146,
+      "elapsed_sec": 68.047,
+      "last_request_byte_reservation": 38200,
+      "last_request_actual_input": 6544,
+      "last_request_reservation_ratio": 5.84,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "017-db-doc-consistency",
+      "language": "hi",
+      "requests": 9,
+      "actual_input_tokens": 59821,
+      "unused_input_tokens": 40179,
+      "actual_output_tokens": 5001,
+      "elapsed_sec": 94.844,
+      "last_request_byte_reservation": 45390,
+      "last_request_actual_input": 8416,
+      "last_request_reservation_ratio": 5.39,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "017-db-doc-consistency",
+      "language": "hinglish",
+      "requests": 9,
+      "actual_input_tokens": 58951,
+      "unused_input_tokens": 41049,
+      "actual_output_tokens": 3680,
+      "elapsed_sec": 72.75,
+      "last_request_byte_reservation": 42101,
+      "last_request_actual_input": 8081,
+      "last_request_reservation_ratio": 5.21,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "017-db-doc-consistency",
+      "language": "en",
+      "requests": 8,
+      "actual_input_tokens": 58147,
+      "unused_input_tokens": 41853,
+      "actual_output_tokens": 6301,
+      "elapsed_sec": 88.797,
+      "last_request_byte_reservation": 46169,
+      "last_request_actual_input": 8889,
+      "last_request_reservation_ratio": 5.19,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "019-incident-runbook-synthesis",
+      "language": "hinglish",
+      "requests": 10,
+      "actual_input_tokens": 59477,
+      "unused_input_tokens": 40523,
+      "actual_output_tokens": 883,
+      "elapsed_sec": 39.547,
+      "last_request_byte_reservation": 39150,
+      "last_request_actual_input": 7063,
+      "last_request_reservation_ratio": 5.54,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "019-incident-runbook-synthesis",
+      "language": "en",
+      "requests": 9,
+      "actual_input_tokens": 56075,
+      "unused_input_tokens": 43925,
+      "actual_output_tokens": 3692,
+      "elapsed_sec": 68.109,
+      "last_request_byte_reservation": 44001,
+      "last_request_actual_input": 8281,
+      "last_request_reservation_ratio": 5.31,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "019-incident-runbook-synthesis",
+      "language": "hi",
+      "requests": 9,
+      "actual_input_tokens": 56036,
+      "unused_input_tokens": 43964,
+      "actual_output_tokens": 3434,
+      "elapsed_sec": 68.547,
+      "last_request_byte_reservation": 41833,
+      "last_request_actual_input": 7518,
+      "last_request_reservation_ratio": 5.56,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "020-archive-checksum",
+      "language": "en",
+      "requests": 10,
+      "actual_input_tokens": 59007,
+      "unused_input_tokens": 40993,
+      "actual_output_tokens": 3350,
+      "elapsed_sec": 67.531,
+      "last_request_byte_reservation": 41024,
+      "last_request_actual_input": 7794,
+      "last_request_reservation_ratio": 5.26,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "020-archive-checksum",
+      "language": "hi",
+      "requests": 8,
+      "actual_input_tokens": 31834,
+      "unused_input_tokens": 68166,
+      "actual_output_tokens": 1232,
+      "elapsed_sec": 73.656,
+      "last_request_byte_reservation": 32835,
+      "last_request_actual_input": 5807,
+      "last_request_reservation_ratio": 5.65,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "020-archive-checksum",
+      "language": "hinglish",
+      "requests": 9,
+      "actual_input_tokens": 58789,
+      "unused_input_tokens": 41211,
+      "actual_output_tokens": 3934,
+      "elapsed_sec": 74.5,
+      "last_request_byte_reservation": 41945,
+      "last_request_actual_input": 8252,
+      "last_request_reservation_ratio": 5.08,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    },
+    {
+      "task_id": "021-batch-rename-transform",
+      "language": "hi",
+      "requests": 5,
+      "actual_input_tokens": 26785,
+      "unused_input_tokens": 73215,
+      "actual_output_tokens": 4465,
+      "elapsed_sec": 131.578,
+      "last_request_byte_reservation": 44129,
+      "last_request_actual_input": 8454,
+      "last_request_reservation_ratio": 5.22,
+      "budget_trigger": "input preflight bound: output and request-count guards remained below limits"
+    }
+  ]
+}

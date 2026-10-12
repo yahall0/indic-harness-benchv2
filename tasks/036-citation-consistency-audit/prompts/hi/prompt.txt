@@ -1,0 +1,37 @@
+Task: Citation Consistency Audit
+
+Inputs:
+- `$WORKSPACE/in/paper_draft.md`
+- `$WORKSPACE/in/bib.json`
+
+In-text citations और bibliography की consistency audit करें, और ये outputs बनाएँ:
+
+1. `$WORKSPACE/out/citation_errors.csv`
+   - Header बिल्कुल `error_type,citation_key,details,expected_fix,evidence_span` हो.
+   - कम-से-कम ये cases cover करें: draft में मौजूद लेकिन `bib.json` से missing citations, bibliography entries जो draft में cited नहीं हैं, author mismatches, और year mismatches.
+   - ये भी cover करें: same-author same-year suffix needs जैसे 2024a/2024b, duplicate या conflicting bibliography keys, और title/DOI inconsistencies.
+   - `error_type` में ये enum use करें: `missing_bib`, `orphan_bib`, `author_mismatch`, `year_mismatch`, `suffix_needed`, `duplicate_key`, `doi_title_mismatch`.
+   - हर error point अपनी row में हो; multiple `citation_key` values को एक row में merge न करें.
+   - `evidence_span` में draft या bibliography का छोटा अंश हो जो error judgment को support करें; सिर्फ़ filename न दें.
+
+2. `$WORKSPACE/out/corrected_bib.json`
+   - Valid JSON होना चाहिए.
+   - Draft से determine हो सकने वाली author/year errors सही करें.
+   - Orphan bibliography entries हटाएँ और `bib.json` में missing draft citations add करें; जिन fields का पता न चल सके unmein `"UNKNOWN"` use कर सकते हैं.
+   - Indirect Rao mention के लिए अलग bibliography entry न बनाएँ, जब तक draft की reference list use explicitly list न करती हो.
+
+3. `$WORKSPACE/out/audit_notes.md`
+   - हर error type का basis समझाएँ.
+   - स्पष्ट बताएँ कि किन fields में `UNKNOWN` use करते हैं और state करें की कोई internet lookup नहीं हुआ.
+   - 2024a/2024b suffixes का ordering basis समझाएँ और Rao को अलग bibliography entry क्यों नहीं बनाना चाहिए, यह भी बताएँ.
+
+4. `$WORKSPACE/out/citation_graph.json`
+   - `in_text_citations`, `bibliography_entries`, और `key_renames` keys वाला JSON object.
+   - `in_text_citations` हर draft citation signal को corrected bibliography key या missing/orphan/error status से map करें.
+   - `bibliography_entries` बताएँ की हर original bibliography entry kept, renamed, removed, या split हुई.
+   - `key_renames` में Lin, Ortega, और Chen key changes explicitly include हों.
+
+Forbidden: internet use न करें; fixtures modify न करें; `citation_errors.csv` को Markdown table के रूप में न लिखें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

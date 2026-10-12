@@ -1,0 +1,11 @@
+**`$WORKSPACE/in/meeting_transcript.txt`** (product meeting ka full transcript) padho aur **English meeting summary** ko **`$WORKSPACE/out/meeting_summary.txt`** mein likho (UTF-8 text; zaroorat ho toh pehle `mkdir -p out` se directory banao).
+
+**Content and format:**
+1. English mein **one to three paragraphs** likho; inmein **main topics**, **agreed conclusions ya decisions**, **major risks ya open issues**, aur **clear follow-ups** cover hon (sentence-by-sentence recap zaroori nahi, par reader full transcript padhe bina discussion samajh sake). **Sirf transcript-supported baatein shamil karo**—speculate ya invent mat karo.
+2. **Length**: ek typical **short workplace summary** target karo—kuch slogan-like bullets se clearly zyada, aur transcript copy karne se clearly chhota; most readers ise **about one to two minutes** mein padh saken. Ultra-short bullet dumps aur bahut lambe essays se bacho.
+3. **Information density**: summary coherent rahe aur transcript ke kuch **recurring ya anchoring terms** naturally include kare (org/product-line names, phase ya release wording, resource ya constraint language, named technical ya process objects, etc.); “complete” dikhne ke liye unrelated terms mat bharo.
+
+**Output path:** sirf `out/meeting_summary.txt`.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

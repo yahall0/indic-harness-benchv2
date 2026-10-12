@@ -1,0 +1,34 @@
+Approved metric definitions ke against dashboard export audit karo.
+
+Inputs:
+- $WORKSPACE/in/metric_definitions.md
+- $WORKSPACE/in/dashboard_export.csv
+
+Banao:
+- $WORKSPACE/out/metric_audit.csv
+- $WORKSPACE/out/equivalence_audit.json
+
+Output columns, isi exact order mein:
+metric_name,dashboard_formula,approved_formula,affected_field,severity
+
+Rules:
+1. Fixtures modify mat karo.
+2. Sirf woh metrics include karo jinka dashboard formula approved definition se conflict karta hai.
+3. Approved definition se semantically match karne wale metrics flag mat karo. Metric conflict karta hai ya nahi decide karne se pehle metric_definitions.md ke equivalent formula notes apply karo.
+4. Revenue, conversion, ya cohort-retention denominator errors ki severity high ho; average/latency/window ya operational SLA denominator errors ki medium; baaki ki low.
+5. Conflicting metrics ke `dashboard_formula`, `approved_formula`, aur `affected_field` ka text source files se directly copy karo.
+6. metric_audit.csv valid CSV ho. Commas wale fields quote karo.
+
+equivalence_audit.json requirements:
+- mismatched_metrics, semantically_matching_metrics, severity_by_metric, reason_class_by_metric keys wala valid JSON.
+- mismatched_metrics, metric_audit.csv mein shamil sorted metric names hon.
+- semantically_matching_metrics, dashboard export ke sorted metric names hon jinhe flag nahi karna kyunki equivalence notes apply karne ke baad semantically match hote hain.
+- severity_by_metric har mismatched metric name ko uski severity se map kare.
+- reason_class_by_metric dashboard export ke har metric ko, semantically matching metrics samet, in labels mein se exactly ek se map kare:
+  semantically_equivalent, revenue_formula_mismatch, denominator_mismatch, time_basis_mismatch, window_mismatch, field_mismatch, distinctness_mismatch, missing_filter.
+- Average, latency, ya duration metric timestamp fields substitute karke galat lifecycle interval measure kare toh `time_basis_mismatch` use karo, bhale field names bhi badalte hon. `field_mismatch` ko non-time fields, jaise opted_in_users versus email_opted_in_users, ke liye rakho.
+
+Network access ya external APIs use mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

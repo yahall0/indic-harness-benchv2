@@ -1,0 +1,1 @@
+{"call_id":"1ba933834fd9e3d392f7e1d75ef485a7","phase":"request","request":{"max_tokens":8,"messages":[{"content":"Count from one to one hundred; show detailed reasoning.","role":"user"}],"model":"gpt-oss:20b","reasoning_effort":"medium","stream":true,"stream_options":{"include_usage":true},"temperature":0}}

@@ -1,0 +1,27 @@
+Round 2 of 2: late policy update ke baad rollout plan revise karein.
+
+Padhein:
+- $WORKSPACE/out/original_plan.json
+- $WORKSPACE/out/state.json
+- $WORKSPACE/in/round2_update_notice.json
+- $WORKSPACE/in ke andar wali original input files
+
+Create karein:
+- $WORKSPACE/out/revised_plan.json
+- $WORKSPACE/out/diff.md
+- $WORKSPACE/out/state.json update karein
+
+Requirements:
+- Late update apply karein:
+  - EU launch_gate ko original EU launch_gate se kam-se-kam 48 hours baad shift karein.
+  - EU customer communications ko EU launch_gate ke saath shift karein aur launch gate se pehle rakhein.
+  - APAC owner Priya available nahi hain; APAC decisions mein Priya ko replace karein.
+  - Har region ki support training mein "refund exception drill" artifact add karein.
+- Original plan ke useful, unaffected AMER decisions preserve karein.
+- $WORKSPACE/out/diff.md mein Added, Removed, Changed, aur Unchanged naam ke sections hone chahiye.
+- $WORKSPACE/out/state.json mein round, plan_version, decisions, source_files_read, changed_decision_ids aur unchanged_decision_ids record karein.
+- Input files modify na karein.
+- Ye sirf planning task hai. Notices, approvals, training, ya production changes already execute ho chuke hain, aisa claim na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

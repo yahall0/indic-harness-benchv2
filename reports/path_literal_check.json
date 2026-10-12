@@ -1,0 +1,8 @@
+{
+  "scope": "Compares ASCII workspace-relative and common file paths in each selected prompt with its English source after removing shared common suffixes.",
+  "selected_task_count": 40,
+  "instruction_round_count": 46,
+  "prompt_file_count": 138,
+  "passed": true,
+  "errors": []
+}

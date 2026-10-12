@@ -1,0 +1,782 @@
+{
+  "001-file": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "002-exec": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "004-meeting-summary": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "005-email-triage": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "007-session-memory": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "012-doc-synthesis": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "016-code-repair-pytest": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "017-db-doc-consistency": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "019-incident-runbook-synthesis": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "020-archive-checksum": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "021-batch-rename-transform": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "022-local-rest-api-summary": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": [],
+    "final_contract_correction": "Final AI source-contract review restored the highest_open_severity identifier and high > medium > low ordering in Hindi and Hinglish. Not independent human validation."
+  },
+  "024-calendar-scheduling-conflict": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "025-meeting-action-tracker": {
+    "checks": {
+      "backtranslation_comparison": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "negations": true,
+      "no_new_hints": true,
+      "numbers_and_dates": true,
+      "requirements": true,
+      "round_order": true,
+      "technical_literals": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared Hindi and Hinglish clauses with the English source, including requirements, prohibitions, ordering, numeric limits, and protected literals. Hindi wording was normalized from a Romanized draft to Devanagari with deterministic common-word mapping outside protected literals. Hinglish punctuation uses ASCII full stops to keep Roman script. No independent human validation was performed.",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "026-ppt-brief-generation": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "027-contract-summary-risk": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": [],
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed."
+  },
+  "033-offline-knowledge-qa": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "034-evidence-matrix-claims": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "035-conflicting-source-resolution": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "036-citation-consistency-audit": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "039-repo-architecture-map": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "040-test-coverage-fill": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "041-frontend-state-bug": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "049-excel-like-cleaning": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": [],
+    "final_contract_correction": "Final AI source-contract review restored the literal JSON key count in Hindi. Not independent human validation."
+  },
+  "050-multitable-join-analysis": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "051-sql-query-report": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "052-metric-definition-audit": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "053-anomalous-transaction-detect": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "057-interruption-resume": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "058-multiday-project-state": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "059-event-update-replan": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "060-task-cancellation-cleanup": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "062-k8s-config-audit": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "063-alert-dedup-noise": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "064-service-dependency-triage": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "067-canary-release-check": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "070-hr-resume-screening": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "071-ecommerce-support-routing": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "072-logistics-delay-response": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "074-education-grading-feedback": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  },
+  "075-platform-appeal-review": {
+    "checks": {
+      "requirements": true,
+      "negations": true,
+      "numbers_and_dates": true,
+      "round_order": true,
+      "no_new_hints": true,
+      "technical_literals": true,
+      "hindi_naturalness": true,
+      "hinglish_naturalness": true,
+      "backtranslation_comparison": true
+    },
+    "independent_human_review": false,
+    "model": "GPT-6 Luna (user-selected chat model)",
+    "notes": "AI self-review compared every instruction round with the original English source. Checked requirements, negation, numbers and dates, order, protected technical text, Hindi naturalness, Roman-script Hinglish naturalness, and backtranslated meaning. Corrections include awkward Hindi phrasing and exact filename preservation. English source body remains unchanged. This is AI translation and AI self-review; no independent human validation was performed.",
+    "review_status": "reviewed_after_natural_language_revision",
+    "reviewer": "AI self-review",
+    "unresolved_issues": []
+  }
+}

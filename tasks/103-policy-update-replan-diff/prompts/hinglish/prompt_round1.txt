@@ -1,0 +1,23 @@
+Round 1 of 2: initial policy rollout plan banayein.
+
+Padhein:
+- $WORKSPACE/in/policy_change_request.json
+- $WORKSPACE/in/regional_constraints.csv
+- $WORKSPACE/in/team_capacity.json
+- $WORKSPACE/in/communications_matrix.csv
+
+Create karein:
+- $WORKSPACE/out/original_plan.json
+- $WORKSPACE/out/state.json
+
+Requirements:
+- Request mein diye sabhi regions ke liye rollout plan banayein.
+- Stable decision IDs use karein taki round 2 mein sirf badli hui cheezein revise hon.
+- legal_review, support_training, customer_comms aur launch_gate workstreams shamil karein.
+- Har decision mein owner, region, planned_start, planned_end, channel_or_artifact, dependencies aur evidence_refs shamil karein.
+- Is round mein $WORKSPACE/out/revised_plan.json ya $WORKSPACE/out/diff.md create na karein.
+- Input files modify na karein.
+- Ye sirf planning task hai. Notices, approvals, training, ya production changes already execute ho chuke hain, aisa claim na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

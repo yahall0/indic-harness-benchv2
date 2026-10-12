@@ -1,0 +1,10 @@
+कार्यशील डायरेक्टरी `$WORKSPACE` है।
+
+`in/input.txt` पढ़ें, फ़ाइल में लाइनों की संख्या गिनें और परिणाम `out/linecount.txt` में लिखें।
+
+ज़रूरी बातें:
+- केवल एक पूर्णांक (लाइनों की संख्या) लिखें।
+- `in/input.txt` में बदलाव न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

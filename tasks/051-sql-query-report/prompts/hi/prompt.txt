@@ -1,0 +1,39 @@
+छोटी BI report बनाने के लिए offline SQL fixture use करें.
+
+Input:
+- $WORKSPACE/in/schema_data.sql
+
+बनाएँ:
+- $WORKSPACE/out/query_results.json
+- $WORKSPACE/out/analysis.md
+- $WORKSPACE/out/query_audit.json
+
+Requirements:
+1. schema_data.sql को local SQLite database में load करें, या equivalent SQL locally execute करें.
+2. सिर्फ़ उन orders पर विचार करें जिनका status = 'paid' हो और order_date 2025-01-01 से 2025-03-31 तक inclusive हो.
+3. query_results.json valid JSON हो और इसमें exactly ये top-level keys हों:
+   - top_products_by_revenue
+   - revenue_by_region
+   - category_summary
+4. top_products_by_revenue में revenue के descending order में top 3 products हों, in fields के साथ:
+   product_id, product_name, revenue
+   Revenue tie हो तो product_id ascending order से tie break करें.
+5. revenue_by_region में हर customer region की एक row हो, in fields के साथ:
+   region, order_count, revenue
+   Region rows को ascending order में sort करें.
+6. category_summary में हर product category की एक row हो, in fields के साथ:
+   category, units_sold, revenue
+   Category rows को ascending order में sort करें.
+7. Revenue values two decimal places तक rounded numbers या numeric strings होनी चाहिए.
+8. analysis.md में top product, सबसे अधिक revenue वाला region, tie होने पर उसे कैसे सुलझाया गया, और excluded records rule को briefly identify करें.
+9. Date window में 2025-01-01 और 2025-03-31 दोनों शामिल हैं. Returned, cancelled, और window के बाहर के orders exclude करें, chahe unmein बड़े order_items हों.
+
+query_audit.json requirements:
+- included_order_ids, excluded_status_order_ids, excluded_out_of_window_order_ids, boundary_included_order_ids, top_product_tie_order keys वाला valid JSON.
+- पहली चार keys, ascending order में sorted order_id strings के arrays हों.
+- top_product_tie_order में revenue से tied product_ids, top_products_by_revenue के लिए use हुए exact output order में listed हों.
+
+Fixtures modify न करें. Network access या external APIs use न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,76 @@
+{
+  "validated_at_utc": "2026-10-01T11:54:32.095578+00:00",
+  "pdf": "pdf/Indic_Harness_Bench_Experiment_Report.pdf",
+  "pdf_sha256": "e80fdc3d0970521d26a95505b076ded28c3df7ec6954257817da556f51458b18",
+  "pdf_bytes": 1305371,
+  "pages": 15,
+  "figures": 9,
+  "primary_run_records_sha256": "80233dcbf4f7b29cd6c7e222e361d483d25928b8ba3d4acf6c7392aa0cf76d88",
+  "primary_records_unchanged_since_analysis": true,
+  "reference_verification": {
+    "reference_unchanged": true,
+    "files_hashed": 1116,
+    "differences": []
+  },
+  "original_40_preservation": {
+    "passed": true,
+    "original_tasks_unchanged": 40,
+    "original_attempts_unchanged": 120,
+    "additional_tasks": 14,
+    "combined_tasks": 54,
+    "combined_planned_runs": 162,
+    "study_id": "be79c2f6c171dbe17a7c517df8fba4996844029a2be4cfd92b47db77ef0ee036",
+    "original_runtime_freeze_hash": "cafc9635ed70f7d2ae616c8a85161ac8e007c112259f9b041ed6714345b9ddc5",
+    "same_inference_and_scoring_protocol": true,
+    "new_model_calls": 0
+  },
+  "population": {
+    "scheduled_tasks": 54,
+    "primary_conditions": 162,
+    "included_tasks": 46,
+    "included_conditions": 138,
+    "excluded_whole_tasks": 8,
+    "filter": "Exclude an original task if any primary language has terminal infrastructure_failed; no retry substitution.",
+    "budget_exhausted_included": 17
+  },
+  "checks": {
+    "unique_complete_language_triplets": true,
+    "excluded_and_included_ids_disjoint": true,
+    "task_037_retry_not_substituted": true,
+    "csv_row_counts_match": true,
+    "embedded_attachments_present": [
+      "excluded_task_ledger.csv",
+      "included_condition_metrics.csv"
+    ],
+    "no_replacement_glyphs_in_text": true
+  },
+  "missing_artifact_diagnostic": {
+    "conditions": 60,
+    "method": "Failed checks with FileNotFound/no-such-file, a bare missing existence check, or an anchored missing-file detail. Lists of malformed rows and content omissions are not classified solely because they contain a filename and the word missing."
+  },
+  "visual_review": {
+    "renderer": "Poppler pdftoppm",
+    "dpi": 110,
+    "all_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "method": "Latest page renders reviewed in three contact sheets, with full-size inspection of paired results, failure diagnostics, score atlas and provenance.",
+    "layout_status": "passed",
+    "observations": "Charts, tables, headings, numeric labels and long task identifiers are legible; no overlap, clipping or missing-glyph defects observed."
+  },
+  "benchmark_or_model_calls_made_for_report": false
+}

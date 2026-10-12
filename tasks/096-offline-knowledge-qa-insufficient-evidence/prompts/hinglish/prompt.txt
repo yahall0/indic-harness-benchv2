@@ -1,0 +1,41 @@
+Task: Offline Knowledge QA aur Insufficient Evidence Detection
+
+Sirf inka use karein:
+- `$WORKSPACE/in/kb/*.md`
+- `$WORKSPACE/in/questions.json`
+
+Information gaps fill karne ke liye internet, product assumptions ya common knowledge use na karein.
+
+`$WORKSPACE/out/answers.json` likhein.
+
+Output shape:
+
+{
+  "answers": [
+    {
+      "question_id": "Q01",
+      "status": "answered",
+      "answer": "...",
+      "sources": [
+        {
+          "source_file": "kb/product_manual.md",
+          "evidence_id": "PM-1",
+          "quote_or_signal": "..."
+        }
+      ],
+      "missing_evidence": []
+    }
+  ]
+}
+
+Requirements:
+- `questions.json` ke har question ke liye exactly ek answer dein.
+- `status` ki value exactly `answered`, `partial`, ya `insufficient_evidence` ho.
+- `answered` ke liye concise answer aur kam-se-kam ek source dein.
+- `partial` mein sirf supported hissa answer karein aur missing evidence ko `missing_evidence` mein list karein.
+- `insufficient_evidence` ke liye `answer` ko `insufficient_evidence` set karein, `sources` blank chhodein ya sirf related par insufficient source cite karein, aur missing evidence samjhayen.
+- `source_file` relative path hona chahiye, jaise `kb/security_bulletin.md`.
+- JSON ke around Markdown wrapper na dein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

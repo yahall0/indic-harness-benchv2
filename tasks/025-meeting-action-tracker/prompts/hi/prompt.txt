@@ -1,0 +1,46 @@
+आप Atlas launch के project coordinator हैं.
+
+Inputs:
+- $WORKSPACE/in/transcript.txt
+- $WORKSPACE/in/transcript_part2.txt
+- $WORKSPACE/in/transcript_part3.txt
+- $WORKSPACE/in/followup_emails.md
+- $WORKSPACE/in/previous_actions.csv
+- $WORKSPACE/in/project_dependencies.json
+
+बिल्कुल ये outputs लिखें:
+- $WORKSPACE/out/action_items.csv
+- $WORKSPACE/out/owner_followups.md
+- $WORKSPACE/out/merge_rationale.md
+
+action_items.csv requirements:
+- CSV header: action_id,owner,task,deadline,status,source
+- Transcripts/emails से नए actions include करें और पहले के incomplete actions को carry forward करें जो abhi भी open हैं.
+- जब वही work item हो, तो updates को existing incomplete action में merge करें.
+- Carry-forward या update किए गए previous actions के existing action_id values jyon के tyon रखें. Sach में नए actions के लिए NEW-<short-id> use करें.
+- बाद के sources से आए explicit cancellation, completion, reassignment और deadline changes लागू करें. Source recency: previous_actions.csv < transcript.txt < transcript_part2.txt < followup_emails.md < transcript_part3.txt.
+- पहले के completed actions को open work के रूप में include न करें.
+- ISO dates YYYY-MM-DD use करें.
+- Cancelled या नए completed actions को action_items.csv में include न करें.
+- Transcripts में introduce किए गए नए actions के लिए ये IDs use करें: compliance signoff checklist → NEW-01, security audit brief → NEW-02, customer quotes for launch brief → NEW-03.
+
+owner_followups.md requirements:
+- Follow-ups को owner के हिसाब से group करें.
+- हर उस owner का नाम और deadlines दें jiske paas open work है.
+- अगर dependency की वजह से किसी action का status "pending" है, तो साफ़ बताएँ कि वह किस cheez से blocked है.
+
+merge_rationale.md requirements:
+- समझाएँ कि कौन से previous actions carry forward, update, cancel, reassign या complete हुए.
+- हर decision के लिए source फ़ाइल का hawala दें.
+- Dependency के कारण deadline में बदलाव और bulk reassignments/cancellations को स्पष्ट रूप से समझाएँ.
+- Input फ़ाइलें modify न करें.
+
+Additional requirements:
+- $WORKSPACE/in/project_dependencies.json पढ़ें और dependency rules लागू करें.
+- अगर कोई action किसी दूसरे open action से blocked_by है, तो निर्धारित rule लागू करें (deadline बढ़ाएँ या status pending set करें).
+- Bulk updates (जैसे owner का team छोड़ना) संभालें: प्रभावित open actions cancel करें. Reassign तभी करें जब किसी बाद के source में किसी और owner ne उसी work item की ज़िम्मेदारी स्पष्ट रूप से li हो.
+- अगर किसी owner के multiple deadlines में resource conflicts हों, तो resolution rule तभी लागू करें जब सारे affected actions open रहें और उनकी deadlines conflicting window के अंदर हों. अगर affected action में से कोई complete या cancel हो गया हो, तो conflict लागू नहीं होता.
+- Source field में वह फ़ाइल darj होनी चाहिए jisne action में आख़िरी substantive बदलाव किया. अगर बदलाव dependency rule या bulk update से हुआ हो, तो source के रूप में "project_dependencies.json" use कर सकते हैं.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

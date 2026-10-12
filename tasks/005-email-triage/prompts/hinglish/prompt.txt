@@ -1,0 +1,20 @@
+Tum mock inbox environment mein ho. **`$WORKSPACE/in/emails.json`** ki email list process karo. File ek JSON object hai; uske **`emails`** field mein array hai, aur har email mein `id`, `from`, `subject`, aur `body` hain. Working directory: `$WORKSPACE`.
+
+Ye steps complete karo:
+
+1) `$WORKSPACE/in/emails.json` ki har email **read** karke teen labels mein se ek assign karo:
+   - `spam`: junk/scams/clearly ignore karne layak; deletion list mein jaana chahiye.
+   - `needs_reply`: aisi threads jinhe human-like reply chahiye (jaise colleague pooche ki tum free ho ya nahi).
+   - `ok`: reply ki zaroorat nahi (system notifications, sirf FYI, etc.).
+
+2) Classifications ko **`$WORKSPACE/out/triage.json`** mein likho (JSON object; keys email `id` strings hon; values aise):
+   `{"label":"spam|needs_reply|ok","reason_short":"one-line reason"}`
+
+3) Har `spam` email ka `id`, har line par ek, **`$WORKSPACE/out/delete_ids.txt`** mein likho (sirf IDs; aur koi text nahi). Non-spam IDs mat likho.
+
+4) Har `needs_reply` email ke liye **reply body** (plain text) **`$WORKSPACE/out/replies/<id>.txt`** mein likho (jaise `out/replies/002.txt`). Reply mein question ka **direct answer** do (jaise “Are you free today?” poocha ho, toh batao free ho ya koi time propose karo). Off-topic reply mat do.
+
+5) Sabse pehle `mkdir -p $WORKSPACE/out $WORKSPACE/out/replies` run karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

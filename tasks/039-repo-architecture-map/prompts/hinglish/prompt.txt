@@ -1,0 +1,33 @@
+Tumhe `$WORKSPACE/in/repo` par ek chhota Python service repository diya gaya hai.
+
+Exactly ye deliverables banao:
+
+1. `$WORKSPACE/out/module_map.json`
+   - `modules`, `entry_points`, `dependency_edges`, `key_functions` keys wala JSON object.
+   - `modules`, module objects ka array ho jisme at least `name`, `path`, aur `purpose` hon.
+   - `entry_points` mein executable/API entry points ko applicable jagah canonical `module:function` identifiers se list karo; inmein `minisvc.cli:main` aur `minisvc.api.routes:register_routes` include hon.
+   - `dependency_edges` mein directed edge objects hon aur fields `from`, `to`, `type` hon; `type` inmein se ek ho: `imports`, `calls`, `instantiates`, `reads_config`, ya `persists_to`.
+   - `key_functions` important functions aur methods describe kare.
+   - `runtime_flows` array include karo jo kam-se-kam CLI startup flow aur HTTP create-order flow ko ordered steps mein describe kare.
+2. `$WORKSPACE/out/architecture.md`
+   - Naye engineer ke liye Markdown architecture summary.
+   - Modules, entry points, data flow, storage aur risks/extension points include karo.
+   - Important runtime flow call out karo aur package marker files ko business logic modules mat samjho.
+3. `$WORKSPACE/out/doc_code_discrepancies.csv`
+   - Header `claim,doc_source,code_evidence,assessment,risk` wala CSV.
+   - README/design notes ko actual implementation se compare karo.
+   - At minimum readonly enforcement, retry behavior aur audit persistence cover karo, agar code se alag hon.
+   - `assessment` inmein se ek ho: `confirmed`, `contradicted`, ya `unsupported`.
+4. `$WORKSPACE/out/risk_register.csv`
+   - Header `risk_id,area,evidence,impact,mitigation,owner_hint` wala CSV.
+   - At least storage/data durability, audit behavior, configuration/runtime environment aur API input validation cover karo.
+   - Har row mein concrete code evidence cite karo, jaise module, function, ya filename.
+5. `$WORKSPACE/out/onboarding_plan.md`
+   - Naye engineer ke liye concise onboarding plan.
+   - Recommended read order, local run/test commands, first debugging breakpoint ya trace point aur do safe first changes include karo.
+   - Active runtime code aur package marker/dead-simple files ke beech farq batao.
+
+`$WORKSPACE/in/repo` ke andar kuch bhi modify mat karo. Internet access use mat karo. Sirf fixture repository ki files use karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

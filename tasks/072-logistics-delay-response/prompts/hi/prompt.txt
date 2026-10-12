@@ -1,0 +1,27 @@
+Logistics delay response plan taiyar कर रहे हैं.
+
+पढ़ें:
+- $WORKSPACE/in/shipments.csv
+- $WORKSPACE/in/carrier_updates.json
+- $WORKSPACE/in/customer_tiers.csv
+
+बनाएँ:
+- $WORKSPACE/out/delay_actions.csv
+- $WORKSPACE/out/customer_messages.md
+
+delay_actions.csv requirements:
+- Header बिल्कुल ये हो: shipment_id,delay_status,customer_tier,action,compensation,reason
+- हर shipment के लिए एक row include करें.
+- delay_status delayed या on_track हो.
+- action इनमें से एक हो: monitor, notify, offer_credit, expedite_replacement.
+- Customer tier rules को consistently apply करें.
+
+customer_messages.md requirements:
+- हर delayed shipment id के लिए एक message include करें.
+- ठोस action और compensation या alternative plan का ज़िक्र करें.
+- Customer को blame न करें और internal carrier notes reveal न करें.
+
+Network use न करें. Input फ़ाइलें modify न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

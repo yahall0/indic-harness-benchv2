@@ -1,0 +1,43 @@
+Teen artifacts banane ke liye `$WORKSPACE/in/release` ke release inputs use karein:
+
+1. `$WORKSPACE/out/CHANGELOG.md`
+   - Jahan lagu ho, Markdown release notes ko Added, Changed, Fixed, Security aur Breaking Changes ke sections mein group karein.
+   - Issue IDs aur aasani se samajh aane wale descriptions shamil karein.
+   - Reverted fixes ko shipped changes ke roop mein list na karein.
+   - Deferred features ko shipped changes ke roop mein list na karein.
+   - Sirf documentation wale kaam ko supporting documentation ke roop mein bata sakte hain, par use shipped product issue na ginein.
+   - Kisi issue ke multiple commits hon, to uska summary sirf ek baar dein.
+   - Embargoed security work ke liye exploit ya implementation details ke bina safe high-level note dein.
+2. `$WORKSPACE/out/release_summary.json`
+   - In keys wala JSON dein: `version`, `date`, `highlights`, `breaking_changes`, `issue_count`, `risk_notes`.
+   - `issue_count` mein sirf shipped aur non-reverted `ISSUE-*` product issue IDs count karein; `SEC-*` advisory IDs nahi.
+   - `issue_count` mein deferred `ISSUE-*` IDs aur documentation-only `ISSUE-*` IDs count na karein.
+3. `$WORKSPACE/out/upgrade_notes.md`
+   - Har breaking change ke liye migration guidance dein.
+   - Reverted work ko shipped changes se alag mention karein.
+   - Embargoed security details disclose na karein.
+4. `$WORKSPACE/out/release_decisions.json`
+   - In keys wala JSON dein: shipped_issue_ids, reverted_issue_ids, deferred_issue_ids, docs_only_issue_ids, security_advisory_ids, embargoed_security_advisory_ids, public_security_advisory_ids, breaking_change_ids, duplicate_commit_issue_ids.
+   - Har value ascending order mein sorted array ho.
+   - shipped_issue_ids mein sirf shipped, non-reverted `ISSUE-*` product issue IDs count karein.
+   - reverted_issue_ids mein reverted `ISSUE-*` product issue IDs dein jinhe shipped changes ke roop mein nahi dikhana hai.
+   - deferred_issue_ids mein release se pehle defer hue aur ship na kiye gaye `ISSUE-*` feature IDs dein.
+   - docs_only_issue_ids mein un `ISSUE-*` IDs ko list karein jinka shipped work sirf documentation hai aur issue_count mein nahi judna chahiye.
+   - security_advisory_ids mein `SEC-*` advisory IDs ko product issues se alag list karein.
+   - embargoed_security_advisory_ids aur public_security_advisory_ids mein security_advisory_ids ko details embargoed hain ya nahi, iske mutabik baantein.
+   - breaking_change_ids mein har shipped issue ID dein jiske liye migration guidance zaroori hai.
+   - duplicate_commit_issue_ids mein woh shipped issue IDs list karein jo ek se zyada non-revert, non-defer commit mein hain; phir bhi unka summary ek baar hi dein.
+5. `$WORKSPACE/out/release_audit.json`
+   - In keys wala JSON dein: issue_status_by_id, shipped_issue_commit_counts, non_counted_issue_ids, migration_required_issue_ids.
+   - issue_status_by_id mein issues.csv ke har ID ko exactly ek status dein: shipped, reverted, deferred, docs_only, embargoed_security, public_security.
+   - shipped_issue_commit_counts mein har shipped `ISSUE-*` product issue ID ke liye us issue ke non-revert, non-defer, non-docs commits ki ginti dein.
+   - non_counted_issue_ids mein woh sabhi IDs list karein jo release_summary.issue_count mein na judein: reverted issues, deferred issues, docs-only issues aur SEC-* advisory IDs.
+   - migration_required_issue_ids, breaking_change_ids se match karein aur ascending order mein sorted hon.
+
+Commits ya issues invent na karein. Aaj ki date use na karein; `commits.json` ki date lein. Fixture files modify na karein.
+
+
+Benchmark clarification: Produce all five listed output files: out/CHANGELOG.md, out/release_summary.json, out/upgrade_notes.md, out/release_decisions.json, and out/release_audit.json.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

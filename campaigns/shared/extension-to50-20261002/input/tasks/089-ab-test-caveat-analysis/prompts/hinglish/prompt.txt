@@ -1,0 +1,30 @@
+Sirf local files se A/B test analyze karo.
+
+Inputs:
+- $WORKSPACE/in/experiment_cells.csv
+- $WORKSPACE/in/exclusions.csv
+- $WORKSPACE/in/analysis_plan.md
+
+Exactly yeh banao:
+- $WORKSPACE/out/variant_metrics.csv
+- $WORKSPACE/out/ab_summary.json
+- $WORKSPACE/out/exclusion_ledger.csv
+- $WORKSPACE/out/recommendation.md
+
+Rules:
+1. Input files modify mat karo.
+2. Listed exclusions apply karne ke baad experiment_cells.csv ke eligible_users aur conversions use karo.
+3. conversion_rate = conversions / eligible_users, refund_rate = refunds / conversions aur revenue_per_eligible_user = revenue_usd / eligible_users calculate karo.
+4. B versus A ke liye two-proportion z-test use karo, two-sided, alpha = 0.05.
+5. Rates aur lift values four decimals tak round karo. revenue_per_eligible_user, z_stat aur p_value bhi four decimals tak round karo.
+6. variant_metrics.csv ka exact header:
+   variant,eligible_users,conversions,conversion_rate,refund_rate,revenue_per_eligible_user
+7. ab_summary.json mein hon: control_variant, treatment_variant, alpha, lift_absolute, lift_relative, z_stat, p_value, significant, recommendation.
+8. exclusion_ledger.csv ka exact header:
+   user_id,reason,variant,notes
+   exclusions.csv ki har row input order preserve karke include karo.
+9. recommendation.md mein batao launch karna hai ya nahi, statistical significance mention karo aur underpowered mobile cohort aur duplicate assignment cleanup ke caveats include karo.
+
+Network access ya external APIs use mat karo.
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

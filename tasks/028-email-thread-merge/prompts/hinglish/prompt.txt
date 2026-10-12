@@ -1,0 +1,24 @@
+Email messages ko coherent threads mein merge karke agla reply draft karein.
+
+Ye inputs use karein:
+- $WORKSPACE/in/emails/*.json
+
+Ye outputs create karein:
+- $WORKSPACE/out/thread_summary.json
+- $WORKSPACE/out/reply_draft.txt
+
+thread_summary.json ki requirements:
+- "threads" array wala JSON object banayein.
+- Jin forwarded ya repeated messages ka message_id ya substantive body same ho, unhe deduplicate karein.
+- Unrelated subjects ko alag threads mein rakhein.
+- Northwind onboarding thread ke liye chronological timeline aur final_todos shamil karein.
+- ISO timestamps ko diye gaye format mein bilkul same rakhein.
+
+reply_draft.txt ki requirements:
+- Sirf Northwind onboarding thread ka reply draft karein.
+- Morgan Lee ko address karein.
+- Agreed pilot kickoff date confirm karein, missing security questionnaire ka naam lein, aur procurement approval complete hone ka claim na karein.
+- Input files ko modify na karein.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

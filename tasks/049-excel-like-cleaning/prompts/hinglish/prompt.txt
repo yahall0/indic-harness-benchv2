@@ -1,0 +1,56 @@
+Finance reconciliation review ke liye messy sales export clean kar rahe ho. Sirf local files use karo.
+
+Workspace root mein copied inputs:
+- $WORKSPACE/in/messy_sales.csv
+- $WORKSPACE/in/customer_dictionary.csv
+- $WORKSPACE/in/fx_rates.csv
+
+Exactly ye outputs banao:
+- $WORKSPACE/out/cleaned_sales.csv
+- $WORKSPACE/out/reject_ledger.csv
+- $WORKSPACE/out/reject_summary.json
+- $WORKSPACE/out/cleaning_report.md
+
+Cleaning rules:
+1. Input files modify mat karo.
+2. customer_id ko customer_dictionary.csv se validate karo. Unknown ya inactive customer_id wali rows reject karo.
+3. order_date ko row ke locale ke according parse karo:
+   - en_US dates month/day/year hoti hain.
+   - en_GB aur de_DE dates day/month/year hoti hain.
+   - ISO dates already year-month-day format mein hain.
+   - Month names wali dates, jaise "10-Jan-2025", valid hain.
+4. status ko lowercase mein normalize karo. Refund/returned rows mein amount_usd negative rehna chahiye.
+5. fx_rates.csv ki rates se amount ko USD mein convert karo. amount field har row ka total hai, unit price nahin. Currency symbols aur accounting parentheses hatao. en_US/en_GB mein comma thousands ko aur dot decimal ko alag karta hai; de_DE mein dot thousands ko aur comma decimal ko. amount_usd ko exactly do decimal places tak round karo.
+6. quantity positive integer hona chahiye.
+7. Validation ke baad order_id ke basis par deduplicate karo. Input order mein first valid occurrence rakho aur later valid duplicates ko reason duplicate_order_id ke saath reject karo. Invalid rows ko duplicate_order_id ke bajay unke validation reason se reject karo.
+8. Invalid dates, unsupported currency, missing/non-numeric amounts, invalid quantities, unknown/inactive customers, ya duplicate rows reject karo.
+9. Row ke liye multiple reject reasons hon, toh is priority order mein pehla applicable reason record karo:
+   missing_amount, unsupported_currency, invalid_quantity, inactive_customer, unknown_customer, invalid_date, duplicate_order_id.
+10. Refund/returned rows mein amount_usd exactly ek baar negative hona chahiye: positive returned amount ko negative banao aur already-negative returned amount ko negative hi rakho.
+
+cleaned_sales.csv requirements:
+- Exact header:
+  order_id,order_date,customer_id,customer_name,sku,quantity,amount_usd,status
+- Rows ko pehle order_date, phir order_id se sort karo.
+- Extra columns mat jodo.
+
+reject_ledger.csv requirements:
+- Exact header:
+  order_id,reason,source_row,notes
+- Har rejected input row ke liye ek row include karo. source_row, header ko chhodkar messy_sales.csv ka 1-based data-row number hai.
+- Rule 9 mein listed reason codes mein se ek use karo.
+
+reject_summary.json requirements:
+- Valid JSON object ho, rule 9 ke har reason code ki key ho, zero-count reasons bhi.
+- Har reason entry mein count, source_rows, aur order_ids ho.
+- source_rows ascending input order mein numeric arrays hon.
+
+cleaning_report.md requirements:
+- Valid row count, rejected row count, duplicate count aur total amount_usd summarize karo.
+- Har reject reason category explain karo.
+- Use ki gayi locale ya FX assumptions mention karo.
+
+Network access ya external APIs use mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

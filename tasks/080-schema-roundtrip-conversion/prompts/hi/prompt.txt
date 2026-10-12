@@ -1,0 +1,26 @@
+Markdown, CSV, JSON और YAML के records को convert और reconcile करें तथा $WORKSPACE/in/schema.json का schema बनाए रखें।
+
+इन inputs का उपयोग करें:
+- $WORKSPACE/in/records.md
+- $WORKSPACE/in/records.csv
+- $WORKSPACE/in/records.json
+- $WORKSPACE/in/records.yaml
+- $WORKSPACE/in/schema.json
+
+ये outputs बनाएँ:
+- $WORKSPACE/out/canonical_records.json
+- $WORKSPACE/out/canonical_records.yaml
+- $WORKSPACE/out/canonical_records.csv
+- $WORKSPACE/out/conversion_report.json
+
+नियम:
+- canonical records को record_id से sort करें।
+- "007" जैसे string identifiers को string ही रखें; उन्हें numbers में coerce न करें।
+- null को JSON/YAML में null ही रखें; CSV में केवल null notes के लिए field खाली रखें।
+- JSON/YAML में arrays को array ही रखें; CSV में tags को semicolons से जोड़ें।
+- Markdown cells में escaped pipes हो सकते हैं।
+- YAML में anchors/aliases हैं।
+- sources में conflict हो, तो schema priority JSON > YAML > CSV > Markdown है; उस conflict की report दें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

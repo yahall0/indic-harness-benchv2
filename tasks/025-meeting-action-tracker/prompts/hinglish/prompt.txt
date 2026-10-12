@@ -1,0 +1,46 @@
+Atlas launch ke project coordinator ho.
+
+Inputs:
+- $WORKSPACE/in/transcript.txt
+- $WORKSPACE/in/transcript_part2.txt
+- $WORKSPACE/in/transcript_part3.txt
+- $WORKSPACE/in/followup_emails.md
+- $WORKSPACE/in/previous_actions.csv
+- $WORKSPACE/in/project_dependencies.json
+
+Exactly ye outputs likho:
+- $WORKSPACE/out/action_items.csv
+- $WORKSPACE/out/owner_followups.md
+- $WORKSPACE/out/merge_rationale.md
+
+action_items.csv requirements:
+- CSV header: action_id,owner,task,deadline,status,source
+- Transcripts/emails se new actions include karo aur purane incomplete actions ko carry forward karo jo abhi bhi open hain.
+- Same work item ho toh updates ko existing incomplete action mein merge karo.
+- Carry-forward ya updated previous actions ke existing action_id values same rakho. Genuinely new actions ke liye NEW-<short-id> use karo.
+- Baad ke sources ke explicit cancellation, completion, reassignment aur deadline changes apply karo. Source recency: previous_actions.csv < transcript.txt < transcript_part2.txt < followup_emails.md < transcript_part3.txt.
+- Purane completed actions ko open work ki tarah include mat karo.
+- ISO dates YYYY-MM-DD use karo.
+- Cancelled ya newly completed actions ko action_items.csv mein include mat karo.
+- Transcripts mein aaye new actions ke liye ye IDs use karo: compliance signoff checklist → NEW-01, security audit brief → NEW-02, customer quotes for launch brief → NEW-03.
+
+owner_followups.md requirements:
+- Follow-ups ko owner ke basis par group karo.
+- Har us owner aur unki deadlines ka zikr karo jinke paas open work hai.
+- Dependency ki wajah se kisi action ka status "pending" ho, toh clearly batao ki woh kis wajah se blocked hai.
+
+merge_rationale.md requirements:
+- Explain karo ki kaun se previous actions carry forward, update, cancel, reassign ya complete hue.
+- Har decision ke liye source file cite karo.
+- Dependency-based deadline changes aur bulk reassignments/cancellations ko explicitly samjhao.
+- Input files modify mat karo.
+
+Additional requirements:
+- $WORKSPACE/in/project_dependencies.json padho aur dependency rules apply karo.
+- Koi action kisi aur open action se blocked_by ho, toh specified rule apply karo (deadline extend karo ya status pending set karo).
+- Bulk updates (jaise owner ka team se jaana) handle karo: affected open actions cancel karo. Reassign tabhi karo jab later source mein kisi aur owner ne same work item ko explicitly take over kiya ho.
+- Owner ke multiple deadlines mein resource conflict ho, toh resolution rule sirf tab apply karo jab saare affected actions open hon aur deadlines conflicting window ke andar hon. Affected actions mein se koi complete ya cancel ho toh conflict apply nahi hota.
+- Source field mein woh file record karo jisne action ko last substantive change diya. Change dependency rule ya bulk update ki wajah se hua ho, toh source ke liye "project_dependencies.json" use kar sakte ho.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

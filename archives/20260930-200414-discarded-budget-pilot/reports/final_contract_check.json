@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "task_count": 40,
+  "unique_prompt_rounds": 46,
+  "checks": [
+    "source bare snake_case identifiers",
+    "source filenames",
+    "task 022 severity order",
+    "task 049 count JSON key"
+  ],
+  "errors": [],
+  "scope": "Additional literal checks and targeted source-contract review; AI self-review only."
+}

@@ -1,0 +1,27 @@
+जाँचें कि production health बिगड़ने पर payments release को सुरक्षित रूप से rollback करने की तैयारी है या नहीं।
+
+इन inputs का उपयोग करें:
+- $WORKSPACE/in/release_manifest.json
+- $WORKSPACE/in/runbook.md
+- $WORKSPACE/in/health_checks.json
+
+ठीक ये output files बनाएँ:
+- $WORKSPACE/out/rollback_readiness.md
+- $WORKSPACE/out/blockers.csv
+
+blockers.csv की आवश्यकताएँ:
+- Header में ये fields हों: blocker_id,severity,owner,evidence,required_action
+- जहाँ लागू हों, blocker_id के लिए ये values इस्तेमाल करें:
+  missing_down_migration, missing_sre_approval, missing_kill_switch, incomplete_health_checks, rollback_duration_risk
+- केवल दी गई files में मौजूद वास्तविक blockers शामिल करें।
+
+rollback_readiness.md की आवश्यकताएँ:
+- स्पष्ट recommendation दें: ready, ready_with_conditions, या blocked।
+- validation metrics और thresholds शामिल करें।
+- approval boundary बताएँ: rollback कौन approve कर सकता है और data migration risk किसे approve करना होगा।
+- rollback sequence संक्षेप में दें, लेकिन किसी action के पहले ही execute हो जाने का दावा न करें।
+
+input files में बदलाव न करें। external systems को call न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

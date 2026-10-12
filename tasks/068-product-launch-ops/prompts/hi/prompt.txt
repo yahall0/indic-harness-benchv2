@@ -1,0 +1,42 @@
+आप एक छोटे B2B product release के launch operations lead हैं।
+
+ये offline input files पढ़ें:
+- $WORKSPACE/in/product.md
+- $WORKSPACE/in/budget.csv
+- $WORKSPACE/in/audience.json
+
+ठीक ये outputs बनाएँ:
+- $WORKSPACE/out/launch_plan.md
+- $WORKSPACE/out/content_pack.json
+- $WORKSPACE/out/launch_checklist.csv
+
+$WORKSPACE/out/launch_plan.md के लिए आवश्यकताएँ:
+- Objectives, Audience, Budget, Timeline, Dependencies, Compliance, Risks नाम वाले sections शामिल करें।
+- audience.json के तीनों audience segments का उल्लेख करें।
+- इन milestone dates वाली timeline दें: 2026-05-01, 2026-05-10, 2026-05-15, 2026-05-20।
+- कुल planned spend को budget.csv के approved budget के बराबर या उससे कम रखें।
+- "offline webinar" phrase शामिल करें और 2026-05-20 से पहले product live उपलब्ध होने का वादा न करें।
+- paid social का विस्तार करने से पहले compliance_review के लिए budget सुरक्षित रखें।
+- अनुपलब्ध audience segments को target न करें; केवल उनके exclusion का कारण समझाने के लिए उनका उल्लेख करें।
+- release date से पहले mobile app integration या general availability का वादा न करें।
+
+$WORKSPACE/out/content_pack.json के लिए आवश्यकताएँ:
+- इन keys वाला valid JSON object दें: tagline, email_subjects, social_posts, webinar_agenda, segment_messages।
+- email_subjects में कम-से-कम 3 strings हों।
+- social_posts में कम-से-कम 3 strings हों।
+- webinar_agenda में कम-से-कम 4 agenda items हों।
+- segment_messages में audience.json के हर segment id के लिए एक message हो।
+- अनुपलब्ध segments के लिए launch copy गढ़ने के बजाय segment_messages में उन्हें excluded या not targeted चिह्नित करें।
+
+$WORKSPACE/out/launch_checklist.csv के लिए आवश्यकताएँ:
+- Header यह हो: item,owner,due_date,dependency,status
+- compliance approval, webinar registration page, claims list, sales enablement और launch day readiness शामिल करें।
+- dependencies में offline sources की शर्तें सही तरह दर्शाएँ।
+
+network का उपयोग न करें। input files में बदलाव न करें।
+
+
+Benchmark clarification: audience.json contains four segments. Mention all listed segments, including the unavailable segment only to explain its exclusion.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

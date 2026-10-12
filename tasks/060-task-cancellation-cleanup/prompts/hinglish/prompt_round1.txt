@@ -1,0 +1,13 @@
+Round 1 of 2: export preparation start karo.
+
+$WORKSPACE/in/export_request.json aur $WORKSPACE/in/customer_segments.csv padho. Banao:
+- $WORKSPACE/out/state.json
+- $WORKSPACE/out/tmp/export_manifest_draft.json
+- $WORKSPACE/out/audit.log
+
+State mein status "running", request_id "cancel-77" aur planned artifacts ki list honi chahiye. tmp draft mein segment count aur planned output names hon, par final export files mat banao.
+
+Input files modify mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

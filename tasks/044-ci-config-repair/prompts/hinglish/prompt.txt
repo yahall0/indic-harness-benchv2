@@ -1,0 +1,28 @@
+Fixture project mein `$WORKSPACE/in/project/.github/workflows/ci.yml` par GitHub Actions workflow broken hai.
+
+Edit karne se pehle `$WORKSPACE/in/project/CI_NOTES.md` padhein. Ismein event safety, action version, caching aur path-filter ki required constraints hain.
+
+Aapka kaam:
+- Workflow YAML edit karein taki woh syntactically valid ho aur local Python tests run kare.
+- Application code ya tests edit na karein.
+- `CI_NOTES.md` edit na karein.
+- Workflow offline-friendly rakhein: deployment, secrets, ya external service calls na hon.
+- Checkout, Python setup, `requirements.txt` se dependencies install aur `python -m pytest` shamil karein.
+- Pinned major versions `actions/checkout@v4` aur `actions/setup-python@v5` use karein.
+- 3.10 aur 3.11 ke liye chhota Python version matrix shamil karein.
+- pip ke liye dependency caching shamil karein.
+- Path filters add karein taki workflow app code, tests, requirements aur workflow changes par chale.
+- Path filters mein `CI_NOTES.md` bhi hona chahiye.
+- `python -m pytest` ke saath ek lightweight smoke command bhi run karein, jo `app.mathutil` se `normalize_percent` import karke ek baar call kare.
+- `push`, `pull_request`, aur `workflow_dispatch` use karein, lekin `pull_request_target` use na karein.
+
+Ye bhi samjhate hue `$WORKSPACE/in/project/ci_design_notes.md` likhein:
+- Pull requests ke liye workflow safe kyun hai,
+- Har path filter kyun shamil hai,
+- Smoke command kya import aur call karta hai,
+- Deployment/secrets/external service calls jaanbujhkar kyun nahi hain.
+
+Oracle YAML parse karke configured local test command run karega.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

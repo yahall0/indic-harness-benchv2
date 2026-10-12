@@ -1,0 +1,10 @@
+Round 1 of 2: initial staffing plan banao.
+
+$WORKSPACE/in/base_event.json aur $WORKSPACE/in/team_availability.json padho. $WORKSPACE/out/original_plan.json banao.
+
+Plan mein "Atlas Launch Webinar" ke liye chaar work blocks schedule karo: setup, rehearsal, live_support aur teardown. Fixture mein jo log available hain sirf unhi ko use karo. Room, start, end, assigned_people aur assumptions include karo.
+
+Abhi $WORKSPACE/out/revised_plan.json ya $WORKSPACE/out/diff.md mat banao. Input files modify mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

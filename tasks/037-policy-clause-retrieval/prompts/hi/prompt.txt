@@ -1,0 +1,33 @@
+कार्य: Policy Clause Retrieval और Case Rulings
+
+इन inputs का उपयोग करें:
+- `$WORKSPACE/in/policy_manual.md`
+- `$WORKSPACE/in/cases.json`
+- `$WORKSPACE/in/policy_amendment.md`
+- `$WORKSPACE/in/reason_codes.json`
+
+हर case पर निर्णय देने के लिए policy manual, amendment और canonical reason-code registry का उपयोग करें और `$WORKSPACE/out/case_rulings.json` लिखें।
+जहाँ amendment अधिक विशिष्ट हो, वहाँ वही base manual पर लागू होगा। Mixed packets पर line-item और case, दोनों स्तरों पर निर्णय दें।
+
+Output format की आवश्यकताएँ:
+- सबसे ऊपरी स्तर पर JSON array होना चाहिए।
+- हर element में ये fields हों: `case_id`, `applicable_clause`, `decision`, `reason_code`, `quote_or_signal`, `secondary_clauses`, `blocking_condition`, और `missing_information`।
+- `applicable_clause` में manual का clause number दें, जैसे `TR-2`।
+- `secondary_clauses` array हो। यदि कोई exception clause भी निर्णय को प्रभावित करता है, तो उसका clause number शामिल करें; अन्यथा खाली array दें।
+- `decision` का मान `approve`, `deny`, या `needs_review` में से एक ही हो।
+- `reason_code` छोटा machine-readable code हो, जैसे `domestic_with_receipt`।
+- canonical reason codes ही इस्तेमाल करें; उनके पर्याय वाले नए codes न बनाएँ।
+- `blocking_condition` में `deny` या `needs_review` का मुख्य कारण बताएं; `approve` के लिए यह empty string हो सकता है।
+- `missing_information` array हो। यदि निर्णय missing या conflicting approval, receipt, attendee-list या business-purpose जानकारी पर निर्भर हो, तो missing items लिखें; अन्यथा खाली array दें।
+- जिन cases में `line_items` हों, उनमें `line_item_rulings` array दें। हर item में `line_id`, `applicable_clause`, `decision`, `reason_code`, `quote_or_signal`, `secondary_clauses`, `blocking_condition`, और `missing_information` हों।
+- mixed packets में case-level निर्णय AM-2 aggregation के अनुसार दें; हर line item का अपना applicable clause और reason code बनाए रखें।
+
+इसके अलावा `$WORKSPACE/out/ruling_summary.csv` बनाएँ और यह header रखें:
+`case_id,case_decision,denied_lines,review_lines,approved_lines,controlling_clause,summary_reason`
+
+summary में single-line cases समेत हर case शामिल करें। जहाँ किसी case में स्पष्ट `line_items` न हों, वहाँ counts शून्य रखें।
+
+निषेध: internet का उपयोग न करें; fixtures में बदलाव न करें; exception clauses को नज़रअंदाज़ न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,67 @@
+{
+  "timestamp_utc": "2026-09-30T13:40:33.713459+00:00",
+  "planned_runs": 120,
+  "attempted_runs": 6,
+  "observed_conditions": [
+    {
+      "task": "001-file",
+      "language": "en",
+      "status": "completed",
+      "requests": 4,
+      "original_score": 1.0,
+      "pause_reason": null
+    },
+    {
+      "task": "001-file",
+      "language": "hi",
+      "status": "infrastructure_failed",
+      "requests": 3,
+      "original_score": 0.0,
+      "pause_reason": "relay_accounting_gate"
+    },
+    {
+      "task": "001-file",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 4,
+      "original_score": 1.0,
+      "pause_reason": null
+    },
+    {
+      "task": "002-exec",
+      "language": "hi",
+      "status": "completed",
+      "requests": 7,
+      "original_score": 1.0,
+      "pause_reason": null
+    },
+    {
+      "task": "002-exec",
+      "language": "hinglish",
+      "status": "completed",
+      "requests": 9,
+      "original_score": 1.0,
+      "pause_reason": null
+    },
+    {
+      "task": "002-exec",
+      "language": "en",
+      "status": "running",
+      "requests": 3,
+      "original_score": null,
+      "pause_reason": null
+    }
+  ],
+  "startup_incident": {
+    "task": "001-file",
+    "language": "hi",
+    "status": "infrastructure_failed",
+    "pause_reason": "relay_accounting_gate",
+    "causal_diagnosis": "Not established; generic gate exception without a detailed cause in the original runtime.",
+    "score_in_language_comparison": false,
+    "rerun": false,
+    "progress_preserved": true,
+    "unsettled_usage": "Original reservation retained conservatively."
+  },
+  "continuous_codex_monitoring": "Stopped after subsequent successful grading and progression; live terminal remains open."
+}

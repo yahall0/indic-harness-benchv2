@@ -1,0 +1,36 @@
+स्थानीय बिक्री और स्टॉक फ़ाइलों से दो सप्ताह की इन्वेंटरी पुनः ऑर्डर योजना बनाएं।
+
+इनपुट:
+- $WORKSPACE/in/sales_history.csv
+- $WORKSPACE/in/stock.json
+
+बनाएं:
+- $WORKSPACE/out/reorder_plan.csv
+- $WORKSPACE/out/inventory_exceptions.json
+- $WORKSPACE/out/forecast_notes.md
+
+reorder_plan.csv में कॉलम इसी क्रम में हों:
+sku,avg_weekly_sales,forecast_14d,current_stock,safety_stock,reorder_qty,risk_level
+
+नियम:
+1. फ़िक्स्चर न बदलें।
+2. stock.json के हर SKU को शामिल करें, चाहे उसकी sales_history पंक्तियां न हों।
+3. हर sku का avg_weekly_sales उसकी सभी इतिहास पंक्तियों के units_sold का औसत है। इतिहास न होने पर avg_weekly_sales और forecast_14d दोनों 0.00 हों; forecast_notes.md में इसका उल्लेख करें।
+4. stock.json में न मिलने वाले SKU की sales_history पंक्तियां छोड़ दें और ऐसे SKU को छोड़ा गया बताएं।
+5. forecast_14d = avg_weekly_sales * 2.
+6. target_stock = forecast_14d + safety_stock.
+7. reorder_qty = max(0, target_stock - current_stock); इसे stock.json में दिए sku के pack_size के अगले गुणज तक ऊपर पूर्णांकित करें। कभी नीचे या निकटतम गुणज तक पूर्णांकित न करें।
+8. current_stock < target_stock होने पर risk_level high है; target_stock के बराबर या उससे ठीक एक pack_size तक अधिक होने पर medium है; अन्यथा low है।
+9. avg_weekly_sales और forecast_14d में ठीक दो दशमलव स्थान रखें। current_stock, safety_stock और reorder_qty पूर्णांक स्ट्रिंग हों।
+10. forecast_notes.md में पूर्वानुमान अवधि, high-risk SKU, इतिहास रहित SKU और pack-size पूर्णांकन नियम का उल्लेख करें।
+
+inventory_exceptions.json की आवश्यकताएं:
+- वैध JSON की कुंजियां हों: high_risk_skus, missing_history_skus, skipped_history_skus, medium_boundary_skus, more_than_one_pack_low_skus, pack_rounding_cases.
+- पहली पांच कुंजियों के मान आरोही क्रम में सॉर्ट किए गए ऐरे हों।
+- more_than_one_pack_low_skus में केवल वे SKU शामिल करें जिनका current stock, target_stock से ठीक एक pack_size से भी अधिक ऊपर है। हर low-risk SKU को शामिल न करें, जब तक वह इस सीमा शर्त को पूरा न करे।
+- pack_rounding_cases ऐसा ऑब्जेक्ट हो जो गैर-शून्य reorder_qty वाले हर SKU को उसकी reorder_qty स्ट्रिंग से मैप करे।
+- यह ऑडिट आर्टिफ़ैक्ट reorder_plan.csv और forecast_notes.md से सुसंगत हो।
+
+नेटवर्क या बाहरी API का उपयोग न करें।
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

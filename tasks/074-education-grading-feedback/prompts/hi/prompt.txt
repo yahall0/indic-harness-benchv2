@@ -1,0 +1,24 @@
+Fixed rubric से छोटे student responses grade करें.
+
+पढ़ें:
+- $WORKSPACE/in/rubric.md
+- $WORKSPACE/in/submissions/*.txt
+
+बनाएँ:
+- $WORKSPACE/out/grades.csv
+- $WORKSPACE/out/feedback/*.md
+
+$WORKSPACE/out/grades.csv requirements:
+- Header बिल्कुल ये हो: submission_id,concept_score,evidence_score,clarity_score,total_score
+- हर submission के लिए एक row include करें.
+- Scores rubric.md के मुताबिक हों. concept_score का max 4, evidence_score का max 3, clarity_score का max 3, और total का max 10 है.
+
+$WORKSPACE/out/feedback/*.md requirements:
+- हर submission id के लिए एक feedback Markdown फ़ाइल बनाएँ, जैसे $WORKSPACE/out/feedback/submission_1.md.
+- हर फ़ाइल में कम-से-कम एक strength और एक improvement का ज़िक्र हो.
+- Feedback उस specific submission के लिए हो.
+
+Network use न करें. Input फ़ाइलें modify न करें.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

@@ -1,0 +1,26 @@
+Day 3 of 3: plan finalize karo.
+
+Current outputs aur $WORKSPACE/in/day3_update.json padho. Inki final versions banao:
+- $WORKSPACE/out/project_log.md
+- $WORKSPACE/out/final_plan.json
+
+Final plan mein Day 1, Day 2 aur Day 3 ki saari information honi chahiye. Ismein ye shamil ho:
+- Day 1, Day 2 aur Day 3 ke liye status_by_day
+- Exactly three day-level entries wala change_history
+- Vendor delay aur security signoff ke liye adjusted milestones
+- R-connect-delay, R-budget, R-compliance aur R-security wala risk_register
+- final_budget: 92000
+- launch_recommendation: "conditional_go"
+- Compliance review, security signoff aur connector sandbox delivery ki conditions
+- decision_register.csv, header: decision_id,day,decision,status,reverses,source
+- Reversed decisions ko delete karne ki jagah audit trail mein preserve karo
+
+Input files modify mat karo. External services use mat karo.
+
+TIMEOUT AUR SCORE FAILURES SE BACHNE KE LIYE IMPORTANT INSTRUCTIONS:
+1. Connection timeouts avoid karne ke liye saare file writes ek hi combined tool call response mein generate karna MUST hai. Ek file likhkar rukna aur phir doosri likhna mat.
+2. `final_plan.json` mein exact root-level key `"owners"` ko dictionary se map karna MUST hai (jaise, `"owners": {"WS-data": "Priya", ...}`).
+3. `final_plan.json` mein exact root-level key `"conditions"` ko strings ki list se map karna MUST hai.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

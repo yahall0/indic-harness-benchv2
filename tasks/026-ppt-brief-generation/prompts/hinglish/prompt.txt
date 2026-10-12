@@ -1,0 +1,24 @@
+HelioDesk Q3 product update ke liye structured slide brief banao. pptx mat banao.
+
+Inputs:
+- $WORKSPACE/in/product_notes.md
+- $WORKSPACE/in/metrics.csv
+- $WORKSPACE/in/template_outline.md
+
+Outputs:
+- $WORKSPACE/out/slides_outline.json
+- $WORKSPACE/out/speaker_notes.md
+
+slides_outline.json requirements:
+- JSON object mein "slides" array ho jisme exactly 6 slides hon.
+- Har slide mein ye fields hon: slide_number, title, bullets, metric_refs.
+- template_outline.md ke six sections ko same order mein follow karo.
+- Jis slide par metric ka use ho, uske metric_refs mein metrics.csv ke sambandhit metric IDs do.
+
+speaker_notes.md requirements:
+- Saari 6 slides ke notes include karo.
+- Main value propositions cover karo: faster onboarding, lower ticket volume, enterprise controls, aur renewal expansion.
+- Metrics ya customer names invent mat karo.
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

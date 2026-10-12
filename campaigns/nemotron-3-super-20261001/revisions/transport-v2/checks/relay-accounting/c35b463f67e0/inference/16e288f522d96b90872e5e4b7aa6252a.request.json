@@ -1,0 +1,1 @@
+{"call_id":"16e288f522d96b90872e5e4b7aa6252a","phase":"request","request":{"max_tokens":4096,"messages":[{"content":"fake quota test","role":"user"}],"model":"nemotron-3-super","reasoning_effort":"high","stream":true,"stream_options":{"include_usage":true},"temperature":0}}

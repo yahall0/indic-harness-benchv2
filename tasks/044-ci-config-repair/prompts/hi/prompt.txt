@@ -1,0 +1,28 @@
+fixture project में `$WORKSPACE/in/project/.github/workflows/ci.yml` पर GitHub Actions workflow टूटा हुआ है।
+
+बदलाव से पहले `$WORKSPACE/in/project/CI_NOTES.md` पढ़ें। इसमें आवश्यक event safety, action version, caching और path-filter की शर्तें हैं।
+
+आपका काम:
+- workflow YAML में बदलाव करें ताकि वह syntactically valid हो और local Python tests चलाए।
+- application code या tests न बदलें।
+- `CI_NOTES.md` में बदलाव न करें।
+- workflow को offline-friendly रखें: deployment, secrets या external service calls न हों।
+- checkout, Python setup, `requirements.txt` से dependency install और `python -m pytest` शामिल करें।
+- pinned major versions `actions/checkout@v4` और `actions/setup-python@v5` इस्तेमाल करें।
+- 3.10 और 3.11 के लिए छोटा Python version matrix शामिल करें।
+- pip के लिए dependency caching रखें।
+- path filters जोड़ें ताकि workflow app code, tests, requirements और workflow changes पर चले।
+- path filters में `CI_NOTES.md` भी शामिल होना चाहिए।
+- `python -m pytest` और एक हल्का smoke command चलाएँ, जो `app.mathutil` से `normalize_percent` import करके उसे एक बार call करे।
+- `push`, `pull_request`, और `workflow_dispatch` इस्तेमाल करें, लेकिन `pull_request_target` नहीं।
+
+यह भी समझाते हुए `$WORKSPACE/in/project/ci_design_notes.md` लिखें:
+- pull requests के लिए workflow सुरक्षित क्यों है,
+- हर path filter क्यों शामिल है,
+- smoke command क्या import और call करता है,
+- deployment/secrets/external service calls जानबूझकर क्यों नहीं हैं।
+
+oracle YAML को parse करके configured local test command चलाएगा।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

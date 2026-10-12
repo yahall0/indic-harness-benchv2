@@ -1,0 +1,49 @@
+budget-vs-actuals variance report तैयार करें।
+
+इन inputs का उपयोग करें:
+- $WORKSPACE/in/budget.csv
+- $WORKSPACE/in/actuals.csv
+
+ये outputs बनाएँ:
+- $WORKSPACE/out/variance_report.csv
+- $WORKSPACE/out/department_rollup.csv
+- $WORKSPACE/out/review_reasons.json
+- $WORKSPACE/out/summary.md
+
+variance_report.csv में columns इसी exact order में रखें:
+department,category,budget_amount,actual_amount,variance_amount,variance_pct,flag
+
+नियम:
+1. fixtures में बदलाव न करें।
+2. budget.csv और actuals.csv को department और category के आधार पर full outer join करें।
+   - यदि budget row का matching actual row न हो, तो actual_amount को 0.00 रखें।
+   - यदि actual row का matching budget row न हो, तो budget_amount 0.00 के साथ unplanned item शामिल करें।
+3. variance_amount = actual_amount - budget_amount रखें।
+4. variance_pct = variance_amount / budget_amount * 100 रखें।
+   - budget_amount 0.00 और actual_amount nonzero हो, तो variance_pct को N/A और flag को review रखें।
+   - budget_amount और actual_amount दोनों 0.00 हों, तो variance_pct 0.00 और flag ok रखें।
+5. amount fields और variance_pct, दोनों को ठीक two decimals में format करें।
+6. absolute variance_pct, 10.00 से सख्ती से अधिक हो तभी flag review रखें; अन्यथा ok। ठीक 10.00 होने पर ok रखें।
+7. summary.md में हर review item और variance_amount के आधार पर सबसे बड़ा overrun बताएँ।
+8. summary.md में unplanned actuals, zero-budget rows और missing actuals का उल्लेख करें।
+
+department_rollup.csv की आवश्यकताएँ:
+- यह exact header रखें:
+  department,budget_amount,actual_amount,variance_amount,variance_pct,review_item_count,rollup_flag
+- full outer join के बाद variance_report.csv की सभी rows को department के आधार पर जोड़ें।
+- variance_pct = department variance_amount / department budget_amount * 100 रखें।
+- department budget_amount 0.00 और actual_amount nonzero हो, तो variance_pct N/A रखें।
+- review_item_count उस department की flag=review वाली category rows की संख्या हो।
+- review_item_count > 0 होने पर rollup_flag review हो; अन्यथा ok।
+- rows को department के ascending क्रम में sort करें।
+
+review_reasons.json की आवश्यकताएँ:
+- हर review item को key बनाकर valid JSON object दें, जिसका रूप `"Department Category"` हो।
+- हर value में reason_type और primary_driver हों।
+- reason_type का मान इनमें से एक हो: overrun_pct, underrun_pct, unplanned_actual, missing_actual, zero_budget_actual।
+- primary_driver में review flag का कारण बना नियम संक्षेप में बताएँ, जैसे `variance_pct > 10`, `variance_pct < -10`, `budget missing`, `actual missing`, या `budget is zero with actual spend`।
+
+network access या external APIs का उपयोग न करें।
+
+
+Benchmark output contract: Write prose deliverables in English. Preserve the specified filenames, commands, identifiers, JSON keys, enum values, headings, and exact output strings.

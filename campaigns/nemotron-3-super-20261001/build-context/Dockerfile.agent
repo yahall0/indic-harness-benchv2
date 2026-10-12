@@ -1,0 +1,3 @@
+FROM ihb-future-agent-base:b6a1883b4478
+COPY agent.py /opt/ihb/agent.py
+USER 10001:10001
